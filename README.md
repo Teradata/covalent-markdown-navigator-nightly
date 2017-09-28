@@ -11,6 +11,7 @@ Components should be reusable and ubiquitous across the design applications and 
 ### Available resources:
 
 * [Adobe Illustrator](illustrator)
+* [Sketch](sketch)
 
 #### Included in templates
 
