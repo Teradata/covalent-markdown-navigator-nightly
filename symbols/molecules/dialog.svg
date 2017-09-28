@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="432px" height="388px" viewBox="0 0 432 388" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>molecules/dialog</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="432" height="388" rx="4"></rect>
+        <filter x="-22.8%" y="-17.9%" width="145.6%" height="150.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.24 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="17" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="25" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.19 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/dialog">
+            <g id="container">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <text id="Lorem-ipsum-dolor-si" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.87" fill="#000000">
+                <tspan x="25" y="257.515625">Lorem ipsum dolor sit amet, doming noster at quo, nostrud </tspan>
+                <tspan x="25" y="274.515625">lucilius rationibus ea duo. Vim no mucius dolores. No </tspan>
+                <tspan x="25" y="291.515625">bonorum voluptatum vis, has iudicabit consectetuer ne. </tspan>
+                <tspan x="25" y="308.515625">Nullam sensibus vim id, et quo graeci perpetua.</tspan>
+            </text>
+            <text id="Id-qui-scripta-labor" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.87" fill="#000000">
+                <tspan x="24" y="167.34375">Id qui scripta laboramus dissentiet, verterem partiendo vim </tspan>
+                <tspan x="24" y="184.34375">at. Stet dissentiet ut mei. Iriure facilis eloquentiam pro eu, </tspan>
+                <tspan x="24" y="201.34375">nec an esse inciderint. In meliore abhorreant sea. Eros </tspan>
+                <tspan x="24" y="218.34375">nostro ocurreret at nec. Cu per regione persecuti.</tspan>
+            </text>
+            <text id="Lorem-ipsum-dolor-si" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.87" fill="#000000">
+                <tspan x="24" y="77.171875">Lorem ipsum dolor sit amet, doming noster at quo, nostrud </tspan>
+                <tspan x="24" y="94.171875">lucilius rationibus ea duo. Vim no mucius dolores. No </tspan>
+                <tspan x="24" y="111.171875">bonorum voluptatum vis, has iudicabit consectetuer ne. </tspan>
+                <tspan x="24" y="128.171875">Nullam sensibus vim id, et quo graeci perpetua.</tspan>
+            </text>
+            <text id="Dialog" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="24" font-weight="normal" letter-spacing="-0.0461538471" fill-opacity="0.87" fill="#000000">
+                <tspan x="25" y="45">Dialog</tspan>
+            </text>
+            <g id="atoms/button-primary" transform="translate(344.570312, 348.636719)" font-size="14" font-family=".AppleSystemUIFont" letter-spacing="-0.0269230772" fill="#5E35B1" font-weight="normal">
+                <text id="SUBMIT">
+                    <tspan x="0" y="14">SUBMIT</tspan>
+                </text>
+            </g>
+            <g id="atoms/button" transform="translate(248.746094, 348.886719)" font-size="14" font-family=".AppleSystemUIFont" letter-spacing="-0.0269230772" fill="#444444" font-weight="normal">
+                <text id="CANCEL">
+                    <tspan x="0" y="14">CANCEL</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

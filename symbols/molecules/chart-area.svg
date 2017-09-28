@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="703px" height="274px" viewBox="0 0 703 274" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>molecules/chart-area</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/chart-area">
+            <g id="x-axis" transform="translate(111.000000, 5.000000)" font-weight="normal" font-family=".AppleSystemUIFont" letter-spacing="-0.075000003" fill="#000000" font-size="12" fill-opacity="0.54">
+                <g id="labels" transform="translate(0.000000, 220.000000)">
+                    <text id="Tue-13" transform="translate(7.434355, 18.500000) rotate(-90.000000) translate(-7.434355, -18.500000) ">
+                        <tspan x="-11.065645" y="23.5">Tue 13</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(52.723920, 17.500000) rotate(-90.000000) translate(-52.723920, -17.500000) ">
+                        <tspan x="35.2239199" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Wed-14" transform="translate(98.013485, 21.000000) rotate(-90.000000) translate(-98.013485, -21.000000) ">
+                        <tspan x="77.0134848" y="26">Wed 14</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(143.303050, 17.500000) rotate(-90.000000) translate(-143.303050, -17.500000) ">
+                        <tspan x="125.80305" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Thu-15" transform="translate(188.592615, 19.000000) rotate(-90.000000) translate(-188.592615, -19.000000) ">
+                        <tspan x="169.592615" y="24">Thu 15</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(233.882179, 17.500000) rotate(-90.000000) translate(-233.882179, -17.500000) ">
+                        <tspan x="216.382179" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Fri-16" transform="translate(279.171744, 15.500000) rotate(-90.000000) translate(-279.171744, -15.500000) ">
+                        <tspan x="263.671744" y="20.5">Fri 16</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(324.461309, 17.500000) rotate(-90.000000) translate(-324.461309, -17.500000) ">
+                        <tspan x="306.961309" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Sat-17" transform="translate(369.750874, 17.500000) rotate(-90.000000) translate(-369.750874, -17.500000) ">
+                        <tspan x="352.250874" y="22.5">Sat 17</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(415.040439, 17.500000) rotate(-90.000000) translate(-415.040439, -17.500000) ">
+                        <tspan x="397.540439" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Sep-18" transform="translate(460.330004, 19.500000) rotate(-90.000000) translate(-460.330004, -19.500000) ">
+                        <tspan x="440.830004" y="24.5">Sep 18</tspan>
+                    </text>
+                    <text id="12-PM" transform="translate(505.619569, 17.500000) rotate(-90.000000) translate(-505.619569, -17.500000) ">
+                        <tspan x="488.119569" y="22.5">12 PM</tspan>
+                    </text>
+                    <text id="Mon-19" transform="translate(550.909134, 20.500000) rotate(-90.000000) translate(-550.909134, -20.500000) ">
+                        <tspan x="530.409134" y="25.5">Mon 19</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="y-axis" transform="translate(1.000000, 0.000000)" fill="#000000">
+                <g id="labels" transform="translate(32.000000, 0.000000)" font-weight="normal" font-family=".AppleSystemUIFont" letter-spacing="-0.075000003" font-size="12" fill-opacity="0.54">
+                    <text id="0">
+                        <tspan x="30" y="211">0</tspan>
+                    </text>
+                    <text id="2,000">
+                        <tspan x="6" y="195.763462">2,000</tspan>
+                    </text>
+                    <text id="4,000">
+                        <tspan x="6" y="180.526924">4,000</tspan>
+                    </text>
+                    <text id="6,000">
+                        <tspan x="6" y="165.290386">6,000</tspan>
+                    </text>
+                    <text id="8,000">
+                        <tspan x="6" y="150.053848">8,000</tspan>
+                    </text>
+                    <text id="10,000">
+                        <tspan x="0" y="134.81731">10,000</tspan>
+                    </text>
+                    <text id="12,000">
+                        <tspan x="0" y="119.580772">12,000</tspan>
+                    </text>
+                    <text id="14,000">
+                        <tspan x="0" y="104.344234">14,000</tspan>
+                    </text>
+                    <text id="16,000">
+                        <tspan x="0" y="89.1076963">16,000</tspan>
+                    </text>
+                    <text id="18,000">
+                        <tspan x="0" y="73.8711583">18,000</tspan>
+                    </text>
+                    <text id="20,000">
+                        <tspan x="0" y="58.6346204">20,000</tspan>
+                    </text>
+                    <text id="22,000">
+                        <tspan x="0" y="43.3980824">22,000</tspan>
+                    </text>
+                    <text id="24,000">
+                        <tspan x="0" y="28.1615445">24,000</tspan>
+                    </text>
+                    <text id="26,000">
+                        <tspan x="0" y="12.9250065">26,000</tspan>
+                    </text>
+                </g>
+                <g id="grid-lines" transform="translate(83.000000, 11.000000)" stroke-opacity="0.1" stroke="#979797">
+                    <path d="M0,199 L618,199" id="Shape"></path>
+                    <path d="M0,183.763462 L618,183.763462" id="Shape"></path>
+                    <path d="M0,168.526924 L618,168.526924" id="Shape"></path>
+                    <path d="M0,153.290386 L618,153.290386" id="Shape"></path>
+                    <path d="M0,138.053848 L618,138.053848" id="Shape"></path>
+                    <path d="M0,122.81731 L618,122.81731" id="Shape"></path>
+                    <path d="M0,107.580772 L618,107.580772" id="Shape"></path>
+                    <path d="M0,92.3442343 L618,92.3442343" id="Shape"></path>
+                    <path d="M0,77.1076963 L618,77.1076963" id="Shape"></path>
+                    <path d="M0,61.8711583 L618,61.8711583" id="Shape"></path>
+                    <path d="M0,46.6346204 L618,46.6346204" id="Shape"></path>
+                    <path d="M0,31.3980824 L618,31.3980824" id="Shape"></path>
+                    <path d="M0,16.1615445 L618,16.1615445" id="Shape"></path>
+                    <path d="M0,0.925006503 L618,0.925006503" id="Shape"></path>
+                </g>
+                <g id="title" transform="translate(0.000000, 90.000000)" font-weight="normal" font-family=".AppleSystemUIFont" letter-spacing="-0.075000003" font-size="12" fill-opacity="0.54">
+                    <text id="Sales" transform="translate(7.000000, 16.500000) rotate(270.000000) translate(-7.000000, -16.500000) ">
+                        <tspan x="-9.5" y="21.5">Sales</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="area" transform="translate(84.000000, 5.000000)">
+                <polygon id="Shape" fill="#1565C0" opacity="0.8" points="0 179.791148 240.635849 175.403025 274.011144 186.190494 447.10273 177.429485 618 172.325244 618 205 447.10273 205 274.011144 205 240.635849 205 0 205"></polygon>
+                <polygon id="Shape" fill="#2196F3" opacity="0.8" points="0 135.818499 240.635849 144.091939 274.011144 167.510498 447.10273 139.810472 618 143.162511 618 172.325244 447.10273 177.429485 274.011144 186.190494 240.635849 175.403025 0 179.791148"></polygon>
+                <polygon id="Shape" fill="#81D4FA" opacity="0.8" points="0 94.5655729 240.635849 104.873091 274.011144 136.869821 447.10273 121.945632 618 90.8402393 618 143.162511 447.10273 139.810472 274.011144 167.510498 240.635849 144.091939 0 135.818499"></polygon>
+                <polygon id="Shape" fill="#FF9800" opacity="0.8" points="0 48.9626147 240.635849 52.6346204 274.011144 89.6822624 447.10273 71.7793303 618 71.4517448 618 90.8402393 447.10273 121.945632 274.011144 136.869821 240.635849 104.873091 0 94.5655729"></polygon>
+                <polygon id="Shape" fill="#EF6C00" opacity="0.8" points="0 0 240.635849 13.8804861 274.011144 57.2284366 447.10273 35.1354565 618 26.1916088 618 71.4517448 447.10273 71.7793303 274.011144 89.6822624 240.635849 52.6346204 0 48.9626147"></polygon>
+                <g id="Group" opacity="0">
+                    <g id="Rectangle-path">
+                        <rect fill="#FF0000" x="0" y="0" width="120.317924" height="205"></rect>
+                        <rect fill="#FFFFFF" x="0" y="0" width="1" height="205"></rect>
+                    </g>
+                    <g transform="translate(120.000000, 0.000000)" id="Rectangle-path">
+                        <rect fill="#FF0000" x="0.317924465" y="0" width="137.005572" height="205"></rect>
+                        <rect fill="#FFFFFF" x="120.635849" y="0" width="1" height="205"></rect>
+                    </g>
+                    <g transform="translate(257.000000, 0.000000)" id="Rectangle-path">
+                        <rect fill="#FF0000" x="0.323496239" y="0" width="103.23344" height="205"></rect>
+                        <rect fill="#FFFFFF" x="17.0111435" y="0" width="1" height="205"></rect>
+                    </g>
+                    <g transform="translate(360.000000, 0.000000)" id="Rectangle-path">
+                        <rect fill="#FF0000" x="0.556936689" y="0" width="171.994428" height="205"></rect>
+                        <rect fill="#FFFFFF" x="87.1027298" y="0" width="1" height="205"></rect>
+                    </g>
+                    <g transform="translate(532.000000, 0.000000)" id="Rectangle-path">
+                        <rect fill="#FF0000" x="0.551364915" y="0" width="85.4486351" height="205"></rect>
+                        <rect fill="#FFFFFF" x="86" y="0" width="1" height="205"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

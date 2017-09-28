@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="703px" height="202px" viewBox="0 0 703 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>molecules/chart-line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polyline id="path-1" points="38.1040856 171.070552 46.2087915 155.686733 54.3134974 135.687768 62.4182033 144.91806 70.5229093 143.379678 78.6276152 157.225115 86.7323211 154.148351 94.837027 129.534241 102.941733 120.303949 111.046439 109.535276 119.151145 121.842331 127.255851 117.227186 135.360557 124.919095 143.465263 109.535276 151.569968 106.458512 159.674674 98.7666028 167.77938 103.381748 175.884086 97.2282209 183.988792 91.0746933 192.093498 87.9979294 200.198204 106.458512 208.30291 86.4595475 216.407616 84.9211656 224.512322 83.3827837 232.617028 78.767638 240.721733 94.1514571 248.826439 91.0746933 256.931145 92.6130752 265.035851 95.689839 273.140557 89.5363113 281.245263 86.4595475 289.349969 78.767638 297.454675 77.2292561 305.559381 80.3060199 313.664087 75.6908742 321.768793 71.0757285 329.873499 75.6908742 337.978204 81.8444018 346.08291 86.4595475 354.187616 77.2292561 362.292322 72.6141104 370.397028 71.0757285 378.501734 74.1524923 386.60644 69.5373466 394.711146 67.9989647 402.815852 64.9222009 410.920558 64.9222009 419.025264 63.383819 427.12997 60.3070552 435.234675 66.4605828 443.339381 69.5373466 451.444087 71.0757285 459.548793 67.9989647 467.653499 63.383819 475.758205 61.8454371 483.862911 60.3070552 491.967617 58.7686733 500.072323 55.6919095 508.177029 63.383819 516.281735 66.4605828 524.386441 72.6141104 532.491146 78.767638 540.595852 71.0757285 548.700558 67.9989647 556.805264 66.4605828 564.90997 64.9222009 573.014676 63.383819 581.119382 60.3070552 589.224088 55.6919095 597.328794 48"></polyline>
+        <filter x="-1.4%" y="-4.9%" width="102.9%" height="113.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M27.0303087,39 C27.0303087,39 24.811066,37.3012618 24.0303089,36 C23.2495518,34.6987382 21.7700566,33.0410095 22.030309,32 C22.2905613,30.9589905 23.2495518,30.6309149 24.0303089,31.4116721 C24.8110661,32.1924292 25.3370074,33.8840694 25.8575123,33.623817 C26.3780171,33.3635647 25.9876383,30.8911672 25.4671337,29.4597792 C24.9466291,28.0283912 24.4039585,25.0000002 25.4671337,25 C26.5303089,24.9999999 26.5303087,26 27.0303087,27.5 C27.5303087,29 27.1399301,30.9999993 27.5303087,31 C27.9206874,31.0000006 28.0696572,30.6506308 28.0696573,30 C28.0696574,29.8231855 28.1043246,29.6737454 28.1747111,29.5498595 C28.3633284,29.217878 28.8084456,29.0694009 29.5303087,29.0694008 C30.5215502,29.0694008 30.0303087,31.0000001 30.5303087,31 C31.0303087,31 31.0303091,31.0410094 31.0303087,30 C31.0303083,28.9589906 31.493948,29.069401 32.493948,29.0694008 C33.493948,29.0694008 33.0098044,30.9999999 33.5303087,31 C34.0508131,31.0000001 33.5303087,30.0000001 34.0303087,30 C34.5303087,30 35.0303081,30.1577286 35.0303087,32.5 C35.0303093,34.8422714 35.3110662,34.9589904 34.5303087,36 C33.7495512,37.0410096 33.0303087,38 33.0303087,38 C33.0303087,38 33.0303087,39 32.493948,39 C31.9575872,39.0000001 31.68094,37.9999999 31.0303087,38 C30.3796774,38.0000001 30.0303087,39 30.0303087,39 L27.0303087,39 Z M33.030309,37 L33.030309,33 L32.030309,33 L32.030309,37 L33.030309,37 Z M30.030309,36 C30.030309,36.2708838 30.2622426,37 30.530309,37 C30.8064513,37 31.030309,36.2754211 31.030309,36 L31.030309,34 C31.030309,33.7291162 30.7983754,33 30.530309,33 C30.2541666,33 30.030309,33.7245789 30.030309,34 L30.030309,36 Z M28.030309,36 C28.030309,36.2708838 28.2622426,37 28.530309,37 C28.8064513,37 29.030309,36.2754211 29.030309,36 L29.030309,34 C29.030309,33.7291162 28.7983754,33 28.530309,33 C28.2541666,33 28.030309,33.7245789 28.030309,34 L28.030309,36 Z" id="path-3"></path>
+        <filter x="-34.4%" y="-25.0%" width="168.8%" height="164.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="0" y="0" width="138" height="78" rx="2"></rect>
+        <filter x="-7.2%" y="-10.3%" width="114.5%" height="125.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.13 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/chart-line">
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="6.65644172" width="1.32879377" height="165.079755"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="135" y="164.214417" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-3" fill="#CCCCCC" x="446" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-2" fill="#CCCCCC" x="57" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-4" fill="#CCCCCC" x="369" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="213" y="164.214417" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-5" fill="#CCCCCC" x="524" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy" fill="#CCCCCC" x="291" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-6" fill="#CCCCCC" x="602" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path-Copy-7" fill="#CCCCCC" x="680" y="164" width="1.32879377" height="14"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="170.404908" width="664" height="1.33000004"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="129.134969" width="664" height="1.33000004"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="89.196319" width="664" height="1.33000004"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="47.9263804" width="664" height="1.33000004"></rect>
+            <rect id="Rectangle-path" fill="#CCCCCC" x="37.4396887" y="6.65644172" width="664" height="1.33000004"></rect>
+            <rect id="Rectangle-path" fill-opacity="0.25" fill="#000000" x="37.4396887" y="6.65644172" width="1.32879377" height="165.079755"></rect>
+            <text id="12:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="123.963281" y="199.214417">12:00 </tspan>
+                <tspan x="130.519336" y="214.214417">PM</tspan>
+            </text>
+            <text id="6:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="436.024414" y="199">6:00 </tspan>
+                <tspan x="440.019336" y="214">PM</tspan>
+            </text>
+            <text id="10:00-AM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="40.8080078" y="199">10:00 </tspan>
+                <tspan x="47.2878906" y="214">AM</tspan>
+            </text>
+            <text id="5:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="359.135742" y="199">5:00 </tspan>
+                <tspan x="363.019336" y="214">PM</tspan>
+            </text>
+            <text id="2:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="207.223633" y="199.214417">2:00 </tspan>
+                <tspan x="211.019336" y="214.214417">PM</tspan>
+            </text>
+            <text id="7:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="512.487305" y="199">7:00 </tspan>
+                <tspan x="516.019336" y="214">PM</tspan>
+            </text>
+            <text id="4:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="282.986328" y="199">4:00 </tspan>
+                <tspan x="287.019336" y="214">PM</tspan>
+            </text>
+            <text id="8:-00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="587.859766" y="199">8: 00 </tspan>
+                <tspan x="593.519336" y="214">PM</tspan>
+            </text>
+            <text id="9:00-PM" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="667.524414" y="199">9:00 </tspan>
+                <tspan x="671.519336" y="214">PM</tspan>
+            </text>
+            <text id="0" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="14.8501946" y="176.214417">0</tspan>
+            </text>
+            <text id="25" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="8.20622568" y="135.277301">25</tspan>
+            </text>
+            <text id="50" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="8.20622568" y="94.340184">50</tspan>
+            </text>
+            <text id="75" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="8.20622568" y="53.4030675">75</tspan>
+            </text>
+            <text id="100" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" letter-spacing="-0.075000003" fill-opacity="0.54" fill="#000000">
+                <tspan x="0.233463035" y="12.4659509">100</tspan>
+            </text>
+            <g id="Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#039BE5" stroke-width="2" xlink:href="#path-1"></use>
+            </g>
+            <g id="pointer" transform="translate(117.000000, 101.000000)">
+                <circle id="ripple-2" fill-opacity="0.35" fill="#039BE5" cx="18" cy="18" r="18"></circle>
+                <circle id="ripple-2" fill="#039BE5" cx="18" cy="18" r="8"></circle>
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <path stroke="#000000" stroke-width="1" d="M25.6063616,32.8688683 C25.6027263,32.6645732 25.5954057,32.3732696 25.5561262,32.0393946 C25.4633515,31.25081 25.245065,30.3121779 24.997237,29.6306507 C24.6974922,28.8063522 24.4412383,27.6493127 24.3745616,26.7292596 C24.2775822,25.3910656 24.54088,24.5000002 25.4671337,24.5 C26.3935279,24.4999999 26.8001017,24.9857808 27.1315801,26.0862434 C27.1018063,25.9873985 27.3982424,27.0226621 27.5046504,27.3418861 C27.6093657,27.6560322 27.6830292,27.9986422 27.7325527,28.3747211 C27.7693286,28.6539947 27.7897186,28.8903133 27.8033453,29.2025009 C28.1187301,28.7518273 28.6964556,28.5694009 29.5303087,28.5694008 C30.1193464,28.5694008 30.429019,28.8734485 30.5941035,29.4070606 C30.6716987,29.1059383 30.8245525,28.8869289 31.0767491,28.7413192 C31.3602115,28.5776578 31.5655828,28.5604563 32.2490452,28.5677385 C32.3689303,28.5689927 32.4226229,28.5694008 32.493948,28.5694008 C33.1577064,28.5694008 33.4692282,28.9519024 33.6232638,29.6166263 C33.7363598,29.5419295 33.8743799,29.5 34.0303087,29.5 C35.0887537,29.5 35.5303082,30.2823549 35.5303087,32.4999999 C35.5303088,32.9125726 35.5383263,33.2604767 35.5545164,33.6875433 C35.5985755,34.8497428 35.5948422,34.9979705 35.4485036,35.4100702 C35.350829,35.6851285 35.1951602,35.9468649 34.9303087,36.3000001 C33.8969495,37.6778121 33.7999733,37.8071137 33.5232936,38.1760202 C33.5128419,38.3113719 33.489589,38.4677182 33.4461986,38.6295137 C33.3105875,39.135185 33.0170789,39.5 32.4939481,39.5 C32.1132703,39.5000001 31.8654377,39.3231063 31.5479989,38.9659274 C31.5171651,38.9312336 31.4856518,38.8949899 31.427785,38.8282135 C31.2068051,38.5742554 31.1071553,38.5 31.0303088,38.5 C30.9485456,38.5 30.8282311,38.5907818 30.700807,38.7796466 C30.6023882,38.9255204 30.5330563,39.0769638 30.5023307,39.1649097 L30.3852607,39.5 L26.8609097,39.5 L26.7263952,39.3970347 C26.619372,39.3151129 26.4356308,39.1694172 26.2004805,38.9743411 C25.8090039,38.6495797 25.4173993,38.3046237 25.0505666,37.9532621 C24.7429461,37.6586155 24.4660369,37.3718986 24.2270489,37.0965327 C23.9696019,36.799898 23.7592497,36.5200601 23.6015624,36.2572479 C23.428841,35.969379 23.3434348,35.8424581 22.8324893,35.099907 C22.7378,34.9622963 22.6658609,34.8569915 22.5963947,34.7539705 C21.7086449,33.4374033 21.3537182,32.6448103 21.5452377,31.8787322 C21.9019656,30.4518208 23.3340468,30.0083032 24.3838623,31.0581187 C24.6370553,31.3113117 24.8583541,31.6241829 25.1346995,32.0836864 C25.1979165,32.1888029 25.4094942,32.5495202 25.4503694,32.6177801 C25.5094923,32.7165129 25.5605221,32.7988317 25.6063616,32.8688683 Z M32.530309,33 L33.030309,33.5 L32.530309,33.5 L32.530309,35 L32.530309,33.25 L32.530309,33.5 L32.030309,33.5 L32.530309,33 Z M30.530309,36 C30.530309,36.0668258 30.5763191,36.2556897 30.6402309,36.4066746 C30.6716799,36.4809694 30.7036018,36.537784 30.7259386,36.5650611 C30.7033327,36.5374553 30.6447742,36.5 30.530309,36.5 C30.4206645,36.5 30.3622266,36.5365374 30.3398401,36.5635695 C30.3612657,36.5376978 30.3922768,36.4825576 30.4228269,36.4097725 C30.4855417,36.2603554 30.530309,36.0716349 30.530309,36 L30.530309,34 C30.530309,33.9331742 30.4842988,33.7443103 30.420387,33.5933254 C30.388938,33.5190306 30.3570161,33.462216 30.3346793,33.4349389 C30.3572853,33.4625447 30.4158437,33.5 30.530309,33.5 C30.6399534,33.5 30.6983913,33.4634626 30.7207778,33.4364305 C30.6993522,33.4623022 30.6683411,33.5174424 30.637791,33.5902275 C30.5750762,33.7396446 30.530309,33.9283651 30.530309,34 L30.530309,36 Z M28.530309,36 L28.530309,34 C28.530309,33.9283651 28.5750762,33.7396446 28.637791,33.5902275 C28.6683411,33.5174424 28.6993522,33.4623022 28.7207778,33.4364305 C28.6983913,33.4634626 28.6399534,33.5 28.530309,33.5 C28.4158437,33.5 28.3572853,33.4625447 28.3346793,33.4349389 C28.3570161,33.462216 28.388938,33.5190306 28.420387,33.5933254 C28.4842988,33.7443103 28.530309,33.9331742 28.530309,34 L28.530309,36 C28.530309,36.0716349 28.4855417,36.2603554 28.4228269,36.4097725 C28.3922768,36.4825576 28.3612657,36.5376978 28.3398401,36.5635695 C28.3622266,36.5365374 28.4206645,36.5 28.530309,36.5 C28.6447742,36.5 28.7033327,36.5374553 28.7259386,36.5650611 C28.7036018,36.537784 28.6716799,36.4809694 28.6402309,36.4066746 C28.5763191,36.2556897 28.530309,36.0668258 28.530309,36 Z"></path>
+                </g>
+            </g>
+            <g id="tooltip-chart" transform="translate(71.000000, 12.000000)">
+                <g id="paper-shadow-z=&quot;1&quot;">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+                <text id="31.21" font-family=".AppleSystemUIFont" font-size="15" font-weight="normal" fill="#F57C00">
+                    <tspan x="15" y="27">31.21</tspan>
+                </text>
+                <text id="12:00-PM" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.87" fill="#000000">
+                    <tspan x="15" y="44">12:00 PM</tspan>
+                </text>
+                <text id="Monday,-Jun-29" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.87" fill="#000000">
+                    <tspan x="15" y="64">Monday, Jun 29</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

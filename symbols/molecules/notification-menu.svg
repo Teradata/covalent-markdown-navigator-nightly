@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="280px" height="512px" viewBox="0 0 280 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>molecules/notification-menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="512"></rect>
+        <filter x="-7.5%" y="-3.3%" width="115.0%" height="108.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.26 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/notification-menu">
+            <g id="Rectangle-117">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="39" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="110" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="180" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="250" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="320" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="390" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="460" width="280" height="1"></rect>
+            <rect id="Rectangle-117-Copy" fill-opacity="0.12" fill="#000000" x="0" y="474" width="280" height="1"></rect>
+            <g id="atoms/button-accent" transform="translate(0.000000, 476.000000)" font-size="14" font-family=".AppleSystemUIFont" letter-spacing="-0.0269230772" fill="#039BE5" font-weight="normal">
+                <text id="BUTTON">
+                    <tspan x="80.0934019" y="24">See All Notifications</tspan>
+                </text>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 390.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">2 days ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 320.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">19 hrs ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 250.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">2 hrs ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 180.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">1 hr ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 110.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">31 min ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <g id="atoms/list-items-2-icon" transform="translate(0.000000, 40.000000)">
+                <text id="Second-line" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                    <tspan x="71" y="51">22 min ago</tspan>
+                </text>
+                <text id="First-line" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="71" y="31">A user did an activity</tspan>
+                </text>
+                <circle id="Oval" fill="#F5F5F5" fill-rule="evenodd" cx="36" cy="35" r="20"></circle>
+            </g>
+            <text id="Title" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" letter-spacing="-0.0307692308" fill-opacity="0.87" fill="#000000">
+                <tspan x="98.9971154" y="25">Notification</tspan>
+                <tspan x="136.484135" y="43">s</tspan>
+            </text>
+            <g id="today" transform="translate(27.000000, 65.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+            <g id="today" transform="translate(27.000000, 135.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+            <g id="today" transform="translate(27.000000, 205.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+            <g id="today" transform="translate(27.000000, 275.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+            <g id="today" transform="translate(27.000000, 345.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+            <g id="today" transform="translate(27.000000, 415.000000)" fill-opacity="0.54" fill="#000000">
+                <path d="M16,2 L15,2 L15,0 L13,0 L13,2 L5,2 L5,0 L3,0 L3,2 L2,2 C0.89,2 0.01,2.9 0.01,4 L0,18 C0,19.1045695 0.8954305,20 2,20 L16,20 C17.1,20 18,19.1 18,18 L18,4 C18,2.9 17.1,2 16,2 Z M16,18 L2,18 L2,7 L16,7 L16,18 Z M4,9 L9,9 L9,14 L4,14 L4,9 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

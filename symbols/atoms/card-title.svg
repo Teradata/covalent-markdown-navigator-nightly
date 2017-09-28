@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="360px" height="66px" viewBox="0 0 360 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>atoms/card-title</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="atoms/card-title" fill="#000000">
+            <g id="atoms/divider" transform="translate(0.000000, 65.000000)" fill-opacity="0.12">
+                <rect id="divider" x="0" y="0" width="360" height="1" rx="0.5"></rect>
+            </g>
+            <text id="Card-Subtitle" font-family=".AppleSystemUIFont" font-size="15" font-weight="normal" letter-spacing="-0.0288461559" fill-opacity="0.54">
+                <tspan x="15" y="47">Card Subtitle</tspan>
+            </text>
+            <text id="Card-Title" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="24" font-weight="normal" letter-spacing="-0.0461538471" fill-opacity="0.87">
+                <tspan x="15" y="23">Card Title</tspan>
+            </text>
+            <path d="M342,16 C340.895431,16 340,15.1045695 340,14 C340,12.8954305 340.895431,12 342,12 C343.104569,12 344,12.8954305 344,14 C344,15.1045695 343.104569,16 342,16 Z M342,10 C340.895431,10 340,9.1045695 340,8 C340,6.8954305 340.895431,6 342,6 C343.104569,6 344,6.8954305 344,8 C344,9.1045695 343.104569,10 342,10 Z M342,4 C340.895431,4 340,3.1045695 340,2 C340,0.8954305 340.895431,0 342,0 C343.104569,0 344,0.8954305 344,2 C344,3.1045695 343.104569,4 342,4 Z" id="more-vert-2" fill-opacity="0.54"></path>
+        </g>
+    </g>
+</svg>

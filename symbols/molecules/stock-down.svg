@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="360px" height="75px" viewBox="0 0 360 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>molecules/stock-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/stock-down">
+            <rect id="divider" fill-opacity="0.12" fill="#000000" transform="translate(180.000000, 74.500000) scale(1, -1) translate(-180.000000, -74.500000) " x="0" y="74" width="360" height="1" rx="0.5"></rect>
+            <text id="Percent-down" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill="#F44336">
+                <tspan x="270.367728" y="55">Percent </tspan>
+                <tspan x="285.100856" y="72">down</tspan>
+            </text>
+            <polygon id="Shape" fill="#F44336" points="342 50 340.59 48.59 335 54.17 335 42 333 42 333 54.17 327.42 48.58 326 50 334 58"></polygon>
+            <text id="USD" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" letter-spacing="-0.0307692308" fill-opacity="0.54" fill="#000000">
+                <tspan x="320.584976" y="31">US</tspan>
+                <tspan x="330.726082" y="49">D</tspan>
+            </text>
+            <text id="Amount" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" letter-spacing="-0.0307692308" fill-opacity="0.87" fill="#000000">
+                <tspan x="251.411178" y="31">Amount</tspan>
+            </text>
+            <text id="Symbol" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" letter-spacing="-0.0269230772" fill-opacity="0.54" fill="#000000">
+                <tspan x="16" y="55">Symbol</tspan>
+            </text>
+            <text id="Company" font-family=".AppleSystemUIFont" font-size="16" font-weight="normal" letter-spacing="-0.0307692308" fill-opacity="0.87" fill="#000000">
+                <tspan x="16" y="31">Company</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

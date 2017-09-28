@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="900px" viewBox="0 0 1440 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #E0E0E0;">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>manage-list desktop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M370,39.9956201 C370,17.9066491 387.909579,0 409.995828,0 L2012.00417,0 C2034.09326,0 2052,17.9093683 2052,39.9956201 L2052,1102.00438 C2052,1124.09335 2034.09042,1142 2012.00417,1142 L409.995828,1142 C387.906742,1142 370,1124.09063 370,1102.00438 L370,39.9956201 Z M492,133 L492,1033 L1932,1033 L1932,133 L492,133 Z" id="path-1"></path>
+        <rect id="path-2" x="0" y="0" width="1142" height="689"></rect>
+        <filter x="-0.9%" y="-1.2%" width="101.8%" height="102.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.13 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-4" x="68.8723703" y="187.561111" width="38.4403927" height="22.9666667"></rect>
+        <rect id="path-5" x="555.784011" y="183.733333" width="89.6942496" height="53.5888889"></rect>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="laptop-bg-nav-cards" transform="translate(-491.000000, -130.000000)">
+            <g id="Rectangle-1">
+                <use fill="#37474F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#979797" stroke-width="1" d="M370.5,39.9956201 L370.5,1102.00438 C370.5,1123.81543 388.183828,1141.5 409.995828,1141.5 L2012.00417,1141.5 C2033.81526,1141.5 2051.5,1123.81622 2051.5,1102.00438 L2051.5,39.9956201 C2051.5,18.1845668 2033.81617,0.5 2012.00417,0.5 L409.995828,0.5 C388.184735,0.5 370.5,18.183777 370.5,39.9956201 Z M491.5,132.5 L1932.5,132.5 L1932.5,1033.5 L491.5,1033.5 L491.5,132.5 Z"></path>
+            </g>
+        </g>
+        <g id="manage-list-desktop">
+            <g id="organisms/data-table" transform="translate(278.000000, 149.000000)">
+                <g id="container">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <g id="arrow-drop-down" stroke-width="1" fill-rule="evenodd" transform="translate(1012.263675, 656.463889)">
+                    <g id="keyboard-arrow-left"></g>
+                    <g id="keyboard-arrow-right" transform="translate(78.482468, 0.000000)"></g>
+                </g>
+                <g id="sort" stroke-width="1" fill-rule="evenodd" transform="translate(1010.661992, 25.837500)" fill-opacity="0.54" fill="#000000">
+                    <path d="M11.4151473,12 L17.4151473,12 L17.4151473,10 L11.4151473,10 L11.4151473,12 L11.4151473,12 Z M5.41514727,0 L5.41514727,2 L23.4151473,2 L23.4151473,0 L5.41514727,0 L5.41514727,0 Z M8.41514727,7 L20.4151473,7 L20.4151473,5 L8.41514727,5 L8.41514727,7 L8.41514727,7 Z" id="Shape"></path>
+                </g>
+                <text id="Card-Heading" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="20" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="26" y="36.5">Card Heading</tspan>
+                </text>
+                <g id="Rectangle-141">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <rect stroke="#979797" stroke-width="1" x="69.3723703" y="188.061111" width="37.4403927" height="21.9666667"></rect>
+                </g>
+                <g id="Rectangle-141-Copy">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    <rect stroke="#979797" stroke-width="1" x="556.284011" y="184.233333" width="88.6942496" height="52.5888889"></rect>
+                </g>
+                <g id="table-row" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 162.680556)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-4" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 354.069444)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-2" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 258.375000)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-5" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 449.763889)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-8" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 545.458333)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-heading" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 111.962500)">
+                    <rect id="Rectangle-145" fill="#FFFFFF" x="1.60168303" y="0" width="1140.39832" height="51.675"></rect>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 14.794444)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <text id="Column-Heading" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                        <tspan x="67" y="32">Column Heading</tspan>
+                    </text>
+                    <text id="Calories" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                        <tspan x="496.945302" y="30.8375">Calories</tspan>
+                    </text>
+                    <text id="Fat-(g)" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                        <tspan x="731.286816" y="30.8375">Fat (g)</tspan>
+                    </text>
+                    <text id="Carbs-(g)" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                        <tspan x="886.357644" y="30.8375">Carbs (g)</tspan>
+                    </text>
+                    <text id="Protein-(g)" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54" fill="#000000">
+                        <tspan x="1028.66329" y="32">Protein (g)</tspan>
+                    </text>
+                    <path d="M0.800841515,52.1534722 L1141.19916,52.1534722" id="Line" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <rect id="Rectangle-145" fill="#FFF3E0" fill-rule="evenodd" x="1.60168303" y="59.3305556" width="1140.39832" height="51.675"></rect>
+                <g id="more-vert" stroke-width="1" fill-rule="evenodd" transform="translate(1093.949509, 23.923611)" fill-opacity="0.54" fill="#000000">
+                    <path d="M3.20336606,56.9 C4.30336606,56.9 5.20336606,56 5.20336606,54.9 C5.20336606,53.8 4.30336606,52.9 3.20336606,52.9 C2.10336606,52.9 1.20336606,53.8 1.20336606,54.9 C1.20336606,56 2.10336606,56.9 3.20336606,56.9 L3.20336606,56.9 Z M3.20336606,58.9 C2.10336606,58.9 1.20336606,59.8 1.20336606,60.9 C1.20336606,62 2.10336606,62.9 3.20336606,62.9 C4.30336606,62.9 5.20336606,62 5.20336606,60.9 C5.20336606,59.8 4.30336606,58.9 3.20336606,58.9 L3.20336606,58.9 Z M3.20336606,64.9 C2.10336606,64.9 1.20336606,65.8 1.20336606,66.9 C1.20336606,68 2.10336606,68.9 3.20336606,68.9 C4.30336606,68.9 5.20336606,68 5.20336606,66.9 C5.20336606,65.8 4.30336606,64.9 3.20336606,64.9 L3.20336606,64.9 Z" id="Shape"></path>
+                    <path d="M4.80504909,4 C5.90504909,4 6.80504909,3.1 6.80504909,2 C6.80504909,0.9 5.90504909,0 4.80504909,0 C3.70504909,0 2.80504909,0.9 2.80504909,2 C2.80504909,3.1 3.70504909,4 4.80504909,4 L4.80504909,4 Z M4.80504909,6 C3.70504909,6 2.80504909,6.9 2.80504909,8 C2.80504909,9.1 3.70504909,10 4.80504909,10 C5.90504909,10 6.80504909,9.1 6.80504909,8 C6.80504909,6.9 5.90504909,6 4.80504909,6 L4.80504909,6 Z M4.80504909,12 C3.70504909,12 2.80504909,12.9 2.80504909,14 C2.80504909,15.1 3.70504909,16 4.80504909,16 C5.90504909,16 6.80504909,15.1 6.80504909,14 C6.80504909,12.9 5.90504909,12 4.80504909,12 L4.80504909,12 Z" id="Shape-Copy"></path>
+                </g>
+                <g id="delete" stroke-width="1" fill-rule="evenodd" transform="translate(1010.661992, 75.598611)" fill-opacity="0.54" fill="#000000">
+                    <path d="M5.21178121,16 C5.21178121,17.1 6.11178121,18 7.21178121,18 L15.2117812,18 C16.3117812,18 17.2117812,17.1 17.2117812,16 L17.2117812,4 L5.21178121,4 L5.21178121,16 L5.21178121,16 Z M18.2117812,1 L14.7117812,1 L13.7117812,0 L8.71178121,0 L7.71178121,1 L4.21178121,1 L4.21178121,3 L18.2117812,3 L18.2117812,1 L18.2117812,1 Z" id="Shape"></path>
+                </g>
+                <text id="1-item-selected" font-family=".AppleSystemUIFont" font-size="15" font-weight="normal" fill="#F57C00">
+                    <tspan x="26" y="95">1 item selected</tspan>
+                </text>
+                <path d="M0.800841515,111.484028 L1141.19916,111.484028" id="Line" stroke="#E0E0E0" stroke-width="1" stroke-linecap="square"></path>
+                <g id="table-row-copy" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 210.527778)">
+                    <rect id="Rectangle-145-Copy" fill="#E8E8E8" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <g id="atoms/checkbox-on" transform="translate(22.062500, 12.796354)">
+                        <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 Z M10,17 L5,12.1923077 L6.4,10.8461538 L10,14.3076923 L17.6,7 L19,8.34615385 L10,17 L10,17 Z" id="Shape" fill="#039BE5" fill-rule="evenodd"></path>
+                    </g>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-6" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 401.916667)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-3" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 306.222222)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-7" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 497.611111)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="table-row-copy-9" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 593.305556)">
+                    <rect id="Rectangle-145-Copy" fill="#FFFFFF" x="1.60168303" y="0.478472222" width="1140.39832" height="46.8902778"></rect>
+                    <text id="Table-content" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="115.270996" y="28.8041667">Table content</tspan>
+                    </text>
+                    <text id="159" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="526.840332" y="30.8590278">159</tspan>
+                    </text>
+                    <text id="6.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="751.849121" y="30.8590278">6.0</tspan>
+                    </text>
+                    <text id="24" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="930.124512" y="30.8590278">24</tspan>
+                    </text>
+                    <text id="4.0" font-family=".AppleSystemUIFont" font-size="13" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                        <tspan x="1101.7666" y="28.8041667">4.0</tspan>
+                    </text>
+                    <g id="atoms/checkbox-off" fill="#000000" transform="translate(22.000000, 12.880556)">
+                        <rect id="bounds" fill="none" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M19,5 L19,19 L5,19 L5,5 L19,5 L19,5 Z M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z" id="Shape" fill="#010101" opacity="0.54"></path>
+                    </g>
+                    <path d="M0.800841515,47.8472222 L1141.19916,47.8472222" id="Line-Copy" stroke="#E0E0E0" stroke-linecap="square"></path>
+                </g>
+                <g id="atoms/pagination" transform="translate(418.039271, 642.109722)" fill="#000000">
+                    <text id="Count" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal" fill-opacity="0.54">
+                        <tspan x="538.671875" y="28">1-10 of 100</tspan>
+                    </text>
+                    <g id="prev-next" stroke-width="1" fill-rule="evenodd" transform="translate(640.000000, 16.979167)">
+                        <polygon id="Shape" fill-opacity="0.38" points="7.4 11.1 2.8 6.5 7.4 1.9 6 0.5 0 6.5 6 12.5"></polygon>
+                        <polygon id="Shape" fill-opacity="0.54" points="45.6 11.3 50.2 6.8 45.6 2.2 47 0.8 53 6.8 47 12.8"></polygon>
+                    </g>
+                    <g id="per-page" stroke-width="1" fill-rule="evenodd" transform="translate(199.592920, 16.000000)" fill-opacity="0.54">
+                        <text id="Rows-per-page" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal">
+                            <tspan x="0" y="12">Rows per page:</tspan>
+                        </text>
+                        <text id="#-Per-Page" font-family=".AppleSystemUIFont" font-size="12" font-weight="normal">
+                            <tspan x="101" y="12">10</tspan>
+                        </text>
+                        <polygon id="Shape" points="121 5 126 10 131 5"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="navigation-drawer" transform="translate(1.000000, 130.000000)">
+                <rect id="bg" stroke="#CCCCCC" fill="#FFFFFF" x="0" y="0" width="256" height="835"></rect>
+                <g id="nav-list" transform="translate(24.000000, 173.000000)">
+                    <g id="list-item" transform="translate(3.000000, 181.844444)">
+                        <text id="Item-Eight" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="49" y="13">Updates</tspan>
+                        </text>
+                        <g id="flag" transform="translate(0.000000, 2.783333)" fill="#7D7D7D">
+                            <rect id="Rectangle-55" x="0" y="0" width="2" height="14.8444444"></rect>
+                            <rect id="Rectangle-56" x="3" y="0" width="11" height="10.2055556"></rect>
+                        </g>
+                    </g>
+                    <g id="list-item" transform="translate(0.000000, 135.455556)">
+                        <text id="Item-Seven" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="52" y="13.9277778">Forums</tspan>
+                        </text>
+                        <g id="forum" fill="#7D7D7D">
+                            <path d="M19,3.71111111 L17,3.71111111 L17,12.0611111 L4,12.0611111 L4,13.9166667 C4,14.4733333 4.4,14.8444444 5,14.8444444 L16,14.8444444 L20,18.5555556 L20,4.63888889 C20,4.08222222 19.6,3.71111111 19,3.71111111 L19,3.71111111 Z M15,9.27777778 L15,0.927777778 C15,0.371111111 14.6,0 14,0 L1,0 C0.4,0 0,0.371111111 0,0.927777778 L0,13.9166667 L4,10.2055556 L14,10.2055556 C14.6,10.2055556 15,9.83444444 15,9.27777778 L15,9.27777778 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                    <g id="list-item" transform="translate(0.000000, 90.922222)">
+                        <text id="Item-Six" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="52" y="13">Starred</tspan>
+                        </text>
+                        <polygon id="star" fill="#7D7D7D" points="10 14.16995 16.18 17.6277778 14.545 11.1064278 20 6.72082222 12.809 6.14838333 10 0 7.191 6.14838333 0 6.72082222 5.455 11.1064278 3.82 17.6277778"></polygon>
+                    </g>
+                    <g id="list-item" transform="translate(3.000000, 45.461111)">
+                        <text id="Item-Five" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="49" y="13">Trash</tspan>
+                        </text>
+                        <g id="delete-3" transform="translate(0.000000, 1.855556)" fill="#7D7D7D">
+                            <path d="M1,14.8444444 C1,15.865 1.9,16.7 3,16.7 L11,16.7 C12.1,16.7 13,15.865 13,14.8444444 L13,3.71111111 L1,3.71111111 L1,14.8444444 L1,14.8444444 Z M14,0.927777778 L10.5,0.927777778 L9.5,0 L4.5,0 L3.5,0.927777778 L0,0.927777778 L0,2.78333333 L14,2.78333333 L14,0.927777778 L14,0.927777778 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                    <g id="list-item">
+                        <text id="Item-Four" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="52" y="13">Sent</tspan>
+                        </text>
+                        <g id="send-2" transform="translate(0.000000, 2.783333)" fill="#7D7D7D">
+                            <polygon id="Shape" points="0 16.7 21 8.35 0 0 0 6.49444444 15 8.35 0 10.2055556"></polygon>
+                        </g>
+                    </g>
+                </g>
+                <path d="M1,152.463889 L257,152.463889" id="divider" stroke="#D6D5D5" stroke-linecap="square"></path>
+                <g id="nav-list" transform="translate(24.000000, 24.000000)">
+                    <g id="list-item" transform="translate(1.000000, 90.922222)">
+                        <text id="Item-Three" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="51" y="13">Replied</tspan>
+                        </text>
+                        <g id="done-2" transform="translate(0.000000, 2.711111)" fill="#7D7D7D">
+                            <polygon id="Shape" points="6 10.4633333 1.8 6.56666667 0.4 7.86555556 6 13.0611111 18 1.92777778 16.6 0.628888889"></polygon>
+                        </g>
+                    </g>
+                    <g id="list-item" transform="translate(1.000000, 45.461111)">
+                        <text id="Item-Two" font-family=".AppleSystemUIFont" font-size="13.9166667" font-weight="normal" fill="#4D4D4E">
+                            <tspan x="51" y="13">Archive</tspan>
+                        </text>
+                        <g id="archive-2" transform="translate(0.000000, 0.927778)" fill="#7D7D7D">
+                            <path d="M17.5,2.04111111 L16.1,0.463888889 C15.9,0.185555556 15.5,0 15,0 L3,0 C2.5,0 2.1,0.185555556 1.8,0.463888889 L0.5,2.04111111 C0.2,2.41222222 0,2.78333333 0,3.24722222 L0,14.8444444 C0,15.865 0.9,16.7 2,16.7 L16,16.7 C17.1,16.7 18,15.865 18,14.8444444 L18,3.24722222 C18,2.78333333 17.8,2.41222222 17.5,2.04111111 L17.5,2.04111111 Z M9,13.4527778 L3.5,8.35 L7,8.35 L7,6.49444444 L11,6.49444444 L11,8.35 L14.5,8.35 L9,13.4527778 L9,13.4527778 Z M2.1,1.85555556 L2.9,0.927777778 L14.9,0.927777778 L15.8,1.85555556 L2.1,1.85555556 L2.1,1.85555556 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                    <g id="list-item">
+                        <text id="Item-One" font-family=".AppleSystemUIFont" font-size="15" font-weight="normal" fill="#F57C00">
+                            <tspan x="52" y="14">Dashboard</tspan>
+                        </text>
+                        <g id="access-time" transform="translate(0.000000, 1.855556)" fill="#7D7D7D">
+                            <path d="M10,0 C4.5,0 0,4.175 0,9.27777778 C0,14.3805556 4.5,18.5555556 10,18.5555556 C15.5,18.5555556 20,14.3805556 20,9.27777778 C20,4.175 15.5,0 10,0 L10,0 Z M10,16.7 C5.6,16.7 2,13.36 2,9.27777778 C2,5.19555556 5.6,1.85555556 10,1.85555556 C14.4,1.85555556 18,5.19555556 18,9.27777778 C18,13.36 14.4,16.7 10,16.7 L10,16.7 Z" id="Shape"></path>
+                            <polygon id="Shape" points="10.5 4.63888889 9 4.63888889 9 10.2055556 14.2 13.1744444 15 11.9683333 10.5 9.46333333"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="molecules/toolbar-white-sub" transform="translate(0.000000, 65.000000)">
+                <rect id="Rectangle-1" fill="#F5F5F5" fill-rule="evenodd" x="0" y="0" width="257" height="64"></rect>
+                <text id="View-Name" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="20" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="22" y="39">Section Name</tspan>
+                </text>
+            </g>
+            <g id="molecules/toolbar">
+                <rect id="Rectangle-1" fill="#F16C00" fill-rule="evenodd" x="0" y="0" width="1440" height="64"></rect>
+                <path d="M1405,40 C1403.89543,40 1403,39.1045695 1403,38 C1403,36.8954305 1403.89543,36 1405,36 C1406.10457,36 1407,36.8954305 1407,38 C1407,39.1045695 1406.10457,40 1405,40 Z M1405,34 C1403.89543,34 1403,33.1045695 1403,32 C1403,30.8954305 1403.89543,30 1405,30 C1406.10457,30 1407,30.8954305 1407,32 C1407,33.1045695 1406.10457,34 1405,34 Z M1405,28 C1403.89543,28 1403,27.1045695 1403,26 C1403,24.8954305 1403.89543,24 1405,24 C1406.10457,24 1407,24.8954305 1407,26 C1407,27.1045695 1406.10457,28 1405,28 Z" id="more-vert" fill="#FFFFFF" fill-rule="evenodd"></path>
+                <path d="M1352.36248,34.83464 L1352.1076,35.08952 L1351.15504,34.13696 C1352.10688,32.9612 1352.68,31.4672 1352.68,29.84 C1352.68,26.06864 1349.61136,23 1345.84,23 C1342.06864,23 1339,26.06864 1339,29.84 C1339,33.61136 1342.06864,36.68 1345.84,36.68 C1347.4672,36.68 1348.9612,36.10688 1350.13696,35.15504 L1351.08952,36.1076 L1350.83464,36.36248 L1355.15608,40.68392 L1356.6832,39.1568 L1352.36248,34.83464 L1352.36248,34.83464 Z M1345.84072,34.52 C1343.26024,34.52 1341.16072,32.42048 1341.16072,29.84 C1341.16072,27.25952 1343.26024,25.16 1345.84072,25.16 C1348.4212,25.16 1350.52072,27.25952 1350.52072,29.84 C1350.52072,32.42048 1348.42048,34.52 1345.84072,34.52 L1345.84072,34.52 Z" id="Shape" fill="#FFFFFF" fill-rule="evenodd"></path>
+                <text id="Title" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="20" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="166" y="39">Toolbar</tspan>
+                </text>
+                <path d="M21,31 L39,31 L39,33 L21,33 L21,31 Z M21,36 L39,36 L39,38 L21,38 L21,36 Z M21,26 L39,26 L39,28 L21,28 L21,26 Z" id="menu" fill="#FFFFFF" fill-rule="evenodd"></path>
+                <g id="atoms/logo" transform="translate(56.000000, 20.000000)" fill-rule="evenodd" fill="#FFFFFF">
+                    <path d="M8.55704698,0 L17.114094,5 L16.529744,15 L8.55704698,20 L0.531227245,15 L0,5 L8.55704698,0 Z M8.55704698,0.998302254 L16.259842,5.49915112 L15.7286148,14.5008489 L8.55704698,19.0016977 L1.38547917,14.5008489 L0.85425193,5.49915112 L8.55704698,0.998302254 Z" id="Combined-Shape"></path>
+                    <path d="M14.7596947,10.2355932 C14.5996355,10.1505763 14.4126864,10.1471413 14.2479322,10.2059661 L13.7553769,9.94447458 L13.7553769,7.86928814 L14.2402494,7.57559322 C14.3000048,7.59405651 14.3618944,7.60607908 14.425918,7.60607908 C14.5420143,7.60607908 14.6564032,7.57430508 14.7558533,7.51376271 C14.9022541,7.42488136 15.0055456,7.28404519 15.0469475,7.11744634 C15.0879227,6.95041807 15.0623132,6.77737854 14.9739606,6.63010169 C14.7989626,6.33769492 14.3866502,6.23378532 14.0951291,6.41068925 C13.9337895,6.50858756 13.8330589,6.66745763 13.7997666,6.84049719 L13.3285524,7.1260339 L11.6212548,6.09595481 L11.6212548,5.52745763 C11.7514363,5.40937854 11.834667,5.24063278 11.834667,5.05084746 C11.834667,4.69575142 11.5474142,4.40677966 11.1944304,4.40677966 C10.8414466,4.40677966 10.5541938,4.69575142 10.5541938,5.05084746 C10.5541938,5.24063278 10.6374246,5.40937854 10.767606,5.52745763 L10.767606,6.09595481 L9.06030836,7.12646329 L7.35301074,6.09595481 L7.35301074,5.52745763 C7.48319218,5.40937854 7.56642295,5.24063278 7.56642295,5.05084746 C7.56642295,4.69575142 7.2791701,4.40677966 6.92618634,4.40677966 C6.57320255,4.40677966 6.2859497,4.69575142 6.2859497,5.05084746 C6.2859497,5.24063278 6.36918047,5.40937854 6.49936191,5.52745763 L6.49936191,6.09595481 L4.79249111,7.1260339 L4.32127695,6.84049719 C4.28798466,6.66745763 4.18725409,6.5081582 4.02591446,6.41068925 C3.73439339,6.23335593 3.32250784,6.33769492 3.14708301,6.62967231 C3.05830353,6.77694915 3.03269407,6.95041807 3.07366921,7.11744634 C3.11507118,7.28404519 3.21836269,7.42488136 3.36476346,7.51376271 C3.46464037,7.57430508 3.57860248,7.60607908 3.69469872,7.60607908 C3.75872238,7.60607908 3.82061191,7.59405651 3.88036735,7.57559322 L4.36523987,7.86971753 L4.36523987,9.94447458 L3.87311134,10.2063955 C3.70835711,10.1475706 3.52140802,10.1505763 3.36092205,10.2360226 C3.0489134,10.4021921 2.92940256,10.7924972 3.09415679,11.1063729 C3.20555796,11.3180565 3.42238477,11.4494463 3.66055279,11.4494463 C3.76427111,11.4494463 3.86713577,11.4236836 3.95932987,11.3747345 C4.12579138,11.2862825 4.23548527,11.1329943 4.27816768,10.9625311 L4.77883272,10.6963164 L6.49936191,11.7345537 L6.49936191,13.8088814 L6.00723339,14.0708023 C5.84205232,14.0119774 5.65510322,14.0154124 5.49504409,14.1004294 C5.18303544,14.2665989 5.0635246,14.656904 5.22827883,14.9707797 C5.33968,15.1824633 5.55650681,15.3138531 5.79467483,15.3138531 C5.89839315,15.3138531 6.00125782,15.2880904 6.09345191,15.2391413 C6.25991342,15.1506893 6.36960728,14.9974011 6.41228973,14.8269379 L6.91295477,14.5607232 L8.63348396,15.5989604 L8.63348396,16.1674576 C8.50330252,16.2855367 8.42007174,16.4542825 8.42007174,16.6440678 C8.42007174,16.9991638 8.7073246,17.2881356 9.06030836,17.2881356 C9.41329215,17.2881356 9.700545,16.9991638 9.700545,16.6440678 C9.700545,16.4542825 9.61731423,16.2855367 9.48713279,16.1674576 L9.48713279,15.5989604 L11.207662,14.5607232 L11.708327,14.8269379 C11.7514363,14.9978305 11.8607033,15.1506893 12.0271648,15.2395706 C12.1189321,15.2880904 12.2222236,15.3138531 12.3259419,15.3138531 C12.5641099,15.3138531 12.7809367,15.1824633 12.8923379,14.9707797 C13.057519,14.656904 12.9375813,14.2661695 12.6255727,14.1004294 C12.4655135,14.0149831 12.2785644,14.0119774 12.1138102,14.0708023 L11.6212548,13.8088814 L11.6212548,11.7345537 L13.341784,10.6963164 L13.8424491,10.9625311 C13.8855583,11.1334237 13.9948254,11.2862825 14.1612869,11.3751638 C14.2530541,11.4236836 14.3563456,11.4494463 14.460064,11.4494463 C14.698232,11.4494463 14.9150588,11.3180565 15.02646,11.1063729 C15.191641,10.7924972 15.0717034,10.4017627 14.7596947,10.2355932 L14.7596947,10.2355932 Z M10.767606,13.824339 L9.06030836,14.8548475 L7.35301074,13.824339 L7.35301074,11.7345537 L9.06030836,10.7040452 L10.767606,11.7345537 L10.767606,13.824339 L10.767606,13.824339 Z M12.9017281,9.9599322 L11.1944304,10.9904407 L9.48713279,9.9599322 L9.48713279,7.87014688 L11.1944304,6.83963841 L12.9017281,7.87014688 L12.9017281,9.9599322 L12.9017281,9.9599322 Z" id="Shape"></path>
+                    <path d="M35.1850007,13.6696548 C35.0282399,15.3467754 34.4154581,16.6549818 33.3466359,17.5943133 C32.2778139,18.5336448 30.856302,19.0033035 29.0820575,19.0033035 C27.842224,19.0033035 26.7502606,18.7063928 25.8061345,18.1125626 C24.8620084,17.5187323 24.133439,16.6747862 23.6204044,15.580699 C23.1073699,14.4866117 22.8401684,13.2161939 22.8187919,11.7694075 L22.8187919,10.3010346 C22.8187919,8.81825844 23.0788681,7.51185149 23.5990281,6.38177454 C24.1191881,5.25169756 24.865571,4.38075959 25.838199,3.76893447 C26.810827,3.15710939 27.9348546,2.85120142 29.2103155,2.85120142 C30.9275562,2.85120142 32.3098785,3.32265956 33.3573241,4.26559003 C34.4047698,5.20852047 35.0139889,6.54011986 35.1850007,8.2604281 L32.4915826,8.2604281 C32.363324,7.13035115 32.0373382,6.31519641 31.5136154,5.81493939 C30.9898926,5.31468241 30.2221337,5.06455766 29.2103155,5.06455766 C28.0346113,5.06455766 27.1314703,5.49822719 26.5008653,6.36557925 C25.8702603,7.23293129 25.5478372,8.50514854 25.5335862,10.1822692 L25.5335862,11.575064 C25.5335862,13.2737784 25.8346333,14.5693886 26.4367363,15.4619335 C27.0388394,16.3544784 27.9206043,16.8007441 29.0820575,16.8007441 C30.143754,16.8007441 30.9417958,16.5596167 31.4762068,16.0773545 C32.0106178,15.5950924 32.349073,14.7925338 32.4915826,13.6696548 L35.1850007,13.6696548 Z M35.8250631,12.8382966 C35.8250631,11.6938238 36.0495124,10.662734 36.4984174,9.74499631 C36.9473228,8.82725864 37.5779185,8.12187088 38.3902232,7.62881183 C39.2025279,7.13575278 40.1359517,6.88922695 41.1905228,6.88922695 C42.7510027,6.88922695 44.0175379,7.39667427 44.9901658,8.41158414 C45.962794,9.42649403 46.4882903,10.7724891 46.5666705,12.4496097 L46.5773587,13.0650307 C46.5773587,14.2167015 46.3582534,15.2459918 45.9200362,16.1529325 C45.4818195,17.0598733 44.8547866,17.7616622 44.0389191,18.2583202 C43.2230517,18.7549782 42.2807211,19.0033035 41.211899,19.0033035 C39.5801641,19.0033035 38.2744396,18.4544686 37.2946859,17.3567824 C36.3149326,16.2590962 35.8250631,14.7961363 35.8250631,12.9678589 L35.8250631,12.8382966 Z M38.4222876,13.0650307 C38.4222876,14.2670871 38.6681131,15.2082039 39.1597711,15.8884095 C39.6514292,16.5686151 40.3354651,16.9087127 41.211899,16.9087127 C42.0883329,16.9087127 42.7705876,16.5632167 43.2586829,15.8722142 C43.7467782,15.1812117 43.9908221,14.169916 43.9908221,12.8382966 C43.9908221,11.6578341 43.739653,10.7221156 43.2373067,10.0311131 C42.7349601,9.34011064 42.0527057,8.99461458 41.1905228,8.99461458 C40.3425906,8.99461458 39.669243,9.33471224 39.1704591,10.0149178 C38.6716755,10.6951234 38.4222876,11.7118175 38.4222876,13.0650307 L38.4222876,13.0650307 Z M51.6530101,15.4619335 L54.1006003,7.10516414 L56.7833302,7.10516414 L52.7752678,18.7873663 L50.5200644,18.7873663 L46.4799376,7.10516414 L49.1733557,7.10516414 L51.6530101,15.4619335 Z M64.1141849,18.7873663 C64.0001772,18.5642301 63.9004218,18.2007395 63.8149161,17.6968835 C62.9883604,18.5678345 61.9765577,19.0033035 60.7794768,19.0033035 C59.6180238,19.0033035 58.670349,18.6686042 57.9364245,17.9991956 C57.2025003,17.3297869 56.8355436,16.5020359 56.8355436,15.5159178 C56.8355436,14.2706738 57.2933487,13.3151613 58.2089728,12.6493516 C59.124597,11.9835419 60.4338842,11.6506421 62.1368742,11.6506421 L63.7294107,11.6506421 L63.7294107,10.884065 C63.7294107,10.2794379 63.5619648,9.79538349 63.2270671,9.43188739 C62.8921695,9.06839129 62.3827054,8.88664597 61.6986594,8.88664597 C61.1072443,8.88664597 60.6227191,9.03600105 60.2450685,9.33471566 C59.8674181,9.63343027 59.6785956,10.013116 59.6785956,10.4737843 L57.0813715,10.4737843 C57.0813715,9.83316746 57.2915698,9.23394776 57.7119732,8.67610722 C58.1323765,8.11826668 58.7041876,7.68099824 59.4274238,7.36428875 C60.1506601,7.04757929 60.9576087,6.88922695 61.8482936,6.88922695 C63.2021349,6.88922695 64.2816289,7.23292353 65.0868081,7.92032702 C65.8919872,8.60773054 66.3052587,9.57403983 66.3266352,10.8192839 L66.3266352,16.0881514 C66.3266352,17.139051 66.4727054,17.9775987 66.76485,18.6038197 L66.76485,18.7873663 L64.1141849,18.7873663 Z M61.2604443,16.8979159 C61.7734789,16.8979159 62.2562232,16.7719538 62.7086909,16.5200258 C63.1611591,16.2680978 63.5013956,15.9297996 63.7294107,15.5051209 L63.7294107,13.3025616 L62.3292611,13.3025616 C61.3673211,13.3025616 60.644096,13.4717107 60.1595634,13.810014 C59.6750305,14.1483173 59.4327681,14.6269733 59.4327681,15.2459963 C59.4327681,15.7498523 59.5984329,16.1511316 59.9297678,16.4498462 C60.2611023,16.7485608 60.704657,16.8979159 61.2604443,16.8979159 L61.2604443,16.8979159 Z M70.7716852,18.7873663 L68.1744607,18.7873663 L68.1744607,2.20338983 L70.7716852,2.20338983 L70.7716852,18.7873663 Z M77.6536369,19.0033035 C76.007651,19.0033035 74.6734248,18.4796611 73.6509185,17.4323604 C72.6284121,16.3850598 72.1171668,14.9904794 72.1171668,13.2485773 L72.1171668,12.9246715 C72.1171668,11.7586048 72.3398346,10.7167183 72.7851772,9.79898061 C73.2305195,8.88124295 73.8557711,8.1668579 74.6609503,7.65580397 C75.4661295,7.14475007 76.3639265,6.88922695 77.3543681,6.88922695 C78.9290993,6.88922695 80.1457567,7.39667427 81.0043772,8.41158414 C81.8629973,9.42649403 82.292301,10.862462 82.292301,12.7195312 L82.292301,13.7776234 L74.7357674,13.7776234 C74.8141477,14.7421477 75.1330081,15.5051182 75.6923584,16.0665577 C76.2517084,16.6279972 76.9553393,16.9087127 77.8032711,16.9087127 C78.9932265,16.9087127 79.9622772,16.4228589 80.7104527,15.4511367 L82.1106023,16.8007441 C81.647446,17.4989445 81.0293201,18.0405816 80.2562054,18.4256715 C79.4830909,18.8107614 78.6155768,19.0033035 77.6536369,19.0033035 L77.6536369,19.0033035 Z M77.3436802,8.99461458 C76.6311322,8.99461458 76.0557581,9.24653878 75.6175413,9.75039475 C75.1793242,10.2542507 74.8996534,10.9560396 74.7785201,11.8557824 L79.7271413,11.8557824 L79.7271413,11.6614389 C79.6701372,10.7832899 79.4385628,10.1192897 79.0324104,9.66941831 C78.6262581,9.21954692 78.0633537,8.99461458 77.3436802,8.99461458 L77.3436802,8.99461458 Z M85.6792225,7.10516414 L85.7540396,8.45477159 C86.6090973,7.41106993 87.7313436,6.88922695 89.1208121,6.88922695 C91.5292242,6.88922695 92.7547886,8.2820079 92.7975413,11.0676116 L92.7975413,18.7873663 L90.2003168,18.7873663 L90.2003168,11.2187677 C90.2003168,10.4773796 90.0417775,9.92854471 89.7246936,9.57224658 C89.4076097,9.21594841 88.8892386,9.037802 88.1695654,9.037802 C87.1221198,9.037802 86.3418913,9.516458 85.8288567,10.4737843 L85.8288567,18.7873663 L83.2316322,18.7873663 L83.2316322,7.10516414 L85.6792225,7.10516414 Z M97.6594295,4.26559003 L97.6594295,7.10516414 L99.7008695,7.10516414 L99.7008695,9.04859888 L97.6594295,9.04859888 L97.6594295,15.5699021 C97.6594295,16.0161745 97.7467154,16.3382777 97.9212896,16.5362211 C98.0958641,16.7341645 98.407599,16.8331347 98.8565044,16.8331347 C99.1557745,16.8331347 99.4586027,16.7971455 99.7649983,16.7251661 L99.7649983,18.7549757 C99.1735836,18.9205284 98.6035537,19.0033035 98.0548919,19.0033035 C96.0597574,19.0033035 95.0622054,17.8912381 95.0622054,15.6670739 L95.0622054,9.04859888 L93.1597117,9.04859888 L93.1597117,7.10516414 L95.0622054,7.10516414 L95.0622054,4.26559003 L97.6594295,4.26559003 Z" id="Covalent"></path>
+                </g>
+            </g>
+            <g id="molecules/toolbar-white-sub" transform="translate(258.000000, 65.000000)">
+                <rect id="Rectangle-1" fill="#F5F5F5" fill-rule="evenodd" x="0" y="0" width="1182" height="64"></rect>
+                <text id="View-Name" font-family=".SFNSDisplay-Regular, .SF NS Display" font-size="20" font-weight="normal" fill-opacity="0.87" fill="#000000">
+                    <tspan x="22" y="39">Detail Name</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
