@@ -1,10 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
-
-// import { UserService, IUser } from './services/user.service';
 
 @Component({
   selector: 'qs-inline',
@@ -15,8 +11,6 @@ export class InlineComponent implements OnInit {
   user;
 
   constructor(private _titleService: Title,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
   }
 
@@ -35,7 +29,7 @@ export class InlineComponent implements OnInit {
          city: '',
          state: '',
          postcode: '',
-      }
+      },
     };
   }
 }

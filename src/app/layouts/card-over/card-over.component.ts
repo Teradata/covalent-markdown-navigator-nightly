@@ -1,7 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
 
 @Component({
@@ -12,14 +10,13 @@ import { TdMediaService } from '@covalent/core/media';
 export class CardOverComponent implements OnInit {
 
   constructor(private _titleService: Title,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {
+    public media: TdMediaService) {
   }
+  
   routes: Object[] = [{
-    icon: 'home',
-    route: '.',
-    title: 'Home',
+      icon: 'home',
+      route: '.',
+      title: 'Home',
   }, {
     icon: 'library_books',
     route: '.',
@@ -37,8 +34,8 @@ export class CardOverComponent implements OnInit {
     route: '.',
     title: 'Components & Addons',
   },
-];
-usermenu: Object[] = [{
+  ];
+  usermenu: Object[] = [{
     icon: 'swap_horiz',
     route: '.',
     title: 'Switch account',
@@ -51,8 +48,8 @@ usermenu: Object[] = [{
     route: '.',
     title: 'Sign out',
   },
-];
-cardlist: Object[] = [{
+  ];
+  cardlist: Object[] = [{
     icon: 'account_box',
     route: '.',
     title: 'John Jameson',
@@ -68,22 +65,21 @@ cardlist: Object[] = [{
     title: '1141e8e8-8d24-4956-93c2',
     description: 'API Key',
   },
-];
-carddates: Object[] = [{
-    icon: 'access_time',
-    route: '.',
-    date: '2017-07-07T00:25:49+00:00',
-    description: 'Last Updated',
-  }, {
-    icon: 'today',
-    route: '.',
-    date: '2017-07-04T00:25:49+00:00',
-    description: 'Created',
-  },
-];
+  ];
+  carddates: Object[] = [{
+      icon: 'access_time',
+      route: '.',
+      date: '2017-07-07T00:25:49+00:00',
+      description: 'Last Updated',
+    }, {
+      icon: 'today',
+      route: '.',
+      date: '2017-07-04T00:25:49+00:00',
+      description: 'Created',
+    },
+  ];
+  
   ngOnInit(): void {
     this._titleService.setTitle('Card Over');
   }
-
-  async load(): Promise<void> {}
 }
