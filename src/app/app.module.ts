@@ -66,6 +66,9 @@ import { FiltersComponent } from './patterns/side-sheet/filters/filters.componen
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.component';
+import { CardListComponent } from './patterns/cards/card-list/card-list.component';
+import { CardGridComponent } from './patterns/cards/card-grid/card-grid.component';
+import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -103,6 +106,9 @@ export function getAPI(): string {
     MiniSideNavComponent,
     CreationFlowComponent,
     BreadcrumbsComponent,
+    CardListComponent,
+    CardGridComponent,
+    CardImagesComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
