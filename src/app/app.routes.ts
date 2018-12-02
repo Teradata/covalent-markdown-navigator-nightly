@@ -29,6 +29,9 @@ import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.com
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.component';
 
+import { CardListComponent } from './patterns/cards/card-list/card-list.component';
+import { CardGridComponent } from './patterns/cards/card-grid/card-grid.component';
+import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
 
 const routes: Routes = [{
     path: 'login',
@@ -54,7 +57,12 @@ const routes: Routes = [{
     children: [
       { path: 'navstepper', component: NavStepperComponent },
       { path: 'stepper', component: StepperComponent },
-      { path: 'cards', component: CardsComponent },
+      { path: 'cards', children: [
+        { path: '', component: CardsComponent },
+        { path: 'card-list', component: CardListComponent },
+        { path: 'card-grid', component: CardGridComponent },
+        { path: 'card-images', component: CardImagesComponent },
+      ]},
       { path: 'alerts', children: [
         { path: '', component: AlertsComponent },
         { path: 'inline', component: AlertsInlineComponent },

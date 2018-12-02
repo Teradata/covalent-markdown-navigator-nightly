@@ -1,0 +1,69 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">view_agenda</mat-icon>
+        <span>Cards</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [routerLink]="['../']" >
+        <mat-icon matListIcon>view_agenda</mat-icon>
+        Standard Card
+      </a>
+      <a mat-list-item [routerLink]="['../card-list']">
+        <mat-icon matListIcon>list</mat-icon>
+        Card List
+      </a>
+      <a mat-list-item [routerLink]="['../card-images']">
+        <mat-icon matListIcon>account_circle</mat-icon>
+        Card with Images
+      </a>
+      <a mat-list-item [routerLink]="['../card-grid']" [class.active]="true">
+        <mat-icon matListIcon>grid_on</mat-icon>
+        Card Grid
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Card Grid</span>
+          <!-- <span flex></span> -->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div layout="row" class="pad" layout-wrap>
+      <ng-template let-item let-index="index" ngFor [ngForOf]="cards">
+        <div class="fav-list-item" flex-gt-xs="50" flex="100">
+          <mat-card href class="mat-card-colored">
+            <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding [routerLink]="[item.route]">
+              <mat-icon>{{item.icon}}</mat-icon>
+            </mat-toolbar>
+            <div class="card-content" [routerLink]="[item.route]">
+              <div layout="column" layout-padding>
+                <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
+                <div class="mat-caption tc-grey-600 text-truncate" [title]="item.description"> item.description </div>
+
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <a>
+              <mat-icon>play_arrow</mat-icon>
+            </a>
+          </mat-card>
+        </div>
+      </ng-template>
+    </div>
+  </td-layout-manage-list>
+</td-layout-nav>
