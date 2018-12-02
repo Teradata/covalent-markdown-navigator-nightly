@@ -5,7 +5,12 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span class="cursor-pointer text-upper">Sandbox</span>
     <span flex></span>
-  
+    <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
   </div>
   <mat-toolbar>
     <mat-toolbar-row>
@@ -13,119 +18,115 @@
         <mat-icon class="push-left-sm push-right-sm">view_compact</mat-icon>
         <span>Nav View</span>
         <span flex></span>
-        <!-- <button mat-icon-button><mat-icon >view_module</mat-icon></button>
-        <button mat-icon-button><mat-icon >sort</mat-icon></button>
-        <button mat-icon-button><mat-icon >settings</mat-icon></button>
-        <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
- 
-<div class="inset" flex>
-  <div layout-gt-xs="row" layout-wrap>
-    <div flex-gt-xs="33">
-      <div layout-gt-xs="row" layout-wrap>
-        <div flex-gt-xs="100">
-          <mat-card>
-            <mat-card-title class="text-lg">Services</mat-card-title>
-            <mat-card-subtitle class="text-md">Description</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-nav-list class="pad-top-none">
-              <ng-template let-item let-last="last" ngFor [ngForOf]="serviceList">
-                <a mat-list-item>
-                  <mat-icon *ngIf="item.icon" [fontSet]="item.fontSet" matListIcon>{{item.icon}}</mat-icon>
-                  <mat-icon *ngIf="item.svg" [svgIcon]="'assets:' + item.svg" matListIcon></mat-icon>
-                  <h3 matLine>{{item.title}}</h3>
-                  <span flex="none" class="tc-{{item.status}} text-md">{{item.health}}</span>
-                </a>
-                <mat-divider *ngIf="!last"></mat-divider>
-              </ng-template>
-            </mat-nav-list>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <a mat-button color="accent" class="text-upper">View All</a>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-      </div>
-    </div>
-    <div flex-gt-xs="33">
-      <div layout-gt-xs="row" layout-wrap>
-        <div flex-gt-xs="100">
-          <mat-card>
-            <mat-card-title class="text-lg">Products</mat-card-title>
-            <mat-card-subtitle class="text-md">Description</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-nav-list class="pad-top-none">
-              <ng-template let-item let-last="last" ngFor [ngForOf]="productList">
-                <mat-list-item>
-                  <mat-icon [svgIcon]="'assets:' + item.icon" matListIcon></mat-icon>
-                  <h3 matLine>{{item.title}}</h3>
-                  <span class="tc-{{item.status}} text-md">{{item.health}}</span>
-                  <a *ngIf="item.url" href="{{item.url}}" target="_blank" mat-icon-button class="pull-right" matTooltip="Open">
-                    <mat-icon>launch</mat-icon>
+  <div class="inset" flex>
+    <div layout-gt-xs="row" layout-wrap>
+      <div flex-gt-xs="33">
+        <div layout-gt-xs="row" layout-wrap>
+          <div flex-gt-xs="100">
+            <mat-card>
+              <mat-card-title class="text-lg">Services</mat-card-title>
+              <mat-card-subtitle class="text-md">Description</mat-card-subtitle>
+              <mat-divider></mat-divider>
+              <mat-nav-list class="pad-top-none">
+                <ng-template let-item let-last="last" ngFor [ngForOf]="serviceList">
+                  <a mat-list-item>
+                    <mat-icon *ngIf="item.icon" [fontSet]="item.fontSet" matListIcon>{{item.icon}}</mat-icon>
+                    <mat-icon *ngIf="item.svg" [svgIcon]="'assets:' + item.svg" matListIcon></mat-icon>
+                    <h3 matLine>{{item.title}}</h3>
+                    <span flex="none" class="tc-{{item.status}} text-md">{{item.health}}</span>
                   </a>
-                </mat-list-item>
-                <mat-divider *ngIf="!last"></mat-divider>
-              </ng-template>
-            </mat-nav-list>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <a mat-button color="accent" class="text-upper">View All</a>
-            </mat-card-actions>
-          </mat-card>
+                  <mat-divider *ngIf="!last"></mat-divider>
+                </ng-template>
+              </mat-nav-list>
+              <mat-divider></mat-divider>
+              <mat-card-actions>
+                <a mat-button color="accent" class="text-upper">View All</a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
         </div>
       </div>
-    </div>
-    <div flex-gt-xs="33">
-      <div layout-gt-xs="row" layout-wrap>
-        <div flex-gt-xs="100">
-          <mat-card>
-            <mat-card-title class="text-lg">Getting Started</mat-card-title>
-            <mat-card-subtitle>Description</mat-card-subtitle>
-            <mat-divider></mat-divider>
-            <mat-nav-list>
-              <a mat-list-item>
-                <mat-icon matListIcon>build</mat-icon>
-                <h3 matLine>Setup</h3>
-                <p matLine>Description</p>
-              </a>
-              <mat-divider [inset]="true"></mat-divider>
-              <a mat-list-item>
-                <mat-icon matListIcon>settings</mat-icon>
-                <h3 matLine>Config</h3>
-                <p matLine>Description</p>
-              </a>
-              <mat-divider [inset]="true"></mat-divider>
-              <a mat-list-item>
-                <mat-icon matListIcon>add_circle</mat-icon>
-                <h3 matLine>Sedding</h3>
-                <p matLine>Description</p>
-              </a>
-              <mat-divider [inset]="true"></mat-divider>
-              <a mat-list-item>
-                <mat-icon matListIcon>move_to_inbox</mat-icon>
-                <h3 matLine>Workloads</h3>
-                <p matLine>Description</p>
-              </a>
-              <mat-divider [inset]="true"></mat-divider>
-              <a mat-list-item>
-                <mat-icon matListIcon>search</mat-icon>
-                <h3 matLine>Exploration</h3>
-                <p matLine>Description</p>
-              </a>
-              <mat-divider [inset]="true"></mat-divider>
-              <a mat-list-item>
-                <mat-icon matListIcon>cloud</mat-icon>
-                <h3 matLine>Productize</h3>
-                <p matLine>Description</p>
-              </a>
-            </mat-nav-list>
-          </mat-card>
+      <div flex-gt-xs="33">
+        <div layout-gt-xs="row" layout-wrap>
+          <div flex-gt-xs="100">
+            <mat-card>
+              <mat-card-title class="text-lg">Products</mat-card-title>
+              <mat-card-subtitle class="text-md">Description</mat-card-subtitle>
+              <mat-divider></mat-divider>
+              <mat-nav-list class="pad-top-none">
+                <ng-template let-item let-last="last" ngFor [ngForOf]="productList">
+                  <mat-list-item>
+                    <mat-icon [svgIcon]="'assets:' + item.icon" matListIcon></mat-icon>
+                    <h3 matLine>{{item.title}}</h3>
+                    <span class="tc-{{item.status}} text-md">{{item.health}}</span>
+                    <a *ngIf="item.url" href="{{item.url}}" target="_blank" mat-icon-button class="pull-right"
+                      matTooltip="Open">
+                      <mat-icon>launch</mat-icon>
+                    </a>
+                  </mat-list-item>
+                  <mat-divider *ngIf="!last"></mat-divider>
+                </ng-template>
+              </mat-nav-list>
+              <mat-divider></mat-divider>
+              <mat-card-actions>
+                <a mat-button color="accent" class="text-upper">View All</a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div flex-gt-xs="33">
+        <div layout-gt-xs="row" layout-wrap>
+          <div flex-gt-xs="100">
+            <mat-card>
+              <mat-card-title class="text-lg">Getting Started</mat-card-title>
+              <mat-card-subtitle>Description</mat-card-subtitle>
+              <mat-divider></mat-divider>
+              <mat-nav-list>
+                <a mat-list-item>
+                  <mat-icon matListIcon>build</mat-icon>
+                  <h3 matLine>Setup</h3>
+                  <p matLine>Description</p>
+                </a>
+                <mat-divider [inset]="true"></mat-divider>
+                <a mat-list-item>
+                  <mat-icon matListIcon>settings</mat-icon>
+                  <h3 matLine>Config</h3>
+                  <p matLine>Description</p>
+                </a>
+                <mat-divider [inset]="true"></mat-divider>
+                <a mat-list-item>
+                  <mat-icon matListIcon>add_circle</mat-icon>
+                  <h3 matLine>Sedding</h3>
+                  <p matLine>Description</p>
+                </a>
+                <mat-divider [inset]="true"></mat-divider>
+                <a mat-list-item>
+                  <mat-icon matListIcon>move_to_inbox</mat-icon>
+                  <h3 matLine>Workloads</h3>
+                  <p matLine>Description</p>
+                </a>
+                <mat-divider [inset]="true"></mat-divider>
+                <a mat-list-item>
+                  <mat-icon matListIcon>search</mat-icon>
+                  <h3 matLine>Exploration</h3>
+                  <p matLine>Description</p>
+                </a>
+                <mat-divider [inset]="true"></mat-divider>
+                <a mat-list-item>
+                  <mat-icon matListIcon>cloud</mat-icon>
+                  <h3 matLine>Productize</h3>
+                  <p matLine>Description</p>
+                </a>
+              </mat-nav-list>
+            </mat-card>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-  
+
 </td-layout-nav>
