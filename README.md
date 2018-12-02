@@ -1,23 +1,15 @@
-## Covalent UI Platform resource files
+# Covalent QuickStart
 
-Resource files for the open-source [Teradata Covalent UI Platform](https://teradata.github.io/covalent/)
+Quickstart App with @covalent packages
 
-### Goal
+## Setup
 
-The goal of these resources is to allow designers & developers to design prototypes and seamlessly transition between roles, and to hand off mockups that will not result in the need for custom coding.
-
-Components should be reusable and ubiquitous across the design applications and the platform. 
-
-### Available resources:
-
-* [Adobe Illustrator](illustrator)
-* [Axure RP](axure)
-* [Sketch](sketch)
-
-#### Included in templates
-
-- Layouts
-- Components
-- Design Patterns
-- Color Palettes
-- Icons
+* Ensure you have Node 4.4+ and NPM 3+ installed.
+* Install YARN `npm i -g yarn`
+* Install Angular CLI `yarn global add angular-cli@latest`
+* Install Typescript 2.0 `yarn global add typescript`
+* Install TSLint `yarn global add tslint`
+* Install Protractor for e2e testing `yarn global add protractor`
+* Install Node packages `yarn i`
+* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
+* Run local build `ng serve`

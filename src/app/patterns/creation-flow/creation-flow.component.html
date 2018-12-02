@@ -1,0 +1,56 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">add_circle</mat-icon>
+        <span>Creation Flow</span>
+      </mat-toolbar-row>
+    </mat-toolbar> 
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [class.active]="true">
+        <mat-icon matListIcon>add_circle</mat-icon>
+        Creation Flow
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Creation Flow</span>
+          <span flex></span>
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper">create</button>
+          <!-- 
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="push">
+      <mat-card-title>Responsive Create Button</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <td-message label="Resize your browser to see responsive behavior" color="accent" icon="info"></td-message>
+        <mat-list>
+          <mat-list-item><mat-icon class="push-right" matListAvatar>check</mat-icon>Use the mat-raised-button in the accent color with the class text-upper</mat-list-item>  
+          <mat-list-item><mat-icon class="push-right" matListAvatar>check</mat-icon>On extra small, hide the create button and show a FAB</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>
+  <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3"
+    (click)="viewAddCluster()">
+    <mat-icon>add</mat-icon>
+  </button>
+</td-layout-nav>

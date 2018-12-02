@@ -1,0 +1,85 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">space_bar</mat-icon>
+        <span>Empty State</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a [class.active]="true" mat-list-item>
+        <mat-icon matListIcon>image</mat-icon>
+        All
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Empty State</span>
+          <!-- <span flex></span>
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div layout-gt-sm="row" class="pad-sm">
+			<mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to filters</mat-card-title>
+        <mat-card-subtitle>use a primary action button to remove the filters</mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column" layout-align="center center" class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar class="text-super push-bottom">image</mat-icon>
+            <h2>No photos</h2>
+            <h3>There are no photos with your applied filters</h3>
+            <button mat-raised-button color="accent" class="text-upper">Remove Filters</button>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+			<mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to no initial content</mat-card-title>
+        <mat-card-subtitle>use a primary and secondary action buttons to add different possible content</mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column" layout-align="center center" class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar class="text-super push-bottom">chrome_reader_mode</mat-icon>
+            <h2>No blog posts</h2>
+            <h3>You have not created any posts</h3>
+            <button mat-raised-button color="accent" class="text-upper">Create Post</button>
+            <button mat-button class="text-upper push-top">Create Category</button>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+			<mat-card flex-gt-sm>
+        <mat-card-title>Empty state due to no possible data</mat-card-title>
+        <mat-card-subtitle>display an informative message when there is way to add data</mat-card-subtitle>
+        <mat-card-content>
+          <!-- Start pattern -->
+          <div layout="column" layout-align="center center" class="tc-grey-500 mat-typography pad-lg">
+            <mat-icon matListAvatar class="text-super push-bottom">receipt</mat-icon>
+            <h2>No logs</h2>
+            <h3>There have been no log entries</h3>
+          </div>
+          <!-- end pattern -->
+        </mat-card-content>
+      </mat-card>
+		</div>
+  </td-layout-manage-list>   
+</td-layout-nav>

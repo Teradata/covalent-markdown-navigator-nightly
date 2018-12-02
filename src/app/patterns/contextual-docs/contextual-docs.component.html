@@ -1,0 +1,76 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">help</mat-icon>
+        <span>Contextual Docs</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [class.active]="true">
+        <mat-icon matListIcon>info</mat-icon>
+        Messages
+      </a>
+      <a mat-list-item [routerLink]="['../inline']">
+        <mat-icon matListIcon>space_bar</mat-icon>
+        Inline
+      </a>
+      <a mat-list-item [routerLink]="['../dialog']">
+        <mat-icon matListIcon>open_in_browser</mat-icon>
+        Dialogs
+      </a>
+      <a mat-list-item [routerLink]="['../sidesheet']">
+        <mat-icon matListIcon>format_indent_increase</mat-icon>
+        Side Sheet
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Messages</span>
+          <!-- <span flex></span>
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="push">
+      <mat-card-title>What are messages?</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        Messages (td-messages) are small, timely, helpful bits of information that can be used for information, warnings, errors, or successful submissions.
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="push">
+      <td-message label="Warning!" sublabel="Before you do anything you should read this!" color="accent" icon="info">
+        <a td-message-actions mat-button class="text-upper" href="https://docs.teradata.com/" target="_blank">Learn More</a>
+      </td-message>
+    </mat-card>
+    <mat-card class="push">
+      <mat-card-title>Card title</mat-card-title>
+      <mat-divider></mat-divider>
+      <td-message label="Info" sublabel="Contextual info about this card goes here. Link off to full documentation with the LEARN MORE button" class="bgc-light-blue-50 tc-light-blue-700" icon="info">
+        <a td-message-actions mat-button class="text-upper" href="https://docs.teradata.com/" target="_blank">Learn More</a>
+      </td-message>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>   
+</td-layout-nav>

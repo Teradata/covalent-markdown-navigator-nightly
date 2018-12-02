@@ -1,0 +1,188 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">looks_one</mat-icon>
+        <span>Stepper</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item>
+        <mat-icon matListIcon>account_circle</mat-icon>
+        Item
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Stepper</span>
+          <!-- <span flex></span>-->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-divider></mat-divider>
+      <mat-card-content>
+      <td-steps>
+        <td-step [state]="state1" #step1 label="Step title" sublabel="Subtitle" active="true" (deactivated)="update(1, form1.form.valid)">
+          <form #form1="ngForm" (ngSubmit)="save(form1.form.valid)" novalidate>
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="First name" #firstName required name="name" [(ngModel)]="user.name.first" ngControl="user.name.first">
+              </mat-form-field>
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Last name" #lastName required name="last" [(ngModel)]="user.name.last"
+                  ngControl="user.name.last">
+              </mat-form-field>
+            </div>
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input class="form-control" matInput #nickname placeholder="Nickname">
+              </mat-form-field>
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Email" #email required name="email" [(ngModel)]="user.email" ngControl="user.email">
+              </mat-form-field>
+            </div>
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Password" #password required minlength="6" name="password" type="password"
+                  [(ngModel)]="user.password" ngControl="user.password">
+                <mat-hint align="end">{{ password.value.length }} / 6 min</mat-hint>
+              </mat-form-field>
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Confirm Password" #password2 required minlength="6" name="password2" type="password"
+                  [(ngModel)]="user.password2" ngControl="user.password2">
+                <mat-hint align="end">Must match</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="push-top">
+              <button mat-button type="submit" color="accent" [disabled]="!form1.form.valid" (click)="step2.active = true">Proceed</button>
+              <button mat-button (click)="step1.active = false; state1 = 'none'; form1.reset()">Cancel</button>
+            </div>
+            <ng-template td-step-summary>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListAvatar>account_box</mat-icon>
+                  <h4 matLine>{{firstName.value}} {{lastName.value}}</h4>
+                  <p matLine>{{nickname.value}}</p>
+                  <p matLine>{{email.value}}</p>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+          </form>
+        </td-step>
+        <td-step [state]="state2" #step2 label="Step title" sublabel="subtitle" (deactivated)="update(2, form2.form.valid)">
+          <form #form2="ngForm" (ngSubmit)="save(form2.form.valid)">
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Address" #street required name="street" [(ngModel)]="user.address.street"
+                ngControl="user.address.street">
+              </mat-form-field>
+            </div>
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input matInput class="form-control" placeholder="Address 2" #street2 name="street2" [(ngModel)]="user.address.street2" ngControl="user.address.street2">
+              </mat-form-field>
+            </div>
+            <div layout-gt-xs="row">
+              <mat-form-field flex>
+                <input matInput #city placeholder="City" required>
+              </mat-form-field>
+              <div layout-gt-xs="row">
+                <mat-form-field flex>
+                  <mat-select class="form-control" #selState placeholder="State" required name="state" [(ngModel)]="user.address.state" ngControl="user.address.state">
+                    <mat-option *ngFor="let state of states" [value]="state">
+                      {{ state }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div layout-gt-xs="row">
+                <mat-form-field>
+                  <input matInput maxlength="5" placeholder="Zip Code" required #zip name="zip" [(ngModel)]="user.address.zip" ngControl="user.address.zip">
+                  <mat-hint align="end">{{ zip.value.length }} / 5</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="push-top">
+              <button type="submit" mat-button color="accent" [disabled]="!form2.form.valid" (click)="step3.active = true">Proceed</button>
+              <button (click)="step2.active = false; state2 = 'none'; form2.reset()" mat-button>Cancel</button>
+            </div>
+            <ng-template td-step-summary>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListAvatar>place</mat-icon>
+                  <h5 matLine>{{ street.value }} {{ street2.value}}</h5>
+                  <h5 matLine>{{city.value}} {{selState.value}} {{zip.value}}</h5>
+                  <p matLine>Address</p>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+          </form>
+        </td-step>
+        <td-step [state]="state3" #step3 label="Step title" sublabel="Subtitle" (deactivated)="update(3, form3.form.valid)">
+          <form #form3="ngForm">
+            <div layout="row">
+              <mat-form-field flex>
+                <input matInput #linkedIn placeholder="LinkedIn">
+                <mat-hint align="end">https://linkedin.com/yourName</mat-hint>
+              </mat-form-field>
+            </div>
+            <div layout="row">
+              <mat-form-field flex>
+                <input matInput #facebook placeholder="Facebook">
+                <mat-hint align="end">https://facebook.com/yourName</mat-hint>
+              </mat-form-field>
+            </div>
+            <div layout="row">
+              <mat-form-field flex>
+                <input matInput #twitter placeholder="Twitter">
+                <mat-hint align="end">https://facebook.com/yourHandle</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="push-top">
+              <button type="submit" mat-button color="accent" (click)="step3.active = false">Save</button>
+              <button mat-button (click)="step3.active = false; state3 = 'none'; form3.reset()">Cancel</button>
+            </div>
+            <ng-template td-step-summary>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListAvatar>insert_link</mat-icon>
+                  <h4 matLine>{{ linkedIn.value }}</h4>
+                  <p matLine>LinkedIn</p>
+                </mat-list-item>
+                <mat-divider matInset></mat-divider>
+                <mat-list-item>
+                  <mat-icon matListAvatar>insert_link</mat-icon>
+                  <h4 matLine>{{ facebook.value }}</h4>
+                  <p matLine>Facebook</p>
+                </mat-list-item>
+                <mat-divider matInset></mat-divider>
+                <mat-list-item>
+                  <mat-icon matListAvatar>insert_link</mat-icon>
+                  <h4 matLine>{{ twitter.value }}</h4>
+                  <p matLine>Twitter</p>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+          </form>
+        </td-step>
+      </td-steps>
+
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>   
+</td-layout-nav>

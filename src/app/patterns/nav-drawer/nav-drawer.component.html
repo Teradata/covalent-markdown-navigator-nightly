@@ -1,0 +1,47 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+  </div>
+  <td-layout-manage-list
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">kitchen</mat-icon>
+        <span>Nav Drawer</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item>
+        <mat-icon matListIcon>space_bar</mat-icon>
+        Nav Drawer
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Nav Drawer</span>
+          <!-- <span flex></span>
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <button mat-raised-button color="accent" tdLayoutToggle>Show Drawer</button>
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>   
+</td-layout-nav>
