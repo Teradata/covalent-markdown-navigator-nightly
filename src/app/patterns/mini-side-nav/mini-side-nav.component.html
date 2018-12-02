@@ -46,7 +46,7 @@
     <div td-sidenav-content layout="column" layout-fill>
       <mat-nav-list [ngClass]="{'clickable': miniNav}" (click)="miniNav ? openMiniNav($event) : ''" flex
         [tdLayoutManageListClose]="!media.query('gt-sm')" layout="column" layout-align="center center">
-        <a mat-list-item [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']" routerLinkActive="active"
+        <a mat-list-item [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']" routerLinkActive="active" 
           [matTooltip]="miniNav ? '' : 'Home'" matTooltipPosition="right" (click)="$event.stopPropagation()">
           <mat-icon mat-list-icon [matTooltip]="miniNav ? 'Home' : ''" matTooltipPosition="right">home</mat-icon>
           <span *ngIf="!miniNav">Home</span>

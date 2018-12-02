@@ -19,37 +19,123 @@ import { multi } from './data';
 })
 export class NavViewComponent implements OnInit {
 
-  showDescription = false;
-  // Current date
-  year: any = new Date().getFullYear();
 
-  items: Object[];
-  users: IUser[];
-  products: Object[];
-  alerts: Object[];
+  systems: ISystem[];
+  systemType: ECSSystemType | string = '';
 
   // Chart
+  axisTime: Function;
+  datePipe: DatePipe;
   single: any[];
   multi: any[];
+  services: any[];
 
-  view: any[] = [700, 400];
-
-  // options
+  // Generic Chart options
   showXAxis: boolean = true;
   showYAxis: boolean = true;
-  gradient: boolean = false;
+  gradient: boolean = true;
+  autoScale: boolean = true;
   showLegend: boolean = false;
   showXAxisLabel: boolean = true;
-  xAxisLabel: string = '';
   showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Sales';
 
-  colorScheme: any = {
-    domain: ['#1565C0', '#2196F3', '#81D4FA', '#FF9800', '#EF6C00'],
-  };
+  productList: Object[] = [
+    {
+      title: 'AppCenter',
+      icon: 'app_center',
+      health: 'RUNNING',
+      status: 'teal-700',
+      color: 'primary',
+      url: 'https://appcenter.appcenter.ps.ac.uda.io/',
+    },
+    {
+      title: 'Data Labs',
+      icon: 'data-labs',
+      health: 'AVAILABLE',
+      status: 'orange-700',
+      color: 'accent',
+    },
+    {
+      title: 'Listener',
+      icon: 'ingest',
+      health: 'AVAILABLE',
+      status: 'orange-700',
+      color: 'accent',
+    },
+    {
+      title: 'QueryGrid',
+      icon: 'querygrid',
+      health: 'AVAILABLE',
+      status: 'orange-700',
+      color: 'primary',
+    },
+    {
+      title: 'Unity',
+      icon: 'unity',
+      health: 'AVAILABLE',
+      status: 'orange-700',
+      color: 'warn',
+    },
+    {
+      title: 'Viewpoint',
+      icon: 'viewpoint',
+      health: 'RUNNING',
+      status: 'teal-700',
+      color: 'primary',
+    },
+    {
+      title: 'Workload Analytics',
+      icon: 'workload-analytics',
+      health: 'RUNNING',
+      status: 'teal-700',
+      color: 'primary',
+    },
+  ];
 
-  // line, area
-  autoScale: boolean = true;
+  serviceList: Object[] = [
+    {
+      title: 'Audit Service',
+      icon: 'verified_user',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+    {
+      title: 'Authentication Service',
+      icon: 'phonelink_lock',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+    {
+      title: 'Dictionary Service',
+      icon: 'data_usage',
+      health: 'AVAILABLE',
+      status: 'orange-700',
+    },
+    {
+      title: 'Notifications Service',
+      icon: 'email',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+    {
+      title: 'Query Service',
+      icon: 'desktop_windows',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+    {
+      title: 'System Management',
+      icon: 'dns',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+    {
+      title: 'User Management',
+      icon: 'people',
+      health: 'HEALTHY',
+      status: 'teal-700',
+    },
+  ];
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
