@@ -60,7 +60,7 @@
         <div class="fav-list-item" flex-gt-xs="25" flex="50">
           <mat-card href [routerLink]="item.route" class="mat-card-colored">
             <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
-              [routerLink]="['/patterns', item.route]">
+              [routerLink]="[item.route]">
               <mat-icon>{{item.icon}}</mat-icon>
             </mat-toolbar>
             <div class="card-content" [routerLink]="[item.route]">
