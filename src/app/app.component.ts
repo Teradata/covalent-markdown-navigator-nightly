@@ -15,6 +15,8 @@ export class AppComponent {
     // Register Covalent Icons
     this._iconRegistry.registerFontClassAlias('covalent', 'covalent-icons');
 
+    this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-dark',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-dark.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'github',
