@@ -14,6 +14,6 @@ export class OverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._titleService.setTitle( 'Terdata Covalent - Sandbox' );
+    this._titleService.setTitle( 'Teradata Covalent - Sandbox' );
   }
 }
