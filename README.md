@@ -1,15 +1,14 @@
-# Covalent QuickStart
+# Covalent Resources
 
-Quickstart App with @covalent packages
+Resources for demos, design patterns and sketch
 
 ## Setup
 
-* Ensure you have Node 4.4+ and NPM 3+ installed.
-* Install YARN `npm i -g yarn`
-* Install Angular CLI `yarn global add angular-cli@latest`
-* Install Typescript 2.0 `yarn global add typescript`
-* Install TSLint `yarn global add tslint`
-* Install Protractor for e2e testing `yarn global add protractor`
-* Install Node packages `yarn i`
-* Update Webdriver `webdriver-manager update` and `./node_modules/.bin/webdriver-manager update`
+* Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
+* Install Angular CLI `npm i -g @angular/cli`
+* Install Typescript `npm i -g typescript`
+* Install TSLint `npm install -g tslint`
+* Install Protractor for e2e testing `npm install -g protractor`
+* Install Node packages `yarn install`
 * Run local build `ng serve`
+* If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`

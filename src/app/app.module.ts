@@ -32,8 +32,6 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-
 import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -147,8 +145,6 @@ export function getAPI(): string {
         interceptor: RequestInterceptor, paths: ['**'],
       }],
     }),
-    // external modules
-    NgxChartsModule,
     // routes
     appRoutes,
   ], // modules needed to run this module

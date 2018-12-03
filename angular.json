@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "covalent-quickstart": {
+    "covalent-resources": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -53,20 +53,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "covalent-quickstart:build",
+            "browserTarget": "covalent-resources:build",
             "port": 4200,
             "host": "localhost"
           },
           "configurations": {
             "production": {
-              "browserTarget": "covalent-quickstart:build:production"
+              "browserTarget": "covalent-resources:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "covalent-quickstart:build"
+            "browserTarget": "covalent-resources:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "covalent-quickstart-e2e": {
+    "covalent-resources-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -112,7 +112,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "covalent-quickstart:serve"
+            "devServerTarget": "covalent-resources:serve"
           }
         },
         "lint": {
@@ -127,7 +127,7 @@
       }
     }
   },
-  "defaultProject": "covalent-quickstart",
+  "defaultProject": "covalent-resources",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

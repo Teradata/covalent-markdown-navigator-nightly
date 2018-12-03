@@ -3,16 +3,15 @@ import { TdMediaService } from '@covalent/core/media';
 import { TdLayoutManageListComponent } from '@covalent/core/layout';
 import { getDirection } from '../../../utilities/direction';
 
-import { TdCollapseAnimation, TdRotateAnimation, TdFadeInOutAnimation } from '@covalent/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { Observable } from 'rxjs';
+import { tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation } from '@covalent/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { share, tap, distinctUntilChanged, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mini-side-nav',
   templateUrl: './mini-side-nav.component.html',
   styleUrls: ['./mini-side-nav.component.scss'],
-  animations: [TdCollapseAnimation(), TdRotateAnimation(), TdFadeInOutAnimation()],
+  animations: [tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation],
 })
 export class MiniSideNavComponent implements AfterViewInit {
 
