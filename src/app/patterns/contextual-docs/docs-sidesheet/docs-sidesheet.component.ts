@@ -3,9 +3,9 @@ import { Title } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core/media';
 
 @Component({
-  selector: 'qs-docs-side-sheet',
-  templateUrl: './docs-side-sheet.component.html',
-  styleUrls: ['./docs-side-sheet.component.scss'],
+  selector: 'qs-docs-sidesheet',
+  templateUrl: './docs-sidesheet.component.html',
+  styleUrls: ['./docs-sidesheet.component.scss'],
 })
 export class DocsSideSheetComponent implements OnInit {
 

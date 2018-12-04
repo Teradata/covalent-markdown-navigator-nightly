@@ -25,7 +25,7 @@
         <mat-icon matListIcon>view_list</mat-icon>
         Management List
       </a>
-      <a mat-list-item [class.active]="true" [routerLink]="['/patterns','creationflow','card-over']">
+      <a mat-list-item [routerLink]="['/patterns','creationflow','card-over']">
         <mat-icon matListIcon>view_day</mat-icon>
         Card Over
       </a>
@@ -33,7 +33,7 @@
         <mat-icon matListIcon>filter_none</mat-icon>
         Dialog
       </a>
-      <a mat-list-item [routerLink]="['/patterns','creationflow','sidesheet']">
+      <a mat-list-item [class.active]="true" [routerLink]="['/patterns','creationflow','sidesheet']">
         <mat-icon matListIcon>format_indent_increase</mat-icon>
         Sidesheet
       </a>
@@ -44,20 +44,20 @@
           <mat-icon>arrow_back</mat-icon>
         </button>
         <div td-toolbar-content layout="row" layout-align="start center" flex>
-          <span>Card Over</span>
+          <span>Sidesheet</span>
           <span flex></span>
-          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" [routerLink]="['edit']">create</button>
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper">create</button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-card class="push">
-      <mat-card-title>When to use Card Over</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <td-message label="Click create button to see Card Over creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
-        <p>The Card Over layout is useful in the creation flow when the user needs to focus on a single task with distractions.</p>
-      </mat-card-content>
-    </mat-card>
+        <mat-card-title>When to use a sidesheet</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <td-message label="Click create button to see Management List creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
+          <p>The sidesheet layout is useful in the creation flow when the user is already in a Management List layout and you want to keep them within the context of their current view while keeping the existing content within view.</p>
+        </mat-card-content>
+      </mat-card>
     <mat-card class="push">
       <mat-card-title>Create Button Guidance</mat-card-title>
       <mat-divider></mat-divider>
@@ -76,8 +76,7 @@
       </mat-card-content>
     </mat-card>
   </td-layout-manage-list>
-  <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3"
-    [routerLink]="['edit']">
+  <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3">
     <mat-icon>add</mat-icon>
   </button>
 </td-layout-nav>

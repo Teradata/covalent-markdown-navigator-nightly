@@ -51,16 +51,16 @@ import { CardsComponent } from './patterns/cards/cards.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
-import { SideSheetComponent } from './patterns/side-sheet/side-sheet.component';
+import { SideSheetComponent } from './patterns/sidesheet/sidesheet.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
 import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
-import { DocsSideSheetComponent } from './patterns/contextual-docs/docs-side-sheet/docs-side-sheet.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/docs-sidesheet/docs-sidesheet.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
-import { LogsComponent } from './patterns/side-sheet/logs/logs.component';
-import { FiltersComponent } from './patterns/side-sheet/filters/filters.component';
+import { LogsComponent } from './patterns/sidesheet/logs/logs.component';
+import { FiltersComponent } from './patterns/sidesheet/filters/filters.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.component';
@@ -71,6 +71,7 @@ import { CreationEditComponent } from './patterns/creation-flow/creation-edit/cr
 import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
 import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
 import { CreationDialogComponent, DialogContentExampleDialog} from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -116,6 +117,7 @@ export function getAPI(): string {
     CreationOverEditComponent,
     CreationDialogComponent,
     DialogContentExampleDialog,
+    CreationSidesheetComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
