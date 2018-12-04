@@ -27,6 +27,11 @@ import { LogsComponent } from './patterns/side-sheet/logs/logs.component';
 import { FiltersComponent } from './patterns/side-sheet/filters/filters.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
+import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
+import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
+import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
+import { CreationDialogComponent } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+
 import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.component';
 
 import { CardListComponent } from './patterns/cards/card-list/card-list.component';
@@ -82,7 +87,19 @@ const routes: Routes = [{
         { path: 'logs', component: LogsComponent },
       ]},
       { path: 'minisidenav', component: MiniSideNavComponent },
-      { path: 'creationflow', component: CreationFlowComponent },
+      { path: 'creationflow', children: [
+        { path: '', component: CreationFlowComponent },
+        { path: 'edit', component: CreationEditComponent },
+        { path: 'card-over', children: [
+          { path: '', component: CreationOverComponent },
+          { path: 'edit', component: CreationOverEditComponent },
+        ]},
+        { path: 'dialog', children: [
+          { path: '', component: CreationDialogComponent },
+        ]},
+        
+      ]},
+      
       { path: 'breadcrumbs', component: BreadcrumbsComponent },
     ],
   },

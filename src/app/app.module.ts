@@ -67,6 +67,10 @@ import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.compone
 import { CardListComponent } from './patterns/cards/card-list/card-list.component';
 import { CardGridComponent } from './patterns/cards/card-grid/card-grid.component';
 import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
+import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
+import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
+import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
+import { CreationDialogComponent } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -107,6 +111,10 @@ export function getAPI(): string {
     CardListComponent,
     CardGridComponent,
     CardImagesComponent,
+    CreationEditComponent,
+    CreationOverComponent,
+    CreationOverEditComponent,
+    CreationDialogComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
