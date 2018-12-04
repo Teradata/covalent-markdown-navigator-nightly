@@ -12,41 +12,6 @@
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
   </div>
-  <!-- <td-layout-manage-list
-                        [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <mat-toolbar td-sidenav-content>
-      <mat-toolbar-row>
-        <mat-icon class="push-left-sm push-right-sm">help</mat-icon>
-        <span>Mini Side Nav</span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a mat-list-item>
-        <mat-icon matListIcon>info</mat-icon>
-        Title
-      </a>
-    </mat-nav-list>
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
-        <div td-toolbar-content layout="row" layout-align="start center" flex>
-          <span>Mini Side Nav</span>
-        </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-card class="push">
-      <mat-card-title>Title</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-       description
-      </mat-card-content>
-    </mat-card>
-  </td-layout-manage-list>    -->
-
   <td-layout-manage-list class="side" #manageList [opened]="mediaGTSM | async" [mode]="'side'" [sidenavWidth]="(margin | async) + 'px'"
     [ngClass]="{'open': !miniNav}">
     <div td-sidenav-content layout="column" layout-fill>
@@ -101,9 +66,16 @@
 
     <mat-sidenav-container flex layout="column" layout-align="end start">
       <div class="theme-alt">
-        <mat-card>
+        <mat-card class="push">
+          <mat-card-title>
+            <button mat-icon-button (click)="toggleMiniNav($event)" *ngIf="media.query('gt-sm')">
+              <mat-icon>arrow_back</mat-icon>
+            </button> 
+            Mini Side Nav
+          </mat-card-title>
+          <mat-divider></mat-divider>
           <mat-card-content>
-            content
+            <p>The mini side nav provides the additional navigation of the Management List layout with the ability to maximize real estate as needed.</p>
           </mat-card-content>
         </mat-card>
       </div>
