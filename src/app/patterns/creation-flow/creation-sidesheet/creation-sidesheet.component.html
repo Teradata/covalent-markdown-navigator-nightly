@@ -85,7 +85,7 @@
           </div>
           <mat-divider></mat-divider>
           <div layout="row">
-            <button mat-raised-button class="text-upper push" color="accent">save</button>
+            <button mat-raised-button class="text-upper push" color="accent" (click)="this.myForm.reset(); matDrawer.toggle()">save</button>
             <button mat-button class="text-upper" (click)="this.myForm.reset(); matDrawer.toggle()">cancel</button>
           </div>
         </div>
