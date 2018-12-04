@@ -77,7 +77,7 @@
     </mat-card>
   </td-layout-manage-list>
   <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3"
-    (click)="viewAddCluster()" [routerLink]="['edit']">
+    [routerLink]="['edit']">
     <mat-icon>add</mat-icon>
   </button>
 </td-layout-nav>
