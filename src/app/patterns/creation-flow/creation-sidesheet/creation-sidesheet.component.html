@@ -46,18 +46,59 @@
         <div td-toolbar-content layout="row" layout-align="start center" flex>
           <span>Sidesheet</span>
           <span flex></span>
-          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper">create</button>
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" (click)="matDrawer.toggle()">create</button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
+    <mat-drawer-container fullscreen flex>
+      <mat-drawer #matDrawer position="end" mode="side"
+        [style.width.%]="(media.registerQuery('gt-xs') | async) ? '50' : '100'" class="mat-body-1">
+        <div layout="column" layout-fill>
+          <div layout="row" layout-align="start center">
+            <h3 class="pad-left" matLine>Create New</h3>
+            <span flex></span>
+            <button class="push-right" mat-icon-button (click)="matDrawer.toggle()">
+              <mat-icon matTooltipPosition="before" matTooltip="Close">close</mat-icon>
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row" class="pad-top-sm" flex>
+            <div class="mat-content pad-left pad-right mat-body-1" flex>
+              <h2 class="mat-title">Introduction</h2>
+              <p>This tutorial covers the core features of the sandbox to get you ready to build and manage your
+                applications on the Covalent UI Platform</p>
+              <p>You'll learn the following concepts:</p>
+              <mat-list dense class="text-sm">
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>Purpose of patterns</h3>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>How to x-ray pattern for reusable code snippets</h3>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>How to contribute to the sandbox</h3>
+                </mat-list-item>
+              </mat-list>
+              <p class="push-top">Let's get started!</p>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row">
+            <button mat-raised-button class="text-upper push" color="accent">continue</button>
+          </div>
+        </div>
+      </mat-drawer>
     <mat-card class="push">
-        <mat-card-title>When to use a sidesheet</mat-card-title>
-        <mat-divider></mat-divider>
-        <mat-card-content>
-          <td-message label="Click create button to see Management List creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
-          <p>The sidesheet layout is useful in the creation flow when the user is already in a Management List layout and you want to keep them within the context of their current view while keeping the existing content within view.</p>
-        </mat-card-content>
-      </mat-card>
+      <mat-card-title>When to use a sidesheet</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <td-message label="Click create button to see a sidesheet creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
+        <p>The sidesheet layout is useful in the creation flow when the user is already in a Management List layout and you want to keep them within the context of their current view while keeping the existing content within view.</p>
+      </mat-card-content>
+    </mat-card>
     <mat-card class="push">
       <mat-card-title>Create Button Guidance</mat-card-title>
       <mat-divider></mat-divider>
@@ -75,6 +116,7 @@
         </mat-list>
       </mat-card-content>
     </mat-card>
+    </mat-drawer-container>
   </td-layout-manage-list>
   <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3">
     <mat-icon>add</mat-icon>

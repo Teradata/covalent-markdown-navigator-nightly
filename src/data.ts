@@ -27,16 +27,6 @@ export var patterns: Object[] = [{
   title: 'Contextual Docs',
 }, {
   color: 'indigo-700',
-  icon: 'format_indent_increase',
-  route: '/patterns/sidesheet',
-  title: 'Side Sheet',
-// }, {
-//   color: 'td-indigo-700',
-//   icon: 'looks_one',
-//   route: '/patterns/navstepper',
-//   title: 'Nav Stepper',
-}, {
-  color: 'indigo-700',
   icon: 'looks_one',
   route: '/patterns/stepper',
   title: 'Stepper Form',

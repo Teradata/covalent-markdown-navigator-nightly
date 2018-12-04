@@ -51,7 +51,6 @@ import { CardsComponent } from './patterns/cards/cards.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
-import { SideSheetComponent } from './patterns/sidesheet/sidesheet.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
@@ -59,8 +58,6 @@ import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.compon
 import { DocsSideSheetComponent } from './patterns/contextual-docs/docs-sidesheet/docs-sidesheet.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
-import { LogsComponent } from './patterns/sidesheet/logs/logs.component';
-import { FiltersComponent } from './patterns/sidesheet/filters/filters.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { BreadcrumbsComponent } from './patterns/breadcrumbs/breadcrumbs.component';
@@ -96,7 +93,6 @@ export function getAPI(): string {
     StepperComponent,
     AlertsComponent,
     NavDrawerComponent,
-    SideSheetComponent,
     EmptyStateComponent,
     ContextualDocsComponent,
     InlineComponent,
@@ -104,8 +100,6 @@ export function getAPI(): string {
     DocsSideSheetComponent,
     AlertsInlineComponent,
     AlertsToastsComponent,
-    LogsComponent,
-    FiltersComponent,
     MiniSideNavComponent,
     CreationFlowComponent,
     BreadcrumbsComponent,

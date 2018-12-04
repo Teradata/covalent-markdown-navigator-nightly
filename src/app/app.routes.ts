@@ -14,7 +14,6 @@ import { StepperComponent } from './patterns/stepper/stepper.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
-import { SideSheetComponent } from './patterns/sidesheet/sidesheet.component';
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
 import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
@@ -23,8 +22,6 @@ import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-in
 
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
 
-import { LogsComponent } from './patterns/sidesheet/logs/logs.component';
-import { FiltersComponent } from './patterns/sidesheet/filters/filters.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
@@ -81,11 +78,6 @@ const routes: Routes = [{
         { path: 'inline', component: InlineComponent },
         { path: 'dialog', component: DialogComponent },
         { path: 'sidesheet', component: DocsSideSheetComponent },
-      ]},
-      { path: 'sidesheet', children:   [
-        { path: '', component: SideSheetComponent },
-        { path: 'filters', component: FiltersComponent },
-        { path: 'logs', component: LogsComponent },
       ]},
       { path: 'minisidenav', component: MiniSideNavComponent },
       { path: 'creationflow', children: [
