@@ -70,7 +70,7 @@ import { CardImagesComponent } from './patterns/cards/card-images/card-images.co
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
 import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
 import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
-import { CreationDialogComponent } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+import { CreationDialogComponent, DialogContentExampleDialog} from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -115,6 +115,7 @@ export function getAPI(): string {
     CreationOverComponent,
     CreationOverEditComponent,
     CreationDialogComponent,
+    DialogContentExampleDialog,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
@@ -162,7 +163,7 @@ export function getAPI(): string {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,
   ], // additional providers needed for this module
-  entryComponents: [ ],
+  entryComponents: [ CreationDialogComponent, DialogContentExampleDialog ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {}

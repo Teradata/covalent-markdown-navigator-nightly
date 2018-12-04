@@ -1,19 +1,28 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core/media';
 
 @Component({
-  selector: 'qs-creation-dialog',
-  templateUrl: './creation-dialog.component.html',
-  styleUrls: ['./creation-dialog.component.scss'],
+  selector: 'dialog-content-example',
+  templateUrl: 'creation-dialog.component.html',
+  styleUrls: ['creation-dialog.component.scss'],
 })
-export class CreationDialogComponent implements OnInit {
-
+export class CreationDialogComponent {
   constructor(private _titleService: Title,
-              public media: TdMediaService) {
-  }
+    public media: TdMediaService,
+    public dialog: MatDialog) {}
 
-  ngOnInit(): void {
-    this._titleService.setTitle('Creation Flow');
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }
+
+@Component({
+  selector: 'creation-dialog-content',
+  templateUrl: 'creation-dialog-content.html',
+})
+export class DialogContentExampleDialog {}

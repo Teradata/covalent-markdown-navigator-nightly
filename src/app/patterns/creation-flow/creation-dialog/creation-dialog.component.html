@@ -46,7 +46,7 @@
         <div td-toolbar-content layout="row" layout-align="start center" flex>
           <span>Dialog</span>
           <span flex></span>
-          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" [routerLink]="['edit']">create</button>
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" (click)="openDialog()">create</button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
