@@ -30,12 +30,12 @@
     <div layout="row" class="pad" layout-wrap>
       <ng-template let-item let-index="index" ngFor [ngForOf]="layouts">
         <div class="fav-list-item" flex-gt-xs="25" flex="50">
-          <mat-card href [routerLink]="item.route" class="mat-card-colored">
+          <mat-card href [routerLink]="['layouts', item.route]" class="mat-card-colored">
             <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
-              [routerLink]="[item.route]">
+              [routerLink]="['layouts', item.route]">
               <mat-icon>{{item.icon}}</mat-icon>
             </mat-toolbar>
-            <div class="card-content" [routerLink]="[item.route]">
+            <div class="card-content" [routerLink]="['layouts', item.route]">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
                 <!-- <div class="mat-caption tc-grey-600 text-truncate" [title]="item.description"> item.description </div> -->
@@ -58,19 +58,19 @@
     <div layout="row" class="pad" layout-wrap>
       <ng-template let-item let-index="index" ngFor [ngForOf]="patterns">
         <div class="fav-list-item" flex-gt-xs="25" flex="50">
-          <mat-card href [routerLink]="item.route" class="mat-card-colored">
+          <mat-card href [routerLink]="['patterns', item.route]" class="mat-card-colored">
             <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
-              [routerLink]="[item.route]">
+              [routerLink]="['patterns', item.route]">
               <mat-icon>{{item.icon}}</mat-icon>
             </mat-toolbar>
-            <div class="card-content" [routerLink]="[item.route]">
+            <div class="card-content" [routerLink]="['patterns', item.route]">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
               </div>
             </div>
             <mat-divider></mat-divider>
             <div layout="row" layout-align="end center">
-              <a mat-icon-button [href]="baseURL + '/?file=src/app/' +item.fullPath + '.component.html'" target="_blank">
+              <a mat-icon-button [href]="baseURL + '/?file=src/app/patterns/' + item.route + '/' + item.route + '.component.html'" target="_blank">
                 <mat-icon color="primary">code</mat-icon>
               </a>
             </div>

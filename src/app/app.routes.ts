@@ -48,10 +48,10 @@ const routes: Routes = [{
     path: 'layouts',
     component: MainComponent,
     children: [
-      { path: 'navview', component: NavViewComponent },
-      { path: 'navlist', component: NavListComponent },
-      { path: 'managelist', component: ManageListComponent },
-      { path: 'cardover', component: CardOverComponent },
+      { path: 'nav-view', component: NavViewComponent },
+      { path: 'nav-list', component: NavListComponent },
+      { path: 'manage-list', component: ManageListComponent },
+      { path: 'card-over', component: CardOverComponent },
     ],
   }, {
     path: 'patterns',
@@ -71,7 +71,7 @@ const routes: Routes = [{
       ]},
       { path: 'nav-drawer', component: NavDrawerComponent },
       { path: 'empty-state', component: EmptyStateComponent },
-      { path: 'docs', children: [
+      { path: 'contextual-docs', children: [
         { path: '', component: ContextualDocsComponent },
         { path: 'inline', component: InlineComponent },
         { path: 'dialog', component: DialogComponent },
