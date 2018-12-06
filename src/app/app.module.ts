@@ -46,7 +46,6 @@ import { OverviewComponent } from './overview/overview.component';
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { CardOverComponent } from './layouts/card-over/card-over.component';
-import { NavStepperComponent } from './patterns/nav-stepper/nav-stepper.component';
 import { CardsComponent } from './patterns/cards/cards.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
@@ -88,7 +87,6 @@ export function getAPI(): string {
     NavViewComponent,
     NavListComponent,
     CardOverComponent,
-    NavStepperComponent,
     CardsComponent,
     StepperComponent,
     AlertsComponent,

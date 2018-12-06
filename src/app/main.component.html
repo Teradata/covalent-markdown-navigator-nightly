@@ -1,21 +1,22 @@
 <td-layout #layout>
   <td-navigation-drawer logo="assets:teradata-dark" sidenavTitle="SANDBOX">
     <mat-nav-list>
-			<a *ngFor="let item of routes" mat-list-item [routerLink]="item.route">
-				<mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-			<h3 matSubheader>Layouts</h3>
-			<ng-template let-item let-last="last" ngFor [ngForOf]="layouts">
-				<a mat-list-item [routerLink]="[item.route]">
-					<mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
-				</a>
-			</ng-template>
-			<h3 matSubheader>Patterns</h3>
-			<ng-template let-item let-last="last" ngFor [ngForOf]="patterns">
-				<a mat-list-item [routerLink]="[item.route]">
-					<mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
-				</a>
-			</ng-template>
-		</mat-nav-list>
+      <a *ngFor="let item of routes" mat-list-item [routerLink]="item.route">
+        <mat-icon>{{item.icon}}</mat-icon>{{item.title}}
+      </a>
+      <h3 matSubheader>Layouts</h3>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="layouts">
+        <a mat-list-item [routerLink]="[item.route]">
+          <mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
+        </a>
+      </ng-template>
+      <h3 matSubheader>Patterns</h3>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="patterns">
+        <a mat-list-item [routerLink]="[item.route]">
+          <mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
+        </a>
+      </ng-template>
+    </mat-nav-list>
   </td-navigation-drawer>
   <router-outlet></router-outlet>
 </td-layout>

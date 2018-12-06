@@ -66,12 +66,11 @@
             <div class="card-content" [routerLink]="[item.route]">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
-                <!-- <div class="mat-caption tc-grey-600 text-truncate" [title]="item.description"> item.description </div> -->
               </div>
             </div>
             <mat-divider></mat-divider>
             <div layout="row" layout-align="end center">
-              <a mat-icon-button>
+              <a mat-icon-button [href]="baseURL + '/?file=src/app/' +item.fullPath + '.component.html'" target="_blank">
                 <mat-icon color="primary">code</mat-icon>
               </a>
             </div>

@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { LoginComponent } from './login/login.component';
-import { NavStepperComponent } from './patterns/nav-stepper/nav-stepper.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
@@ -58,7 +57,6 @@ const routes: Routes = [{
     path: 'patterns',
     component: MainComponent,
     children: [
-      { path: 'navstepper', component: NavStepperComponent },
       { path: 'stepper', component: StepperComponent },
       { path: 'cards', children: [
         { path: '', component: CardsComponent },
@@ -71,16 +69,16 @@ const routes: Routes = [{
         { path: 'inline', component: AlertsInlineComponent },
         { path: 'toasts', component: AlertsToastsComponent },
       ]},
-      { path: 'navdrawer', component: NavDrawerComponent },
-      { path: 'emptystate', component: EmptyStateComponent },
+      { path: 'nav-drawer', component: NavDrawerComponent },
+      { path: 'empty-state', component: EmptyStateComponent },
       { path: 'docs', children: [
         { path: '', component: ContextualDocsComponent },
         { path: 'inline', component: InlineComponent },
         { path: 'dialog', component: DialogComponent },
         { path: 'sidesheet', component: DocsSideSheetComponent },
       ]},
-      { path: 'minisidenav', component: MiniSideNavComponent },
-      { path: 'creationflow', children: [
+      { path: 'mini-side-nav', component: MiniSideNavComponent },
+      { path: 'creation-flow', children: [
         { path: '', component: CreationFlowComponent },
         { path: 'edit', component: CreationEditComponent },
         { path: 'card-over', children: [

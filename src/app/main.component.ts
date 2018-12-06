@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { name, patterns, layouts, routes } from '../data';
+import { name, patterns, layouts, routes, baseURL } from '../data';
 
 @Component({
   selector: 'qs-main',
@@ -8,12 +8,13 @@ import { name, patterns, layouts, routes } from '../data';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  baseURL;
 
   constructor(private _router: Router) { 
-    Object.assign(this, { name, patterns, layouts, routes })
+    Object.assign(this, { name, patterns, layouts, routes, baseURL })
   }
-
-  logout(): void {
-    this._router.navigate(['/login']);
+  ngOnInit() {
+    console.log(window.location.origin);
+    console.log(this.baseURL);
   }
 }
