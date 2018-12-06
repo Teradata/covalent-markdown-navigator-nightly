@@ -1,11 +1,12 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core/media';
+import { baseURL } from '../../../../data';
 
 @Component({
-  selector: 'qs-docs-sidesheet',
-  templateUrl: './docs-sidesheet.component.html',
-  styleUrls: ['./docs-sidesheet.component.scss'],
+  selector: 'qs-sidesheet',
+  templateUrl: './sidesheet.component.html',
+  styleUrls: ['./sidesheet.component.scss'],
 })
 export class DocsSideSheetComponent implements OnInit {
 
@@ -18,6 +19,7 @@ export class DocsSideSheetComponent implements OnInit {
 
   constructor(private _titleService: Title,
     public media: TdMediaService) {
+      Object.assign(this, { baseURL })
   }
 
   ngOnInit(): void {

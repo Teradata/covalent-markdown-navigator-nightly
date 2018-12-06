@@ -5,7 +5,7 @@ import { TdDialogService } from '@covalent/core';
 import { TdMediaService } from '@covalent/core/media';
 import { MatSnackBar } from '@angular/material';
 
-// import { UserService, IUser } from './services/user.service';
+import { baseURL } from '../../../../data';
 
 @Component({
   selector: 'qs-alerts-toasts',
@@ -18,6 +18,7 @@ export class AlertsToastsComponent implements OnInit {
               private _snackBarService: MatSnackBar,
               private _dialogService: TdDialogService,
               public media: TdMediaService) {
+    Object.assign(this, { baseURL })
   }
 
   ngOnInit(): void {

@@ -3,8 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
-
-// import { UserService, IUser } from './services/user.service';
+import { baseURL } from '../../../data';
 
 @Component({
   selector: 'qs-manage-list',
@@ -81,6 +80,7 @@ navmenu: Object[] = [{
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
+    Object.assign(this, { baseURL })
   }
 
   ngOnInit(): void {

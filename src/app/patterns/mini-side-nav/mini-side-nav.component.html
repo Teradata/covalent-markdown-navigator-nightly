@@ -8,7 +8,7 @@
     <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
       <mat-icon>chrome_reader_mode</mat-icon>
     </a>
-    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+    <a mat-icon-button matTooltip="Github" href="https://github.com/Teradata/covalent-resources" target="_blank">
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
   </div>
@@ -67,12 +67,19 @@
     <mat-sidenav-container flex layout="column" layout-align="end start">
       <div class="theme-alt">
         <mat-card class="push">
-          <mat-card-title>
-            <button mat-icon-button (click)="toggleMiniNav($event)" *ngIf="media.query('gt-sm')">
-              <mat-icon>arrow_back</mat-icon>
-            </button> 
-            Mini Side Nav
-          </mat-card-title>
+          <div layout="row" layout-align="start center">
+              <mat-card-title>
+                <button mat-icon-button (click)="toggleMiniNav($event)" *ngIf="media.query('gt-sm')">
+                  <mat-icon>arrow_back</mat-icon>
+                </button> 
+                Mini Side Nav
+              </mat-card-title>
+              <span flex></span>
+              <a mat-icon-button [href]="baseURL + '/?file=src/app/patterns/mini-side-nav/mini-side-nav.component.html'" target="_blank"
+                class="push-right">
+                <mat-icon color="primary" matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+              </a>
+          </div>
           <mat-divider></mat-divider>
           <mat-card-content>
             <p>The mini side nav provides the additional navigation of the Management List layout with the ability to maximize real estate as needed.</p>

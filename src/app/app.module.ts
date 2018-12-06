@@ -38,7 +38,6 @@ import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MOCK_API } from '../config/api.config';
 
-import { USER_PROVIDER, USERS_API } from './users';
 import { MainComponent } from './main.component';
 import { LoginComponent } from './login/login.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
@@ -54,7 +53,7 @@ import { EmptyStateComponent } from './patterns/empty-state/empty-state.componen
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
 import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
-import { DocsSideSheetComponent } from './patterns/contextual-docs/docs-sidesheet/docs-sidesheet.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
@@ -153,9 +152,6 @@ export function getAPI(): string {
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
-    Title, {
-      provide: USERS_API, useFactory: getAPI,
-    }, USER_PROVIDER,
   ], // additional providers needed for this module
   entryComponents: [ CreationDialogComponent, DialogContentExampleDialog ],
   bootstrap: [ AppComponent ],

@@ -16,7 +16,7 @@ import { EmptyStateComponent } from './patterns/empty-state/empty-state.componen
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
 import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
-import { DocsSideSheetComponent } from './patterns/contextual-docs/docs-sidesheet/docs-sidesheet.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';

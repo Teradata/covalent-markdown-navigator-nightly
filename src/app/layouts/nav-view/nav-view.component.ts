@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { baseURL } from '../../../data';
 
 @Component({
   selector: 'qs-nav-view',
@@ -109,5 +110,6 @@ export class NavViewComponent implements OnInit {
 
   ngOnInit(): void {
     this._titleService.setTitle( 'Teradata Covalent - Sandbox' );
+    Object.assign(this, { baseURL })
   }
 }

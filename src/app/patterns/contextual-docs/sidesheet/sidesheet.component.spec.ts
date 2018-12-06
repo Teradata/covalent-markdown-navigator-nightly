@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidesheetComponent } from './docs-sidesheet.component';
+import { SidesheetComponent } from './sidesheet.component';
 
 describe('SidesheetComponent', () => {
   let component: SidesheetComponent;

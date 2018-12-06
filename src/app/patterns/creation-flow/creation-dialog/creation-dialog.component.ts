@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core/media';
+import { baseURL } from '../../../../data';
 
 @Component({
   selector: 'dialog-content-example',
@@ -11,7 +12,9 @@ import { TdMediaService } from '@covalent/core/media';
 export class CreationDialogComponent {
   constructor(private _titleService: Title,
     public media: TdMediaService,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog) {
+      Object.assign(this, { baseURL })
+    }
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentExampleDialog);

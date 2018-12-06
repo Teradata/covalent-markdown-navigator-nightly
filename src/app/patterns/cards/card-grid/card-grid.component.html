@@ -8,7 +8,7 @@
     <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
       <mat-icon>chrome_reader_mode</mat-icon>
     </a>
-    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+    <a mat-icon-button matTooltip="Github" href="https://github.com/Teradata/covalent-resources" target="_blank">
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
   </div>
@@ -45,7 +45,11 @@
         </button>
         <div td-toolbar-content layout="row" layout-align="start center" flex>
           <span>Card Grid</span>
-          <!-- <span flex></span> -->
+          <span flex></span>
+          <a mat-icon-button [href]="baseURL + '/?file=src/app/patterns/cards/card-grid/card-grid.component.html'" target="_blank"
+            class="push-right">
+            <mat-icon color="primary" matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+          </a>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>

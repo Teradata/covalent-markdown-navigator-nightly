@@ -14,7 +14,5 @@ export class MainComponent {
     Object.assign(this, { name, patterns, layouts, routes, baseURL })
   }
   ngOnInit() {
-    console.log(window.location.origin);
-    console.log(this.baseURL);
   }
 }

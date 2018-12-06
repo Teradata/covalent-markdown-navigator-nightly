@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { baseURL } from '../../../../data';
 
 import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
@@ -70,6 +71,7 @@ export class CardGridComponent implements OnInit {
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
+    Object.assign(this, { baseURL })
   }
 
   ngOnInit(): void {

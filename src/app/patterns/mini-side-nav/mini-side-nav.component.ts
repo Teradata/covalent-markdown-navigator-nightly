@@ -2,6 +2,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { TdMediaService } from '@covalent/core/media';
 import { TdLayoutManageListComponent } from '@covalent/core/layout';
 import { getDirection } from '../../../utilities/direction';
+import { baseURL } from '../../../data';
 
 import { tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation } from '@covalent/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -101,6 +102,8 @@ export class MiniSideNavComponent implements AfterViewInit {
   ];
 
   constructor(public media: TdMediaService) {
+    Object.assign(this, { baseURL })
+    
     this.mediaGTSM = media.registerQuery('gt-sm').pipe( 
       distinctUntilChanged(),
       debounceTime(50),

@@ -5,8 +5,7 @@ import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
 
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-
-// import { UserService, IUser } from './services/user.service';
+import { baseURL } from '../../../data';
 
 @Component({
   selector: 'qs-breadcrumbs',
@@ -19,6 +18,7 @@ export class BreadcrumbsComponent implements OnInit {
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
+    Object.assign(this, { baseURL })
   }
 
   ngOnInit(): void {
