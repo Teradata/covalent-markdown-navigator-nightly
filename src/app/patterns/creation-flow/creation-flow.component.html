@@ -46,12 +46,8 @@
         <div td-toolbar-content layout="row" layout-align="start center" flex>
           <span>Management List</span>
           <span flex></span>
-          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" [routerLink]="['edit']">create</button>
-          <!-- 
-          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
-          <button mat-icon-button><mat-icon >sort</mat-icon></button>
-          <button mat-icon-button><mat-icon >settings</mat-icon></button>
-          <button mat-icon-button><mat-icon >more_vert</mat-icon></button> -->
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper"
+            [routerLink]="['edit']">create</button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
@@ -59,8 +55,10 @@
       <mat-card-title>When to use Management List</mat-card-title>
       <mat-divider></mat-divider>
       <mat-card-content>
-        <td-message label="Click create button to see Management List creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
-        <p>The Management List layout is useful in the creation flow when the user is already in a Management List layout and you want to keep them within the context of their current view.</p>
+        <td-message label="Click create button to see Management List creation pattern" color="accent" icon="info"
+          class="push-bottom"></td-message>
+        <p>The Management List layout is useful in the creation flow when the user is already in a Management List
+          layout and you want to keep them within the context of their current view.</p>
       </mat-card-content>
     </mat-card>
     <mat-card class="push">
