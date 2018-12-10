@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
-import { TdMediaService, TdDigitsPipe } from '@covalent/core';
 
 @Component({
   selector: 'td-app',
@@ -35,7 +34,6 @@ export class AppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('https://raw.githubusercontent.com/Teradata/covalent-resources/feat/sandbox/src/assets/icons/unity.svg'));
       this._iconRegistry.addSvgIconInNamespace('assets', 'viewpoint',
       this._domSanitizer.bypassSecurityTrustResourceUrl('https://raw.githubusercontent.com/Teradata/covalent-resources/feat/sandbox/src/assets/icons/viewpoint.svg'));
-      
       this._iconRegistry.addSvgIconInNamespace('assets', 'workload-analytics',
       this._domSanitizer.bypassSecurityTrustResourceUrl('https://raw.githubusercontent.com/Teradata/covalent-resources/feat/sandbox/src/assets/icons/workload-analytics.svg'));
   }

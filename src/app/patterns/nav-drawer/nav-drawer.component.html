@@ -41,11 +41,59 @@
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>What is a nav drawer?</mat-card-title>
+      <mat-card-content>
+        A nav drawer is a standard way of displaying the main navigation for the entire application.  First class citizens should be displayed with minimal wording which matches the title on the linked page.
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="accent" tdLayoutToggle>Show Drawer</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>Required</mat-card-title>
       <mat-divider></mat-divider>
       <mat-card-content>
-        <button mat-raised-button color="accent" tdLayoutToggle>Show Drawer</button>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Logo </h3>
+            <p matLine> Match logo in main toolbar </p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> App title </h3>
+            <p matLine> Match title in main toolbar </p>
+          </mat-list-item>
+        </mat-list>
       </mat-card-content>
+    </mat-card>
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>Optional</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> User's first & last name </h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> User's email address </h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Subheaders </h3>
+            <p matLine> h3 matSubheader </p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Submenu with link to sign out </h3>
+            <p matLine> td-navigation-drawer-menu </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-divider></mat-divider>
     </mat-card>
   </td-layout-manage-list>
 </td-layout-nav>
