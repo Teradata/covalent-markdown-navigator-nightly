@@ -1,24 +1,29 @@
+/*
+ * Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
+ * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
+ */
+
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material/icon';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
-  selector: 'qs-app',
+  selector: 'td-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 
   constructor(private _iconRegistry: MatIconRegistry,
-    private _domSanitizer: DomSanitizer) {
-
-    // Register Covalent Icons
+              private _domSanitizer: DomSanitizer) {
+    // Covalent Icons
     this._iconRegistry.registerFontClassAlias('covalent', 'covalent-icons');
 
-    this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-dark',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-dark.svg'));
+    // SVG Icons
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
+      this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-dark',
+        this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-dark.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'github',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'covalent',
@@ -27,39 +32,13 @@ export class AppComponent {
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/covalent-mark.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata-ux',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-ux.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'app_center',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/app_center.svg'));
+    this._iconRegistry.addSvgIconInNamespace('assets', 'appcenter',
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/appcenter.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'listener',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/istener.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'query_grid',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/query_grid.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'aster',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/aster.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'hbase',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/hbase.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'hdfs',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/hdfs.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'java',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/java.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'viewpoint',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/viewpoint.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'workload-analytics',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/workload-analytics.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'control-center',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/control-center.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'ecosystem-services',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ecosystem-services.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'ingest',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ingest.svg'));
+      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/querygrid.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'unity',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/unity.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'data-labs',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/data-labs.svg'));
-    this._iconRegistry.addSvgIconInNamespace('assets', 'deployments',
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/deployments.svg'));
-
+    
     // SVG Icons
     this._iconRegistry.addSvgIcon('teradata', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
     this._iconRegistry.addSvgIcon('teradata-dark', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata-dark.svg'));
