@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
-@import '~@covalent/highlight/highlight-theme';
-@import '~@covalent/markdown/markdown-theme';
+// @import '~@covalent/highlight/highlight-theme';
+// @import '~@covalent/markdown/markdown-theme';
 
 // Plus imports for other components in your app.
 
@@ -21,7 +21,9 @@ $custom-typography: mat-typography-config(
 @include covalent-core();
 
 // Include material-icons
-@import '../node_modules/@covalent/core/common/material-icons.css';
+// @import '../node_modules/@covalent/core/common/material-icons.css';
+$mat-font-url: '../node_modules/@covalent/core/common/styles/font/';
+@include covalent-material-icons();
 
 // Include covalent utility classes
 @include covalent-utilities();
@@ -47,8 +49,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // that you are using.
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
-@include covalent-highlight-theme();
-@include covalent-markdown-theme($theme);
+// @include covalent-highlight-theme();
+// @include covalent-markdown-theme($theme);
 @include teradata-brand($theme);
 
 /* ------------------------------------------------------------------------------- */
