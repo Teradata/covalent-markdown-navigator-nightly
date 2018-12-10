@@ -1,6 +1,6 @@
 export var name: String = "SANDBOX";
 
-export var baseURL = "https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox";
+export var baseURL = "https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox/?view=editor&file=src/app";
 
 export var routes: Object[] = [{
   icon: 'home',
