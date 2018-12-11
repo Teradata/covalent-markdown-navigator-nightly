@@ -18,47 +18,47 @@ export var overview: Object[] = [{
 ];
 
 export var patterns: Object[] = [{
-  color: 'td-yellow-800',
+  color: 'red-800',
   icon: 'add_circle',
   route: 'creation-flow',
   title: 'Creation Flow',
 }, {
-  color: 'td-teal-800',
+  color: 'pink-800',
   icon: 'help',
   route: 'contextual-docs',
   title: 'Contextual Docs',
 }, {
-  color: 'td-blue-800',
+  color: 'purple-800',
   icon: 'looks_one',
   route: 'stepper',
   title: 'Stepper Form',
 }, {
-  color: 'td-orange-800',
+  color: 'deep-purple-800',
   icon: 'view_agenda',
   route: 'cards',
   title: 'Cards',
 }, {
-  color: 'td-yellow-800',
+  color: 'indigo-800',
   icon: 'filter_none',
   route: 'alerts',
   title: 'Alerts',
 }, {
-  color: 'td-teal-800',
+  color: 'blue-800',
   icon: 'kitchen',
   route: 'nav-drawer',
   title: 'Nav Drawer',
 }, {
-  color: 'td-blue-800',
+  color: 'light-blue-800',
   icon: 'swap_horiz',
   route: 'mini-side-nav',
   title: 'Mini Side Nav',
 }, {
-  color: 'td-orange-800',
+  color: 'cyan-800',
   icon: 'space_bar',
   route: 'empty-state',
   title: 'Empty State',
 }, {
-  color: 'td-yellow-800',
+  color: 'green-800',
   icon: 'more_horiz',
   route: 'breadcrumbs',
   title: 'Breadcrumbs',
