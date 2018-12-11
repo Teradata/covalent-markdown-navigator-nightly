@@ -34,4 +34,30 @@ export class StepperComponent implements OnInit {
       }
     };
   }
+
+  update(step, isValid): void {
+    switch(step) {
+      case 1:
+        if(isValid) {
+          this.state1 = 'complete';
+        } else {
+          this.state1 = 'required';
+        }
+        break;
+      case 2:
+        if(isValid) {
+          this.state2 = 'complete';
+        } else {
+          this.state2 = 'required';
+        }
+        break;
+      case 3:
+        if(isValid) {
+          this.state3 = 'complete';
+          this.blockSave = false;
+        } else {
+          this.state3 = 'required';
+        }
+    }
+  } 
 }
