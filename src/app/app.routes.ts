@@ -13,6 +13,8 @@ import { StepperComponent } from './patterns/stepper/stepper.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
+import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
+import { EmptyContentComponent } from './patterns/empty-state/empty-content/empty-content.component';
 import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
 import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
 import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
@@ -70,7 +72,11 @@ const routes: Routes = [{
         { path: 'toasts', component: AlertsToastsComponent },
       ]},
       { path: 'nav-drawer', component: NavDrawerComponent },
-      { path: 'empty-state', component: EmptyStateComponent },
+      { path: 'empty-state', children: [
+        { path: '', component: EmptyStateComponent },
+        { path: 'filter', component: EmptyFilterComponent },
+        { path: 'no-content', component: EmptyContentComponent },
+      ]},
       { path: 'contextual-docs', children: [
         { path: '', component: ContextualDocsComponent },
         { path: 'inline', component: InlineComponent },
