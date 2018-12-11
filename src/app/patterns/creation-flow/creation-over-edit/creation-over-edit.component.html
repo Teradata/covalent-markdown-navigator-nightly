@@ -60,16 +60,6 @@
               <button class="text-upper" mat-button type="submit" color="accent" [disabled]="!form1.form.valid" (click)="step2.active = true">Continue</button>
               <button class="text-upper" mat-button>Cancel</button>
             </div>
-            <ng-template td-step-summary>
-              <mat-list>
-                <mat-list-item>
-                  <mat-icon matListAvatar>account_box</mat-icon>
-                  <h4 matLine>{{firstName.value}} {{lastName.value}}</h4>
-                  <p matLine>{{nickname.value}}</p>
-                  <p matLine>{{email.value}}</p>
-                </mat-list-item>
-              </mat-list>
-            </ng-template>
           </form>
         </td-step>
         <td-step [state]="state2" #step2 label="Address" sublabel="Street, City, State, Zip" (deactivated)="update(2, form2.form.valid)">
@@ -109,16 +99,6 @@
               <button class="text-upper" type="submit" mat-button color="accent" [disabled]="!form2.form.valid" (click)="step3.active = true">Continue</button>
               <button class="text-upper" (click)="step2.active = false; state2 = 'none'; form2.reset()" mat-button>Cancel</button>
             </div>
-            <ng-template td-step-summary>
-              <mat-list>
-                <mat-list-item>
-                  <mat-icon matListAvatar>place</mat-icon>
-                  <h5 matLine>{{ street.value }} {{ street2.value}}</h5>
-                  <h5 matLine>{{city.value}} {{selState.value}} {{zip.value}}</h5>
-                  <p matLine>Address</p>
-                </mat-list-item>
-              </mat-list>
-            </ng-template>
           </form>
         </td-step>
         <td-step [state]="state3" #step3 label="Social Media (Optional)" sublabel="Link your account" (deactivated)="update(3, form3.form.valid)">
@@ -145,25 +125,6 @@
               <button class="text-upper" type="submit" mat-button color="accent" (click)="step3.active = false">Continue</button>
               <button class="text-upper" mat-button (click)="step3.active = false; state3 = 'none'; form3.reset()">Cancel</button>
             </div>
-            <ng-template *ngIf="linksSummary" td-step-summary>
-              <mat-list>
-                <mat-list-item *ngIf="linkedin.value != ''">
-                  <mat-icon matListAvatar>insert_link</mat-icon>
-                  <h4 matLine>{{ linkedin.value }}</h4>
-                  <p matLine>LinkedIn</p>
-                </mat-list-item>
-                <mat-list-item *ngIf="facebook.value != ''">
-                  <mat-icon matListAvatar>insert_link</mat-icon>
-                  <h4 matLine>{{ facebook.value }}</h4>
-                  <p matLine>Facebook</p>
-                </mat-list-item>
-                <mat-list-item *ngIf="twitter.value != ''">
-                  <mat-icon matListAvatar>insert_link</mat-icon>
-                  <h4 matLine>{{ twitter.value }}</h4>
-                  <p matLine>Twitter</p>
-                </mat-list-item>
-            </mat-list>
-            </ng-template>
           </form>
         </td-step>
       </td-steps>
