@@ -12,11 +12,11 @@
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
   </div>
-  <td-layout-manage-list class="side" #manageList [opened]="mediaGTSM | async" [mode]="'side'" [sidenavWidth]="(margin | async) + 'px'"
+  <td-layout-manage-list class="side" #manageList [mode]="'side'" [sidenavWidth]="(margin | async) + 'px'"
     [ngClass]="{'open': !miniNav}">
     <div td-sidenav-content layout="column" layout-fill>
       <mat-nav-list [ngClass]="{'clickable': miniNav}" (click)="miniNav ? openMiniNav($event) : ''" flex
-        [tdLayoutManageListClose]="!media.query('gt-sm')" layout="column" layout-align="center center">
+         layout="column" layout-align="center center">
         <a mat-list-item [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']" routerLinkActive="active"
           [matTooltip]="miniNav ? '' : 'Home'" matTooltipPosition="right" (click)="$event.stopPropagation()">
           <mat-icon mat-list-icon [matTooltip]="miniNav ? 'Home' : ''" matTooltipPosition="right">home</mat-icon>
@@ -56,24 +56,21 @@
             <mat-divider *ngIf="last"></mat-divider>
           </ng-template>
         </div>
+      </mat-nav-list>
+      <div td-sidenav-content class="td-layout-footer">
         <div layout="row" layout-align="end start" class="pad-sm">
           <button mat-icon-button (click)="toggleMiniNav($event)">
-            <mat-icon [@tdRotate]="miniNav" [matTooltip]="miniNav ? '' : 'Expand Menu'" matTooltipPosition="right">keyboard_arrow_right</mat-icon>
+            <mat-icon [@tdRotate]="miniNav" [matTooltip]="miniNav ? 'Expand Menu' : 'Collapse Menu'" matTooltipPosition="right">keyboard_arrow_left</mat-icon>
           </button>
         </div>
-      </mat-nav-list>
+      </div>
     </div>
 
     <mat-sidenav-container flex layout="column" layout-align="end start">
       <div class="theme-alt">
         <mat-card class="push">
           <div layout="row" layout-align="start center">
-              <mat-card-title>
-                <button mat-icon-button (click)="toggleMiniNav($event)">
-                  <mat-icon>arrow_back</mat-icon>
-                </button> 
-                Mini Side Nav
-              </mat-card-title>
+              <mat-card-title> Mini Side Nav </mat-card-title>
               <span flex></span>
               <a mat-icon-button [href]="baseURL + '/patterns/mini-side-nav/mini-side-nav.component.html'" target="_blank"
                 class="push-right">

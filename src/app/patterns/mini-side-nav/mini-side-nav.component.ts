@@ -21,7 +21,6 @@ export class MiniSideNavComponent implements AfterViewInit {
   
   miniNav: boolean = false;
   _margin: BehaviorSubject<string> = new BehaviorSubject('250'); 
-  mediaGTSM: Observable<any>;
   dir: 'ltr' | 'rtl';
   marginDirection: string;
 
@@ -103,22 +102,6 @@ export class MiniSideNavComponent implements AfterViewInit {
 
   constructor(public media: TdMediaService) {
     Object.assign(this, { baseURL })
-    
-    this.mediaGTSM = media.registerQuery('gt-sm').pipe( 
-      distinctUntilChanged(),
-      debounceTime(50),
-      tap((gtSm: boolean) => {
-      if (!gtSm) {
-        if (this.dir === 'ltr') {
-          this._margin.next('0');
-        }
-        this.manageList.opened = false;
-      } else {
-        this.checkMiniNav();
-      }
-    }),
-    share());
-    this.dir = getDirection();
   }
 
   handleDirEmitter(event: 'ltr' | 'rtl'): void {
