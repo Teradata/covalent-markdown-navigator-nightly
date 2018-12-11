@@ -10,6 +10,9 @@ import { baseURL } from '../../../data';
 })
 export class StepperComponent implements OnInit {
   user; 
+  state1: String = "none";
+  state2: String = "none";
+  state3: String = "none";
   
   constructor(private _titleService: Title,
               public media: TdMediaService) {
