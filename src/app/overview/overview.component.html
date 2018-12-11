@@ -38,6 +38,7 @@
             <div class="card-content" [routerLink]="['layouts', item.route]">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
+                <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description" matTooltipShowDelay="1000">{{item.description}}</div>
               </div>
             </div>
             <mat-divider></mat-divider>
@@ -65,6 +66,7 @@
             <div class="card-content" [routerLink]="['patterns', item.route]">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
+                <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description" matTooltipShowDelay="1000">{{item.description}}</div>
               </div>
             </div>
             <mat-divider></mat-divider>
