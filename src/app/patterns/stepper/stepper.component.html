@@ -82,16 +82,6 @@
                 <button mat-button type="submit" color="accent" [disabled]="!form1.form.valid" (click)="step2.active = true">Proceed</button>
                 <button mat-button (click)="step1.active = false; state1 = 'none'; form1.reset()">Cancel</button>
               </div>
-              <ng-template td-step-summary>
-                <mat-list>
-                  <mat-list-item>
-                    <mat-icon matListAvatar>account_box</mat-icon>
-                    <h4 matLine>{{firstName.value}} {{lastName.value}}</h4>
-                    <p matLine>{{nickname.value}}</p>
-                    <p matLine>{{email.value}}</p>
-                  </mat-list-item>
-                </mat-list>
-              </ng-template>
             </form>
           </td-step>
           <td-step [state]="state2" #step2 label="Step title" sublabel="subtitle" (deactivated)="update(2, form2.form.valid)">
@@ -134,16 +124,6 @@
                 <button type="submit" mat-button color="accent" [disabled]="!form2.form.valid" (click)="step3.active = true">Proceed</button>
                 <button (click)="step2.active = false; state2 = 'none'; form2.reset()" mat-button>Cancel</button>
               </div>
-              <ng-template td-step-summary>
-                <mat-list>
-                  <mat-list-item>
-                    <mat-icon matListAvatar>place</mat-icon>
-                    <h5 matLine>{{ street.value }} {{ street2.value}}</h5>
-                    <h5 matLine>{{city.value}} {{selState.value}} {{zip.value}}</h5>
-                    <p matLine>Address</p>
-                  </mat-list-item>
-                </mat-list>
-              </ng-template>
             </form>
           </td-step>
           <td-step [state]="state3" #step3 label="Step title" sublabel="Subtitle" (deactivated)="update(3, form3.form.valid)">
@@ -170,27 +150,6 @@
                 <button type="submit" mat-button color="accent" (click)="step3.active = false">Save</button>
                 <button mat-button (click)="step3.active = false; state3 = 'none'; form3.reset()">Cancel</button>
               </div>
-              <ng-template td-step-summary>
-                <mat-list>
-                  <mat-list-item>
-                    <mat-icon matListAvatar>insert_link</mat-icon>
-                    <h4 matLine>{{ linkedIn.value }}</h4>
-                    <p matLine>LinkedIn</p>
-                  </mat-list-item>
-                  <mat-divider matInset></mat-divider>
-                  <mat-list-item>
-                    <mat-icon matListAvatar>insert_link</mat-icon>
-                    <h4 matLine>{{ facebook.value }}</h4>
-                    <p matLine>Facebook</p>
-                  </mat-list-item>
-                  <mat-divider matInset></mat-divider>
-                  <mat-list-item>
-                    <mat-icon matListAvatar>insert_link</mat-icon>
-                    <h4 matLine>{{ twitter.value }}</h4>
-                    <p matLine>Twitter</p>
-                  </mat-list-item>
-                </mat-list>
-              </ng-template>
             </form>
           </td-step>
         </td-steps>
