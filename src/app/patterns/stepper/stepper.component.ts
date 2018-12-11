@@ -13,6 +13,7 @@ export class StepperComponent implements OnInit {
   state1: String = "none";
   state2: String = "none";
   state3: String = "none";
+  blockSave: boolean = true;
   
   constructor(private _titleService: Title,
               public media: TdMediaService) {
