@@ -17,7 +17,9 @@ export class CreationDialogComponent {
     }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+    const dialogRef = this.dialog.open(DialogContentExampleDialog , {
+      width: '600px',
+    });
 
     dialogRef.afterClosed().subscribe(result => {
     });
