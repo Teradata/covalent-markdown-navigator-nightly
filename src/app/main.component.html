@@ -1,5 +1,5 @@
 <td-layout #layout>
-  <td-navigation-drawer logo="assets:teradata-dark" sidenavTitle="SANDBOX" name="Firstname Lastname" email="firstname.lastname@company.com">
+  <td-navigation-drawer logo="assets:teradata-dark" sidenavTitle="SANDBOX">
     <mat-nav-list>
       <a *ngFor="let item of routes" mat-list-item [routerLink]="item.route">
         <mat-icon>{{item.icon}}</mat-icon>{{item.title}}
@@ -19,11 +19,6 @@
         </a>
       </ng-template>
     </mat-nav-list>
-    <div td-navigation-drawer-menu>
-      <mat-nav-list>
-        <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-      </mat-nav-list>
-    </div>
   </td-navigation-drawer>
   <router-outlet></router-outlet>
 </td-layout>
