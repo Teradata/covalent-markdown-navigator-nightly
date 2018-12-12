@@ -5,7 +5,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 @Component({
   selector: 'td-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 

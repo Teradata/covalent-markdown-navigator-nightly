@@ -8,7 +8,7 @@ describe('NavDrawerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavDrawerComponent ]
+      declarations: [ NavDrawerComponent ],
     })
     .compileComponents();
   }));

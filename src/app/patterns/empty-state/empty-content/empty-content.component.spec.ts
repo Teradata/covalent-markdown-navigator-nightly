@@ -8,7 +8,7 @@ describe('EmptyContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmptyContentComponent ]
+      declarations: [ EmptyContentComponent ],
     })
     .compileComponents();
   }));

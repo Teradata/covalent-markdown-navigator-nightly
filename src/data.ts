@@ -1,23 +1,23 @@
-export var name: String = "SANDBOX";
+export let name: String = 'SANDBOX';
 
-export var baseURL = "https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox/?view=editor&file=src/app";
+export let baseURL = 'https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox/?view=editor&file=src/app';
 
-export var routes: Object[] = [{
+export let routes: Object[] = [{
   icon: 'home',
   route: '/',
   title: 'Home',
-}
+},
 ];
 
-export var overview: Object[] = [{
+export let overview: Object[] = [{
   color: 'td-orange-700',
   icon: 'extension',
   route: '/',
   title: 'Design Patterns',
-}
+},
 ];
 
-export var patterns: Object[] = [{
+export let patterns: Object[] = [{
   color: 'indigo-800',
   icon: 'add_circle',
   route: 'creation-flow',
@@ -74,7 +74,7 @@ export var patterns: Object[] = [{
 },
 ];
 
-export var layouts: Object[] = [
+export let layouts: Object[] = [
   {
     color: 'red-800',
     icon: 'view_compact',
@@ -102,5 +102,5 @@ export var layouts: Object[] = [
     route: 'card-over',
     title: 'Card Over',
     description: 'Detail views, forms, & blogs',
-  }
+  },
 ];

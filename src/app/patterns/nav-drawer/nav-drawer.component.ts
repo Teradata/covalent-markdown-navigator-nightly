@@ -16,7 +16,7 @@ export class NavDrawerComponent implements OnInit {
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {

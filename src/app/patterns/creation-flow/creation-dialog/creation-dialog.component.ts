@@ -13,7 +13,7 @@ export class CreationDialogComponent {
   constructor(private _titleService: Title,
     public media: TdMediaService,
     public dialog: MatDialog) {
-      Object.assign(this, { baseURL })
+      Object.assign(this, { baseURL });
     }
 
   openDialog() {
@@ -21,7 +21,7 @@ export class CreationDialogComponent {
       width: '600px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
     });
   }
 }

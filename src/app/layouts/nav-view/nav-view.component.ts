@@ -110,6 +110,6 @@ export class NavViewComponent implements OnInit {
 
   ngOnInit(): void {
     this._titleService.setTitle( 'Teradata Covalent - Sandbox' );
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 }

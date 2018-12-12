@@ -10,7 +10,7 @@ import { name, patterns, layouts, routes, baseURL } from '../../data';
 export class OverviewComponent implements OnInit {
 
   constructor(private _titleService: Title) {
-    Object.assign(this, { name, patterns, layouts, routes, baseURL })
+    Object.assign(this, { name, patterns, layouts, routes, baseURL });
   }
 
   ngOnInit(): void {

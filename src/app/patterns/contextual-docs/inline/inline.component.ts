@@ -13,7 +13,7 @@ export class InlineComponent implements OnInit {
 
   constructor(private _titleService: Title,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {

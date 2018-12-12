@@ -7,7 +7,6 @@ import { TdMediaService } from '@covalent/core/media';
 
 // import { UserService, IUser } from './services/user.service';
 
-
 @Component({
   selector: 'qs-card-grid',
   templateUrl: './card-grid.component.html',
@@ -64,14 +63,14 @@ export class CardGridComponent implements OnInit {
     route: '/',
     title: 'Analytics Workflow',
     description: 'Coordinate analytic process flow phases',
-  }
+  },
   ];
 
   constructor(private _titleService: Title,
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {

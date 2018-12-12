@@ -15,7 +15,7 @@ export class AlertsToastsComponent implements OnInit {
   constructor(private _titleService: Title,
               private _snackBarService: MatSnackBar,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {

@@ -10,16 +10,16 @@ import { baseURL } from '../../../../data';
 })
 export class DocsSideSheetComponent implements OnInit {
 
-  name: string = "Sandbox";
+  name: string = 'Sandbox';
   showDescription: boolean = false;
   sheet1: boolean = true;
   sheet2: boolean = false;
   sheet3: boolean = false;
-  mode: string = "side";
+  mode: string = 'side';
 
   constructor(private _titleService: Title,
     public media: TdMediaService) {
-      Object.assign(this, { baseURL })
+      Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {
@@ -30,14 +30,14 @@ export class DocsSideSheetComponent implements OnInit {
     this.sheet1 = false;
     this.sheet2 = false;
     this.sheet3 = false;
-    this.mode = "over";
-    if(sheet === 1) {
+    this.mode = 'over';
+    if (sheet === 1) {
       this.sheet1 = true;
     } else if (sheet === 2) {
       this.sheet2 = true;
     } else {
       this.sheet3 = true;
-      this.mode = "side";
+      this.mode = 'side';
     }
   }
 }

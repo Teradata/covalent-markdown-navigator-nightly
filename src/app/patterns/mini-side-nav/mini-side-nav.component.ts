@@ -101,7 +101,7 @@ export class MiniSideNavComponent implements AfterViewInit {
   ];
 
   constructor(public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   handleDirEmitter(event: 'ltr' | 'rtl'): void {

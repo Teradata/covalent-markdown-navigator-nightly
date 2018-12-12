@@ -14,7 +14,7 @@ export class AlertsComponent implements OnInit {
   constructor(private _titleService: Title,
               private _dialogService: TdDialogService,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {

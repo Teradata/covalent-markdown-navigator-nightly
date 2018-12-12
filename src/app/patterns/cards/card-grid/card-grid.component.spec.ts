@@ -8,7 +8,7 @@ describe('CardGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardGridComponent ]
+      declarations: [ CardGridComponent ],
     })
     .compileComponents();
   }));

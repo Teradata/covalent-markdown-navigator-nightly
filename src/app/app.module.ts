@@ -18,7 +18,7 @@ import {
   MatMenuModule, MatButtonToggleModule,
   MatProgressSpinnerModule, MatSlideToggleModule, MatDialogModule, MatSnackBarModule,
   MatTabsModule, MatSidenavModule, MatRippleModule, MatRadioModule, MatGridListModule,
-  MatDatepickerModule, MatNativeDateModule, MatSliderModule, MatAutocompleteModule
+  MatDatepickerModule, MatNativeDateModule, MatSliderModule, MatAutocompleteModule,
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
@@ -64,7 +64,7 @@ import { CardImagesComponent } from './patterns/cards/card-images/card-images.co
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
 import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
 import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
-import { CreationDialogComponent, DialogContentExampleDialog} from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+import { CreationDialogComponent, DialogContentExampleDialog } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
 import { EmptyContentComponent } from './patterns/empty-state/empty-content/empty-content.component';

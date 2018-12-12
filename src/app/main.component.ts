@@ -26,7 +26,7 @@ export class MainComponent {
 ];
 
   constructor(private _router: Router) { 
-    Object.assign(this, { name, patterns, layouts, routes, baseURL })
+    Object.assign(this, { name, patterns, layouts, routes, baseURL });
   }
   ngOnInit() {
   }

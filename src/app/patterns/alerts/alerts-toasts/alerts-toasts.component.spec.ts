@@ -8,7 +8,7 @@ describe('AlertsToastsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertsToastsComponent ]
+      declarations: [ AlertsToastsComponent ],
     })
     .compileComponents();
   }));

@@ -10,14 +10,14 @@ import { baseURL } from '../../../data';
 })
 export class StepperComponent implements OnInit {
   user; 
-  state1: String = "none";
-  state2: String = "none";
-  state3: String = "none";
+  state1: String = 'none';
+  state2: String = 'none';
+  state3: String = 'none';
   blockSave: boolean = true;
   
   constructor(private _titleService: Title,
               public media: TdMediaService) {
-    Object.assign(this, { baseURL })
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {
@@ -35,28 +35,28 @@ export class StepperComponent implements OnInit {
          city: '',
          state: '',
          postcode: '',
-      }
+      },
     };
   }
 
   update(step, isValid): void {
-    switch(step) {
+    switch (step) {
       case 1:
-        if(isValid) {
+        if (isValid) {
           this.state1 = 'complete';
         } else {
           this.state1 = 'required';
         }
         break;
       case 2:
-        if(isValid) {
+        if (isValid) {
           this.state2 = 'complete';
         } else {
           this.state2 = 'required';
         }
         break;
       case 3:
-        if(isValid) {
+        if (isValid) {
           this.state3 = 'complete';
           this.blockSave = false;
         } else {
