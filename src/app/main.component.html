@@ -1,20 +1,29 @@
 <td-layout #layout>
   <td-navigation-drawer logo="assets:teradata-dark" sidenavTitle="SANDBOX">
     <mat-nav-list>
-      <a *ngFor="let item of routes" mat-list-item [routerLink]="item.route">
+      <a *ngFor="let item of routes" 
+          mat-list-item 
+          tdLayoutClose 
+          [routerLink]="item.route">
         <mat-icon>{{item.icon}}</mat-icon>{{item.title}}
       </a>
       <mat-divider></mat-divider>
       <h3 matSubheader>Layouts</h3>
       <ng-template let-item let-last="last" ngFor [ngForOf]="layouts">
-        <a mat-list-item [routerLink]="['/layouts', item.route]">
+        <a mat-list-item 
+          tdLayoutClose
+          [routerLink]="['/layouts', item.route]" 
+          [routerLinkActive]="['active']">
           <mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
         </a>
       </ng-template>
       <mat-divider></mat-divider>
       <h3 matSubheader>Patterns</h3>
       <ng-template let-item let-last="last" ngFor [ngForOf]="patterns">
-        <a mat-list-item [routerLink]="['/patterns', item.route]">
+        <a mat-list-item 
+        tdLayoutClose 
+        [routerLinkActive]="['active']"
+        [routerLink]="['/patterns', item.route]">
           <mat-icon matListIcon>{{item.icon}}</mat-icon> {{item.title}}
         </a>
       </ng-template>
