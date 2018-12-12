@@ -56,15 +56,13 @@
       <ng-template let-item let-index="index" ngFor [ngForOf]="cards">
         <div class="fav-list-item" flex-gt-xs="50" flex="100">
           <mat-card href class="mat-card-colored">
-            <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
-              [routerLink]="[item.route]">
+            <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding>
               <mat-icon>{{item.icon}}</mat-icon>
             </mat-toolbar>
-            <div class="card-content" [routerLink]="[item.route]">
+            <div class="card-content">
               <div layout="column" layout-padding>
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
                 <div class="mat-caption tc-grey-600 text-truncate" [title]="item.description"> item.description </div>
-
               </div>
             </div>
             <mat-divider></mat-divider>
