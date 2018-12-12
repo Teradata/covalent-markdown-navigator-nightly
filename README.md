@@ -7,7 +7,7 @@ Resources for demos, design patterns and sketch
 * Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
 * Install Angular CLI `npm i -g @angular/cli`
 * Install Typescript `npm i -g typescript`
-* Install TSLint `npm install -g tslint`
+* Install TSLint `npm i -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
 * Install Node packages `yarn install`
 * Run local build `ng serve`
