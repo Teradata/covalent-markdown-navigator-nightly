@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
-import { LoginComponent } from './login/login.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
@@ -38,9 +37,6 @@ import { CardGridComponent } from './patterns/cards/card-grid/card-grid.componen
 import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
 
 const routes: Routes = [{
-    path: 'login',
-    component: LoginComponent,
-  }, {
     path: '',
     component: MainComponent,
     children: [

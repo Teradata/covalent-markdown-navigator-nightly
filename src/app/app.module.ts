@@ -39,7 +39,6 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MOCK_API } from '../config/api.config';
 
 import { MainComponent } from './main.component';
-import { LoginComponent } from './login/login.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
@@ -82,7 +81,6 @@ export function getAPI(): string {
   declarations: [
     AppComponent,
     MainComponent,
-    LoginComponent,
     OverviewComponent,
     ManageListComponent,
     NavViewComponent,
