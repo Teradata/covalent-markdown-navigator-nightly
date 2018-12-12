@@ -11,6 +11,9 @@
     <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
       <mat-icon svgIcon="assets:github"></mat-icon>
     </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/mini-side-nav/mini-side-nav.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
   </div>
   <td-layout-manage-list class="side" #manageList [mode]="'side'" [sidenavWidth]="(margin | async) + 'px'"
     [ngClass]="{'open': !miniNav}">
@@ -72,10 +75,6 @@
           <div layout="row" layout-align="start center">
               <mat-card-title> Mini Side Nav </mat-card-title>
               <span flex></span>
-              <a mat-icon-button [href]="baseURL + '/patterns/mini-side-nav/mini-side-nav.component.html'" target="_blank"
-                class="push-right">
-                <mat-icon color="primary" matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
-              </a>
           </div>
           <mat-divider></mat-divider>
           <mat-card-content>
