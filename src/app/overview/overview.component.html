@@ -41,12 +41,6 @@
                 <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description" matTooltipShowDelay="1000">{{item.description}}</div>
               </div>
             </div>
-            <mat-divider></mat-divider>
-            <div layout="row" layout-align="end center">
-              <a mat-icon-button [href]="baseURL + '/layouts/' + item.route + '/' + item.route + '.component.html'" target="_blank">
-                <mat-icon color="tc-grey-700" matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
-              </a>
-            </div>
           </mat-card>
         </div>
       </ng-template>
@@ -68,13 +62,6 @@
                 <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
                 <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description" matTooltipShowDelay="1000">{{item.description}}</div>
               </div>
-            </div>
-            <mat-divider></mat-divider>
-            <div layout="row" layout-align="end center">
-              <a mat-icon-button [href]="baseURL + '/patterns/' + item.route + '/' + item.route + '.component.html'"
-                target="_blank">
-                <mat-icon color="tc-grey-700" matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
-              </a>
             </div>
           </mat-card>
         </div>
