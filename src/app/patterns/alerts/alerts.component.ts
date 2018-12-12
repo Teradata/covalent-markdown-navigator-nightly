@@ -2,7 +2,6 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TdDialogService } from '@covalent/core';
 import { TdMediaService } from '@covalent/core/media';
-import { MatSnackBar } from '@angular/material';
 import { baseURL } from '../../../data';
 
 @Component({
@@ -13,7 +12,6 @@ import { baseURL } from '../../../data';
 export class AlertsComponent implements OnInit {
 
   constructor(private _titleService: Title,
-              private _snackBarService: MatSnackBar,
               private _dialogService: TdDialogService,
               public media: TdMediaService) {
     Object.assign(this, { baseURL })
@@ -42,9 +40,5 @@ export class AlertsComponent implements OnInit {
         // DO SOMETHING ELSE
       }
     });
-  }
-   showSnackBar(): void {
-    this._snackBarService
-      .open('Connection timed out.  Showing limited messages.', 'RETRY', { duration: 3000 });
   }
 }
