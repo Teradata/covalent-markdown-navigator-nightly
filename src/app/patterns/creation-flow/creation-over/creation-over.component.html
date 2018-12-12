@@ -24,19 +24,19 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a mat-list-item [routerLink]="['/patterns','creation-flow']">
+      <a mat-list-item [routerLink]="['/patterns', 'creation-flow']">
         <mat-icon matListIcon>view_list</mat-icon>
         Management List
       </a>
-      <a mat-list-item [class.active]="true" [routerLink]="['/patterns','creation-flow','card-over']">
+      <a mat-list-item  [class.active]="true" [routerLink]="['/patterns', 'creation-flow', 'card-over']">
         <mat-icon matListIcon>view_day</mat-icon>
         Card Over
       </a>
-      <a mat-list-item [routerLink]="['/patterns','creation-flow','dialog']">
+      <a mat-list-item [routerLink]="['/patterns', 'creation-flow', 'dialog']">
         <mat-icon matListIcon>filter_none</mat-icon>
         Dialog
       </a>
-      <a mat-list-item [routerLink]="['/patterns','creation-flow','sidesheet']">
+      <a mat-list-item [routerLink]="['/patterns', 'creation-flow', 'sidesheet']">
         <mat-icon matListIcon>format_indent_increase</mat-icon>
         Sidesheet
       </a>

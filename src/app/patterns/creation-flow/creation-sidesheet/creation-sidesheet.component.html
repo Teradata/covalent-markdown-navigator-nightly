@@ -24,19 +24,19 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a mat-list-item [routerLink]="['/patterns','creation-flow']">
+      <a mat-list-item [routerLink]="['../']">
         <mat-icon matListIcon>view_list</mat-icon>
         Management List
       </a>
-      <a mat-list-item [routerLink]="['/patterns','creation-flow','card-over']">
+      <a mat-list-item [routerLink]="['../card-over']">
         <mat-icon matListIcon>view_day</mat-icon>
         Card Over
       </a>
-      <a mat-list-item [routerLink]="['/patterns','creation-flow','dialog']">
+      <a mat-list-item [routerLink]="['../dialog']">
         <mat-icon matListIcon>filter_none</mat-icon>
         Dialog
       </a>
-      <a mat-list-item [class.active]="true" [routerLink]="['/patterns','creation-flow','sidesheet']">
+      <a mat-list-item [class.active]="true" [routerLink]="['../sidesheet']">
         <mat-icon matListIcon>format_indent_increase</mat-icon>
         Sidesheet
       </a>
@@ -55,7 +55,7 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-drawer-container fullscreen flex>
-      <mat-drawer #matDrawer position="end" mode="side" [style.width.%]="(media.registerQuery('gt-xs') | async) ? '50' : '100'"
+      <mat-drawer #matDrawer position="end" mode="over" [style.width.%]="(media.registerQuery('gt-xs') | async) ? '50' : '100'"
         class="mat-body-1">
         <div layout="column" layout-fill>
           <div layout="row" layout-align="start center">
