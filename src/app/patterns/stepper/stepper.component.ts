@@ -9,7 +9,7 @@ import { baseURL } from '../../../data';
   styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent implements OnInit {
-  user; 
+  user: Object[]; 
   state1: String = 'none';
   state2: String = 'none';
   state3: String = 'none';
@@ -39,7 +39,7 @@ export class StepperComponent implements OnInit {
     };
   }
 
-  update(step, isValid): void {
+  update(step: any, isValid: Boolean): void {
     switch (step) {
       case 1:
         if (isValid) {
@@ -62,6 +62,9 @@ export class StepperComponent implements OnInit {
         } else {
           this.state3 = 'required';
         }
+        break;
+      default: 
+        return;
     }
   } 
 }

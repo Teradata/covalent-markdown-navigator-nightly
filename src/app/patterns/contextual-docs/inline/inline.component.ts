@@ -9,7 +9,7 @@ import { baseURL } from '../../../../data';
   styleUrls: ['./inline.component.scss'],
 })
 export class InlineComponent implements OnInit {
-  user;
+  user: Object[];
 
   constructor(private _titleService: Title,
               public media: TdMediaService) {

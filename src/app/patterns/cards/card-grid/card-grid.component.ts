@@ -14,7 +14,7 @@ import { TdMediaService } from '@covalent/core/media';
 })
 export class CardGridComponent implements OnInit {
 
- cards = [
+ cards: Object = [
   {
     color: 'pink-800',
     icon: 'zoom_in',

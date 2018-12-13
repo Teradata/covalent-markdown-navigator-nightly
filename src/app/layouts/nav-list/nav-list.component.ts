@@ -34,20 +34,6 @@ export class NavListComponent implements OnInit {
     title: 'Components & Addons',
   },
 ];
-usermenu: Object[] = [{
-    icon: 'swap_horiz',
-    route: '.',
-    title: 'Switch account',
-  }, {
-    icon: 'tune',
-    route: '.',
-    title: 'Account settings',
-  }, {
-    icon: 'exit_to_app',
-    route: '.',
-    title: 'Sign out',
-  },
-];
 navmenu: Object[] = [{
     icon: 'looks_one',
     route: '.',

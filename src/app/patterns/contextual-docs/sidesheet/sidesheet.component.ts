@@ -26,7 +26,7 @@ export class DocsSideSheetComponent implements OnInit {
     this._titleService.setTitle('Contextual Docs - Side Sheet');
   }
 
-  showSheet(sheet): void {
+  showSheet(sheet: Number ): void {
     this.sheet1 = false;
     this.sheet2 = false;
     this.sheet3 = false;

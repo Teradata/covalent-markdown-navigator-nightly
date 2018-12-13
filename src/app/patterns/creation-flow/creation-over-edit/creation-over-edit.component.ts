@@ -9,25 +9,90 @@ import { baseURL } from '../../../../data';
   styleUrls: ['./creation-over-edit.component.scss'],
 })
 export class CreationOverEditComponent implements OnInit {
-  user;
-  blockSave: boolean = true;
+  user: Object[];
+  blockSave: Boolean = true;
   state1: String = 'none';
   state2: String = 'none';
   state3: String = 'none';
-  @ViewChild('form1') _form1;
-  @ViewChild('form2') _form2;
-  @ViewChild('form3') _form3;
+
+  @ViewChild('form1')
+  @ViewChild('form2')
+  @ViewChild('form3')
 
   constructor(private _titleService: Title,
     public media: TdMediaService) {
-      Object.assign(this, { baseURL });
+    Object.assign(this, { baseURL });
   }
 
-  states: String[] = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY', 'AE', 'AA', 'AP'];
-  
+  // tslint:disable-next-line:member-ordering
+  states: any[] = [
+    'AL',
+    'AK',
+    'AS',
+    'AZ',
+    'AR',
+    'CA', 
+    'CO', 
+    'CT', 
+    'DE', 
+    'DC', 
+    'FM', 
+    'FL', 
+    'GA', 
+    'GU', 
+    'HI', 
+    'ID', 
+    'IL', 
+    'IN', 
+    'IA', 
+    'KS', 
+    'KY', 
+    'LA', 
+    'ME', 
+    'MH', 
+    'MD', 
+    'MA', 
+    'MI', 
+    'MN', 
+    'MS', 
+    'MO', 
+    'MT', 
+    'NE', 
+    'NV', 
+    'NH', 
+    'NJ', 
+    'NM', 
+    'NY', 
+    'NC', 
+    'ND', 
+    'MP', 
+    'OH', 
+    'OK', 
+    'OR', 
+    'PW',
+    'PA', 
+    'PR', 
+    'RI', 
+    'SC', 
+    'SD', 
+    'TN', 
+    'TX', 
+    'UT', 
+    'VT', 
+    'VI', 
+    'VA', 
+    'WA', 
+    'WV', 
+    'WI', 
+    'WY', 
+    'AE', 
+    'AA', 
+    'AP',
+  ];
+
   ngOnInit(): void {
     this._titleService.setTitle('Card Over');
-    
+
     this.user = {
       name: {
         first: '',
@@ -36,16 +101,16 @@ export class CreationOverEditComponent implements OnInit {
       email: '',
       nickname: '',
       address: {
-         street: '',
-         street2: '',
-         city: '',
-         state: '',
-         postcode: '',
+        street: '',
+        street2: '',
+        city: '',
+        state: '',
+        postcode: '',
       },
     };
   }
 
-  update(step, isValid): void {
+  update(step: any, isValid: Boolean): void {
     switch (step) {
       case 1:
         if (isValid) {
@@ -68,6 +133,9 @@ export class CreationOverEditComponent implements OnInit {
         } else {
           this.state3 = 'required';
         }
+        break;
+      default:
+        return;
     }
-  } 
+  }
 }

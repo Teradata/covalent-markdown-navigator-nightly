@@ -1,6 +1,6 @@
 export let name: String = 'SANDBOX';
 
-export let baseURL = 'https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox/?view=editor&file=src/app';
+export let baseURL: String = 'https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/sandbox/?view=editor&file=src/app';
 
 export let routes: Object[] = [{
   icon: 'home',
