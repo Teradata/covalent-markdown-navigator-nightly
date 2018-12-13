@@ -9,86 +9,22 @@ import { baseURL } from '../../../../data';
   styleUrls: ['./creation-edit.component.scss'],
 })
 export class CreationEditComponent implements OnInit {
-  user: Object[];
+  user;
   blockSave: boolean = true;
   state1: String = 'none';
   state2: String = 'none';
   state3: String = 'none';
-
-  @ViewChild('form1')
-  @ViewChild('form2')
-  @ViewChild('form3')
+  @ViewChild('form1') _form1;
+  @ViewChild('form2') _form2;
+  @ViewChild('form3') _form3;
 
   constructor(private _titleService: Title,
     public media: TdMediaService) {
       Object.assign(this, { baseURL });
   }
-  // tslint:disable-next-line:member-ordering
-  states: any[] = [
-    'AL',
-    'AK',
-    'AS',
-    'AZ',
-    'AR',
-    'CA', 
-    'CO', 
-    'CT', 
-    'DE', 
-    'DC', 
-    'FM', 
-    'FL', 
-    'GA', 
-    'GU', 
-    'HI', 
-    'ID', 
-    'IL', 
-    'IN', 
-    'IA', 
-    'KS', 
-    'KY', 
-    'LA', 
-    'ME', 
-    'MH', 
-    'MD', 
-    'MA', 
-    'MI', 
-    'MN', 
-    'MS', 
-    'MO', 
-    'MT', 
-    'NE', 
-    'NV', 
-    'NH', 
-    'NJ', 
-    'NM', 
-    'NY', 
-    'NC', 
-    'ND', 
-    'MP', 
-    'OH', 
-    'OK', 
-    'OR', 
-    'PW',
-    'PA', 
-    'PR', 
-    'RI', 
-    'SC', 
-    'SD', 
-    'TN', 
-    'TX', 
-    'UT', 
-    'VT', 
-    'VI', 
-    'VA', 
-    'WA', 
-    'WV', 
-    'WI', 
-    'WY', 
-    'AE', 
-    'AA', 
-    'AP',
-  ];
 
+  states: String[] = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY', 'AE', 'AA', 'AP'];
+  
   ngOnInit(): void {
     this._titleService.setTitle('Card Over');
     
@@ -109,7 +45,7 @@ export class CreationEditComponent implements OnInit {
     };
   }
 
-  update(step: any, isValid: Boolean): void {
+  update(step, isValid): void {
     switch (step) {
       case 1:
         if (isValid) {
@@ -132,9 +68,6 @@ export class CreationEditComponent implements OnInit {
         } else {
           this.state3 = 'required';
         }
-        break;
-      default:
-        return;
     }
   } 
 }

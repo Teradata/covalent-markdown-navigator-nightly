@@ -9,6 +9,11 @@ import { baseURL } from '../../../data';
   styleUrls: ['./card-over.component.scss'],
 })
 export class CardOverComponent implements OnInit {
+
+  constructor(private _titleService: Title,
+    public media: TdMediaService) {
+      Object.assign(this, { baseURL });
+  }
   
   routes: Object[] = [{
       icon: 'home',
@@ -32,7 +37,21 @@ export class CardOverComponent implements OnInit {
     title: 'Components & Addons',
   },
   ];
-  cardList: Object[] = [{
+  usermenu: Object[] = [{
+    icon: 'swap_horiz',
+    route: '.',
+    title: 'Switch account',
+  }, {
+    icon: 'tune',
+    route: '.',
+    title: 'Account settings',
+  }, {
+    icon: 'exit_to_app',
+    route: '.',
+    title: 'Sign out',
+  },
+  ];
+  cardlist: Object[] = [{
     icon: 'account_box',
     route: '.',
     title: 'John Jameson',
@@ -61,11 +80,6 @@ export class CardOverComponent implements OnInit {
       description: 'Created',
     },
   ];
-
-  constructor(private _titleService: Title,
-    public media: TdMediaService) {
-      Object.assign(this, { baseURL });
-  }
   
   ngOnInit(): void {
     this._titleService.setTitle('Card Over');
