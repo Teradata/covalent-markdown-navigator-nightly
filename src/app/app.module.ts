@@ -64,7 +64,7 @@ import { CardImagesComponent } from './patterns/cards/card-images/card-images.co
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
 import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
 import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
-import { CreationDialogComponent, ContentComponent } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+import { CreationDialogComponent, DialogContentExampleDialog } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
 import { EmptyContentComponent } from './patterns/empty-state/empty-content/empty-content.component';
@@ -107,7 +107,7 @@ export function getAPI(): string {
     CreationOverComponent,
     CreationOverEditComponent,
     CreationDialogComponent,
-    ContentComponent,
+    DialogContentExampleDialog,
     CreationSidesheetComponent,
     EmptyFilterComponent,
     EmptyContentComponent,
@@ -155,7 +155,7 @@ export function getAPI(): string {
   providers: [
     httpInterceptorProviders,
   ], // additional providers needed for this module
-  entryComponents: [ CreationDialogComponent, ContentComponent ],
+  entryComponents: [ CreationDialogComponent, DialogContentExampleDialog ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {}
