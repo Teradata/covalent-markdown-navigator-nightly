@@ -1,7 +1,7 @@
 export let name: String = 'SANDBOX';
 
 // TODO: Update after release
-export let baseURL = 'https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/demos/?view=editor&file=src/app';
+export let baseURL: String = 'https://stackblitz.com/github/Teradata/covalent-resources/tree/feat/demos/?view=editor&file=src/app';
 
 export let routes: Object[] = [{
   icon: 'home',
@@ -16,7 +16,7 @@ export let patterns: Object[] = [{
   route: 'creation-flow',
   title: 'Dummy Pattern',
   description: 'Placeholder for pattern',
-}
+},
 ];
 
 export let layouts: Object[] = [
@@ -26,5 +26,5 @@ export let layouts: Object[] = [
     route: 'nav-view',
     title: 'Dummy Layout',
     description: 'Placeholder for layout',
-  }
+  },
 ];

@@ -8,11 +8,9 @@ import { name, patterns, layouts, routes, baseURL } from '../data';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  baseURL;
+  baseURL: String;
 
   constructor(private _router: Router) {
     Object.assign(this, { name, patterns, layouts, routes, baseURL });
-  }
-  ngOnInit() {
   }
 }
