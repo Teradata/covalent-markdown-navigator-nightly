@@ -25,9 +25,9 @@ Components should be reusable and ubiquitous across the design applications and 
 
 ### Available resources:
 
-* [Adobe Illustrator](resources/illustrator)
-* [Axure RP](resources/axure)
-* [Sketch](resources/sketch)
+* [Adobe Illustrator](templates/illustrator)
+* [Axure RP](templates/axure)
+* [Sketch](templates/sketch)
 
 #### Included in templates
 
