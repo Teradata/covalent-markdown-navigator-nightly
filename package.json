@@ -32,16 +32,8 @@
   "author": "Teradata UX",
   "contributors": [
     "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
-    "Richa Vyas <richa.vyas@teradata.com>",
-    "Ed Morales <eduardo.morales@teradata.com>",
-    "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Smartt <jeremy.smartt@teradata.com>",
-    "Ilsun Park <ilsun.park@teradata.com>",
-    "Steven Ov <steven.ov@teradata.com>",
-    "Jenn Medellin <jennifer.medellin@teradata.com>",
-    "Julie Knowles <julie.knowles@teradata.com>",
-    "Christian Memije <christain.memije@teradata.com>",
-    "Phil Dominguez <phillip.dominguez@teradata.com>"
+    "Natasha Radushkevich <natalia.radushkevich@teradata.com>",
+    "Jenn Medellin <jennifer.medellin@teradata.com>"
   ],
   "dependencies": {
     "@angular/animations": "7.0.0",
