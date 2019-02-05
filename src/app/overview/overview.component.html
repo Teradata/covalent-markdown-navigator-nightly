@@ -1,0 +1,78 @@
+<td-layout-nav logo="assets:teradata" [toolbarTitle]="name" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/"
+      target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources"
+      target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/overview/overview.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <div flex>
+    <div class="bgc-td-slate pad-xl">
+      <div layout="row" layout-align="start center">
+        <mat-icon hide-xs svgIcon="assets:covalent-mark" class="push-right logo"></mat-icon>
+        <div>
+          <h1 class="mat-title mat-display-1 tc-blue-grey-50 push-bottom-none">Covalent Sandbox</h1>
+          <h2 class="mat-headline tc-white push-bottom-none">Demos and best practices for enterprise apps built on
+            Covalent</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="pad" layout="row" layout-align="start center">
+      <h3 flex class="mat-headline tc-grey-700 pad-left pad-top push-bottom-none text-upper">Layouts</h3>
+    </div>
+
+    <div layout="row" class="pad" layout-wrap>
+      <ng-template let-item let-index="index" ngFor [ngForOf]="layouts">
+        <div class="fav-list-item" flex-gt-xs="25" flex="50">
+          <mat-card href [routerLink]="['layouts', item.route]" class="mat-card-colored">
+            <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
+              [routerLink]="['layouts', item.route]">
+              <mat-icon>{{item.icon}}</mat-icon>
+            </mat-toolbar>
+            <div class="card-content" [routerLink]="['layouts', item.route]">
+              <div layout="column" layout-padding>
+                <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
+                <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description"
+                  matTooltipShowDelay="1000">{{item.description}}</div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </ng-template>
+    </div>
+    <div class="pad" layout="row" layout-align="start center">
+      <h3 flex class="mat-headline tc-grey-700 pad-left pad-top push-bottom-none text-upper">Patterns</h3>
+      <mat-divider></mat-divider>
+    </div>
+    <div layout="row" class="pad" layout-wrap>
+      <ng-template let-item let-index="index" ngFor [ngForOf]="patterns">
+        <div class="fav-list-item" flex-gt-xs="25" flex="50">
+          <mat-card href [routerLink]="['patterns', item.route]" class="mat-card-colored">
+            <mat-toolbar [ngClass]="'bgc-' + item.color" layout="column" layout-align="center center" layout-padding
+              [routerLink]="['patterns', item.route]">
+              <mat-icon>{{item.icon}}</mat-icon>
+            </mat-toolbar>
+            <div class="card-content" [routerLink]="['patterns', item.route]">
+              <div layout="column" layout-padding>
+                <div class="mat-subheading-2 text-truncate push-none" [matTooltip]="item.title" matTooltipShowDelay="1000">{{item.title}}</div>
+                <div class="mat-body-1 text-truncate push-none tc-grey-700" [matTooltip]="item.description"
+                  matTooltipShowDelay="1000">{{item.description}}</div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</td-layout-nav>
