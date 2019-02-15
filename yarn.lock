@@ -241,56 +241,79 @@
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/code-editor@2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-2.0.0-beta.5.tgz#3ed1cc8c0b6561f6db37a3b987cde95095902c42"
-  integrity sha512-39LW4fLlw52F3LCJFs7ruz6H/Au/lt11wO/eembRyE5nLBJN6CdIFyur7sVrcEwg61WgHS1SBKG+8VxXz0X8XA==
+"@covalent/code-editor@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@covalent/code-editor/-/code-editor-2.0.2.tgz#8a62dd1ab5726addbd34df12b51c53ff431a8eef"
+  integrity sha512-nHFaw5bUoyWrqS3B0B24cj4y+tgjgp2MUexzC/BjpRrq8gOojwgZ+B5mp/2nhmcxBFU02ibamg9JdTDsjWWA/g==
   dependencies:
     monaco-editor "^0.10.1"
     tslib "^1.9.0"
 
-"@covalent/core@2.0.0-beta.5", "@covalent/core@^2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.0-beta.5.tgz#1a82895ae31cb75b6b1fd554119550b027216678"
-  integrity sha512-pEhp2qwTzQ26OkZeU48n4ifGU4Gx4+7l4TsaZcUyREK2huaYbGMQCYrIhpeuecB04iNTDBOfWBSftBLQ7X9X9w==
+"@covalent/core@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.0.tgz#58912dc0ccc3bde09f8797e19e9e87cf157c796d"
+  integrity sha512-MPHyNyqRX7vZot1wRDjWYetJEYXODV28BbILOP/uTcbOhsVpdftlS1s1UHegXEMbHU6/1wtmwPNRDEgcBuQmjA==
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/dynamic-forms@2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/dynamic-forms/-/dynamic-forms-2.0.0-beta.5.tgz#22ef2ae56e8d3fae76e806eb0e6ee0bb02bb2616"
-  integrity sha512-nNGnQ7aO1LUukjNVmBxryOcPQuqSk33biU/aAUj5Ddq758YyQcbLXmcQA/e7l3GFy8CnAZratUseuFkHpikHLw==
+"@covalent/core@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.1.tgz#1ab727711d136dbc37be5a7cc6ca905d82c3629e"
+  integrity sha512-AZ+sWLoYs1IvKFrVJCA98irtbsAgU4c4dIfsHhiXt9qzRri4u/B2S6T3GvITWp3U83MCIfCAdPAVBIX0aKIgTA==
   dependencies:
-    "@covalent/core" "^2.0.0-beta.5"
     tslib "^1.9.0"
 
-"@covalent/highlight@2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-2.0.0-beta.5.tgz#4ad6f16987d5d36e00ef5cbb2b1e335afc64a775"
-  integrity sha512-bi99EFlYON/xko91T2bytd6Grg7hvaujtXWpUS3myOh6+7VJZkJ6CjC+iqoYMWLMphgltEzxinwIW7Nl8WW8ZQ==
+"@covalent/dynamic-forms@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/dynamic-forms/-/dynamic-forms-2.0.0.tgz#68df06c96008beef5e853de6f8f0117c4ff41b9b"
+  integrity sha512-821pHzOnf78zQZL9SNoZHbxh7tkG751olprtQKJBNX+KiXAQtWrgiqoaXaKC19Eafcabt5FdzNNW1cz3Q7s2Fg==
+  dependencies:
+    "@covalent/core" "^2.0.0"
+    tslib "^1.9.0"
+
+"@covalent/echarts@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/echarts/-/echarts-2.0.0.tgz#f9400bf5c168289d75db3c0b63af594952f30263"
+  integrity sha512-TPmka26QUBZWfnpy82ZC+yQM+Hz7h7vTAfm8UyPiujRgcsnZ1Q/cOJ8FEzuxNiEB48bT54ONHppfBxyVFBBuyw==
+  dependencies:
+    tslib "^1.9.0"
+
+"@covalent/flavored-markdown@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/flavored-markdown/-/flavored-markdown-2.0.0.tgz#071e334019cb3e0a1964e2cb8de02c8a4cf7c5aa"
+  integrity sha512-rbEZ6unRmLKCq5ZUj/bCnZ6bWamZUpxEsXoiU0mhf6Q+w0OSb6QD4OA8rQrusE+tFwNTJzPr895Gs/oaFePJkg==
+  dependencies:
+    highlight.js "9.11.0"
+    showdown "1.6.4"
+    tslib "^1.9.0"
+
+"@covalent/highlight@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-2.0.0.tgz#72dc81852cbad3e392878e1532bc9f58b4072b57"
+  integrity sha512-wVkXa+aWEwEKgLg4TUuQngs6KgD1HRx2pbbtaor3+Iy75MGLGgPSj8o2GtMgkYn2ozGKeh/7IdsiqQrTjpNGDw==
   dependencies:
     highlight.js "9.11.0"
     tslib "^1.9.0"
 
-"@covalent/http@2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/http/-/http-2.0.0-beta.5.tgz#36c76419b79720e37d0527029d58034c0b9a7492"
-  integrity sha512-hdkXQ710ZK0Aazm/nDiMRe11vPoBDxt3rG2ymc95GOzsAUZDO8Gy1Kb9uwuknZqJSkyYjjRc8Kph3nzeenHHJQ==
+"@covalent/http-deprec@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/http-deprec/-/http-deprec-2.0.0.tgz#89a6b2aba81725d5e86d354b949744bfb0e6b35b"
+  integrity sha512-AmocNKLLXtWMSFdFTras6vrBb2lZHjlRiTqAV7SoLAaYH8puC0gULUN8Ar/QYlL5J6H4n3lJM2qr+iL2pwlbNw==
   dependencies:
     tslib "^1.9.0"
 
-"@covalent/markdown@2.0.0-beta.5":
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-2.0.0-beta.5.tgz#5c0a5b4040e1f7813ade7d2cade80785ba39644f"
-  integrity sha512-FSnpAdTL9bBxJA41y9PhxPmFPRLQhGFETnL9Rw1YzIq4x9xl+p1Iq0hkiPabfj79bCEpkbVpxq1/Ml8nYbP7EA==
+"@covalent/markdown@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-2.0.0.tgz#3dfb2b0b1225db2aeca255569b5baa9ff949b4a7"
+  integrity sha512-XEEGqU+/JPh1iCNrCt02EJQ+aPlJUSr43eKNmVkjqtgDycjCiJmwkNmYXxEU4obtnFkZ10eO+RkOp/5kzqkm1g==
   dependencies:
     showdown "1.6.4"
     tslib "^1.9.0"
 
-"@covalent/text-editor@2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-2.0.0-beta.2.tgz#172ac2d2a5f5f3fb3b1d1d62053e823b4f83146c"
-  integrity sha512-0d+DLlBj9KAq2sQ9D0Z3PbEX15kBDYSCSd/6CzE2yJtNFL74imMPinCK0KzbxYqUDRa64vpqNdW/9i1PzZ6Jtw==
+"@covalent/text-editor@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@covalent/text-editor/-/text-editor-2.0.0.tgz#8c8b7170abbac49d849c960d441241481f89e60a"
+  integrity sha512-DRRwRxGBkpviDmOXiDF7aSqUhYvHIbhopciB4nYBYgEPLqidbX1E5UAzddI+T6Bc+l6u9Ctrp1SJ21X5IiqorQ==
   dependencies:
     simplemde "^1.11.2"
     tslib "^1.9.0"
