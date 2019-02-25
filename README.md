@@ -10,7 +10,7 @@ Best practices and examples of Covalent layouts and patterns as well as resource
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm i -g tslint`
 * Install Protractor for e2e testing `npm install -g protractor`
-* Install Node packages `yarn i`
+* Install Node packages `npm i`
 * Run local build `ng serve`
 * If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 
