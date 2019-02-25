@@ -5,7 +5,7 @@ Best practices and examples of Covalent layouts and patterns as well as resource
 
 ## Sandbox Setup
 
-* Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
+* Ensure you have Node 8.9.4+ and NPM 5+ installed.
 * Install Angular CLI `npm i -g @angular/cli`
 * Install Typescript `npm i -g typescript`
 * Install TSLint `npm i -g tslint`
