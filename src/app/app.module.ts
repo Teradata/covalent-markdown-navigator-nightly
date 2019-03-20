@@ -15,7 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import {
-  MatDialogModule, MatSnackBarModule, MatSidenavModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  MatSidenavModule,
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
@@ -24,7 +26,11 @@ import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentLoadingModule } from '@covalent/core/loading';
-import { CovalentMessageModule, CovalentStepsModule, CovalentDialogsModule } from '@covalent/core';
+import {
+  CovalentMessageModule,
+  CovalentStepsModule,
+  CovalentDialogsModule,
+} from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { CovalentHttpModule } from '@covalent/http';
@@ -37,16 +43,20 @@ import { MOCK_API } from '../config/api.config';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { AlertsComponent } from './patterns/alerts/alerts.component';
+import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
+import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
 
-const httpInterceptorProviders: Type<any>[] = [
-  RequestInterceptor,
-];
+const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     OverviewComponent,
+    AlertsComponent,
+    AlertsInlineComponent,
+    AlertsToastsComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
@@ -81,17 +91,18 @@ const httpInterceptorProviders: Type<any>[] = [
     CovalentStepsModule,
     CovalentDialogsModule,
     CovalentHttpModule.forRoot({
-      interceptors: [{
-        interceptor: RequestInterceptor, paths: ['**'],
-      }],
+      interceptors: [
+        {
+          interceptor: RequestInterceptor,
+          paths: ['**'],
+        },
+      ],
     }),
     // routes
     appRoutes,
   ], // modules needed to run this module
-  providers: [
-    httpInterceptorProviders,
-  ], // additional providers needed for this module
+  providers: [httpInterceptorProviders], // additional providers needed for this module
   entryComponents: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

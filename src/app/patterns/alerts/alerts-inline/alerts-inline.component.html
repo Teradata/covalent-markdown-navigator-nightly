@@ -1,0 +1,121 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/alerts/alerts-inline/alerts-inline.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">filter_none</mat-icon>
+        <span class="push-left">Alerts</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [routerLink]="['../../alerts']">
+        <mat-icon matListIcon>error</mat-icon>
+        Dialogs
+      </a>
+      <a mat-list-item [routerLink]="['../toasts']">
+        <mat-icon matListIcon>announcement</mat-icon>
+        Toasts
+      </a>
+      <a mat-list-item [class.active]="true">
+        <mat-icon matListIcon>warning</mat-icon>
+        Inline Errors
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Inline</span>
+          <span flex></span>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div layout-gt-sm="row" tdMediaToggle="gt-xs">
+      <div flex-gt-sm>
+        <mat-card>
+          <mat-card-content>
+            <p>For forms and inputs use inline errors for contextual feedback.</p>
+            <form #myForm="ngForm">
+              <div layout-gt-xs="row" layout-margin>
+                <mat-form-field flex>
+                  <input matInput #firstNameForm="ngModel" placeholder="Firstname" [(ngModel)]="first_name" name="first_name"
+                    required tdAutoTrim />
+                  <mat-hint>
+                    <span [hidden]="firstNameForm.pristine || !firstNameForm.errors?.required" class="tc-red-600">Required</span>
+                  </mat-hint>
+                </mat-form-field>
+                <mat-form-field flex>
+                  <input matInput #lastNameForm="ngModel" flex placeholder="Lastname" [(ngModel)]="last_name" name="last_name"
+                    required tdAutoTrim />
+                  <mat-hint>
+                    <span [hidden]="lastNameForm.pristine || !lastNameForm.errors?.required" class="tc-red-600">Required</span>
+                  </mat-hint>
+                </mat-form-field>
+              </div>
+              <div layout-gt-xs="row" layout-margin>
+                <mat-form-field flex="40">
+                  <input matInput #addressEl #addressForm="ngModel" placeholder="Address" [(ngModel)]="address" name="address"
+                    required maxlength="50" tdAutoTrim />
+                  <mat-hint>
+                    <span [hidden]="addressForm.pristine || !addressForm.errors?.required" class="tc-red-600">Required</span>
+                  </mat-hint>
+                  <mat-hint align="end">0 / 50</mat-hint>
+                </mat-form-field>
+                <mat-form-field flex="35">
+                  <input matInput placeholder="City" [(ngModel)]="city" name="city" tdAutoTrim />
+                </mat-form-field>
+              </div>
+              <div layout-gt-xs="row" layout-margin>
+                <mat-form-field flex="20">
+                  <input matInput #stateForm="ngModel" placeholder="State" [(ngModel)]="state" name="state" pattern="[A-Z]{2}"
+                    maxlength="2" required tdAutoTrim />
+                  <mat-hint>
+                    <span [hidden]="stateForm.pristine" class="tc-red-600">
+                      <span [hidden]="!stateForm.errors?.required">Required</span>
+                      <span [hidden]="!stateForm.errors?.pattern">2 uppercase letters</span>
+                    </span>
+                  </mat-hint>
+                  <mat-hint align="end">e.g CA</mat-hint>
+                </mat-form-field>
+                <mat-form-field flex="25">
+                  <input matInput #zipForm="ngModel" placeholder="Zip" [(ngModel)]="zip" name="zip" pattern="\d{5}"
+                    maxlength="5" required />
+                  <mat-hint>
+                    <span [hidden]="zipForm.pristine" class="tc-red-600">
+                      <span [hidden]="!zipForm.errors?.required">Required</span>
+                      <span [hidden]="!zipForm.errors?.pattern">5 digits pls</span>
+                    </span>
+                  </mat-hint>
+                  <mat-hint align="end">e.g 92101</mat-hint>
+                </mat-form-field>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="inset">
+                <button mat-raised-button color="accent" [disabled]="!myForm.valid" class="text-upper">Submit Form</button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </td-layout-manage-list>
+</td-layout-nav>
