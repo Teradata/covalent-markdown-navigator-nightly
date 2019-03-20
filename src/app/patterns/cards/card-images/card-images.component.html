@@ -1,0 +1,94 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/cards/card-images/card-images.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">view_agenda</mat-icon>
+        <span class="push-left">Cards</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [routerLink]="['../']">
+        <mat-icon matListIcon>view_agenda</mat-icon>
+        Standard Card
+      </a>
+      <a mat-list-item [routerLink]="['../card-list']">
+        <mat-icon matListIcon>list</mat-icon>
+        Card List
+      </a>
+      <a mat-list-item [routerLink]="['../card-images']" [class.active]="true">
+        <mat-icon matListIcon>account_circle</mat-icon>
+        Card with Images
+      </a>
+      <a mat-list-item [routerLink]="['../card-grid']">
+        <mat-icon matListIcon>grid_on</mat-icon>
+        Card Grid
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Card with Images</span>
+          <span flex></span>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div layout-gt-sm="column">
+      <div layout-gt-xs="row">
+        <mat-card>
+          <img mat-card-image src="https://placekitten.com/g/600/200">
+          <mat-card-title>Card with Image First</mat-card-title>
+          <mat-card-subtitle>100% Width Image</mat-card-subtitle>
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div layout-gt-xs="row">
+        <mat-card>
+          <mat-card-title-group>
+            <mat-card-title class="text-xl push-none">Card with Small Image</mat-card-title>
+            <mat-card-subtitle class="push-none">80px x 80px Image</mat-card-subtitle>
+            <img mat-card-sm-image src="https://placekitten.com/g/200/200">
+          </mat-card-title-group>
+        </mat-card>
+      </div>
+      <div layout-gt-xs="row">
+        <mat-card>
+          <mat-card-title-group>
+            <mat-card-title class="text-xxl">Card with Medium Image</mat-card-title>
+            <mat-card-subtitle>112px x 112px Image</mat-card-subtitle>
+            <img mat-card-md-image src="https://placekitten.com/g/300/300">
+          </mat-card-title-group>
+        </mat-card>
+      </div>
+      <div layout-gt-xs="row">
+        <mat-card>
+          <mat-card-title-group>
+            <mat-card-title>Card with Large Image</mat-card-title>
+            <mat-card-subtitle>152px x 152px image</mat-card-subtitle>
+            <img mat-card-lg-image src="https://placekitten.com/g/400/400">
+          </mat-card-title-group>
+        </mat-card>
+      </div>
+    </div>
+  </td-layout-manage-list>
+</td-layout-nav>
