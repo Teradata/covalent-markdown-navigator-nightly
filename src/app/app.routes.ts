@@ -12,6 +12,7 @@ import { CreationDialogComponent } from './patterns/creation-flow/creation-dialo
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
 const routes: Routes = [
+  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: '',
     component: MainComponent,
