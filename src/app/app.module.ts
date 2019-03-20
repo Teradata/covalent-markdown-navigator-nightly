@@ -113,7 +113,7 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     appRoutes,
   ], // modules needed to run this module
   providers: [httpInterceptorProviders], // additional providers needed for this module
-  entryComponents: [CreationDialogComponent],
+  entryComponents: [CreationDialogComponent, DialogContentExampleDialog],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
