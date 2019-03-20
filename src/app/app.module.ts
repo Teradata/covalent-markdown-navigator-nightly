@@ -37,6 +37,10 @@ import { MOCK_API } from '../config/api.config';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
+import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
+import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -47,6 +51,10 @@ const httpInterceptorProviders: Type<any>[] = [
     AppComponent,
     MainComponent,
     OverviewComponent,
+    ContextualDocsComponent,
+    InlineComponent,
+    DialogComponent,
+    DocsSideSheetComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules

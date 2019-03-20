@@ -1,0 +1,219 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/contextual-docs/sidesheet/sidesheet.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">help</mat-icon>
+        <span class="push-left">Contextual Docs</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [routerLink]="['../../contextual-docs']">
+        <mat-icon matListIcon color="primary">info</mat-icon>
+        Messages
+      </a>
+      <a mat-list-item [routerLink]="['../inline']">
+        <mat-icon matListIcon>space_bar</mat-icon>
+        Inline
+      </a>
+      <a mat-list-item [routerLink]="['../dialog']">
+        <mat-icon matListIcon>open_in_browser</mat-icon>
+        Dialogs
+      </a>
+      <a mat-list-item [class.active]="true" [routerLink]="['../sidesheet']">
+        <mat-icon matListIcon>format_indent_increase</mat-icon>
+        Side Sheet
+      </a>
+    </mat-nav-list>
+    <mat-drawer-container fullscreen flex>
+      <mat-drawer #matDrawer position="end" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  mode"
+        [style.width.%]="(media.registerQuery('gt-xs') | async) ? '50' : '100'" class="mat-body-1">
+        <div *ngIf="sheet1" layout="column" layout-fill>
+          <div layout="row" layout-align="start center">
+            <h3 class="pad-left" matLine>Sandbox Tour</h3>
+            <span flex></span>
+            <button class="push-right" mat-icon-button (click)="matDrawer.toggle()">
+              <mat-icon matTooltipPosition="before" matTooltip="Close">close</mat-icon>
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row" class="pad-top-sm" flex>
+            <div class="mat-content pad-left pad-right mat-body-1" flex>
+              <h2 class="mat-title">Introduction</h2>
+              <p>This tutorial covers the core features of the sandbox to get you ready to build and manage your
+                applications on the Covalent UI Platform</p>
+              <p>You'll learn the following concepts:</p>
+              <mat-list dense class="text-sm">
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>Purpose of patterns</h3>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>How to x-ray pattern for reusable code snippets</h3>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListAvatar>check_circle</mat-icon>
+                  <h3 matLine>How to contribute to the sandbox</h3>
+                </mat-list-item>
+              </mat-list>
+              <p class="push-top">Let's get started!</p>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row">
+            <button mat-raised-button class="text-upper push" color="accent">continue</button>
+          </div>
+        </div>
+        <div *ngIf="sheet2" layout="column" layout-fill>
+          <div layout="row" layout-align="start center">
+            <h3 class="pad-left" matLine>About Modal Sidesheet</h3>
+            <span flex></span>
+            <button class="push-right" mat-icon-button (click)="matDrawer.toggle()">
+              <mat-icon matTooltipPosition="before" matTooltip="Close">close</mat-icon>
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row" class="pad-top-sm" flex>
+            <div class="mat-content pad-left pad-right mat-body-1" flex>
+              <p>Modal side sheets are used on mobile instead of standard side sheets, due to limited screen size. They
+                can display the same types of content as standard side sheets, but must be dismissed in order to
+                interact with the underlying content.</p>
+              <h3 class="mat-title">Usage</h3>
+              <p>Modal side sheets present content while blocking interaction with the rest of the screen.</p>
+              <p>On mobile, they are used instead of standard side sheets. On larger screens, they can help focus a
+                user’s attention on a key flow, such as making a purchase.</p>
+              <h3 class="mat-title">Behavior</h3>
+              <p>Modal side sheets have a default elevation of 16dp. This elevation allows them to appear over all UI
+                elements.</p>
+              <p>A modal side sheet places all content and UI elements behind a scrim, which indicates that they will
+                not respond to user interaction. Tapping the scrim dismisses both the modal side sheet and scrim from
+                view.</p>
+              <mat-divider></mat-divider>
+              <td-message label="Pro Tip: Make it responsive" sublabel="Set the matDrawer mode based on the media query to show modal on medium screens and standard on larger ones"
+                color="primary">
+              </td-message>
+              <td-highlight flex lang="html">
+                [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
+              </td-highlight>
+              <h3 class="mat-title">Scrolling</h3>
+              <p>Side sheets can be vertically scrolled independent of the rest of the UI. This allows their scroll
+                position and contents to persist while the page is scrolled, and vice versa.</p>
+              <p>Side sheets cannot be horizontally scrolled.</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="sheet3" layout="column" layout-fill>
+          <div layout="row" layout-align="start center">
+            <h3 class="pad-left" matLine>About Standard Sidesheet</h3>
+            <span flex></span>
+            <button class="push-right" mat-icon-button (click)="matDrawer.toggle();">
+              <mat-icon matTooltipPosition="before" matTooltip="Close">close</mat-icon>
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+          <div layout="row" class="pad-top-sm" flex>
+            <div class="mat-content pad-left pad-right mat-body-1" flex>
+              <h3 class="mat-title">Usage</h3>
+              <p>Standard side sheets co-exist with the screen’s primary UI region, which allows viewing and
+                interaction with both surfaces. They are used only on tablet and desktop.</p>
+              <p>Standard side sheets are commonly used for:</p>
+              <ul>
+                <li>Keeping a feature or content on-screen, if the primary UI region is frequently scrolled or panned</li>
+                <li>Contextual actions that affect the primary region, such as filters</li>
+                <li>
+                  Supporting information or metadata, such as location or photo details</li>
+                <li>Short tasks that can be accomplished in a single screen, such as configuring options or specifying
+                  item details before making a purchase</li>
+              </ul>
+              <h3 class="mat-title">Behavior</h3>
+              <p>Standard side sheets that aren’t permanent should include affordances to open and close the sheet.</p>
+              <p>Common open affordances include action icons in top app bars or buttons in the screen layout. While a
+                single affordance can be used to toggle the visibility of the sheet on or off, a separate close
+                affordance within the sheet is recommended.</p>
+              <h3 class="mat-title">Elevation</h3>
+              <p>Standard side sheets can be set at the same elevation as the main content or placed above it, at 8dp.</p>
+              <p>Their elevation can be used to indicate their hierarchical relationship to content or affect its
+                behavior in the layout grid.</p>
+              <h3 class="mat-title">Coplanar elevation</h3>
+              <p>Coplanar elevation places the sheet at the same elevation as content, indicating the two surfaces are
+                related and of equal importance. Coplanar sheets affect the layout grid and shrink the available area
+                for content.</p>
+              <h3 class="mat-title">Above content</h3>
+              <p>When the standard side sheet is elevated above content, it can indicate hierarchical meaning or simply
+                be for layout purposes. Surfaces elevated in front of others often convey more importance or control
+                over those behind them. They don’t affect the layout grid, and should only be used for temporarily
+                visible sheets since they obscure content.</p>
+            </div>
+          </div>
+        </div>
+      </mat-drawer>
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <div td-toolbar-content layout="row" layout-align="start center" flex>
+            <span>Side Sheet</span>
+            <span flex></span>
+            <button mat-icon-button class="push-right" (click)="matDrawer.toggle(); showSheet(1)">
+              <mat-icon color="primary">help</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <mat-card class="push">
+        <mat-card-title>What is a side sheet?</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          A side sheet is embedded full documentation for the page being viewed. Optionally create side sheets about a
+          dedicated section of your application.
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="push">
+      </mat-card>
+      <mat-card class="push">
+        <div layout="row" layout-align="start center">
+          <mat-card-title>Modal Side Sheet</mat-card-title>
+          <span flex></span>
+          <button mat-icon-button class="push-right" (click)="matDrawer.toggle();  showSheet(2)">
+            <mat-icon color="primary">info</mat-icon>
+          </button>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          content
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="push">
+        <div layout="row" layout-align="start center">
+          <mat-card-title>Standard Side Sheet</mat-card-title>
+          <span flex></span>
+          <button mat-icon-button class="push-right" (click)="matDrawer.toggle();  showSheet(3)">
+            <mat-icon color="primary">info</mat-icon>
+          </button>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          content
+        </mat-card-content>
+      </mat-card>
+    </mat-drawer-container>
+  </td-layout-manage-list>
+</td-layout-nav>
