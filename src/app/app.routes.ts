@@ -9,6 +9,7 @@ import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.compon
 import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 
 const routes: Routes = [
+  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: '',
     component: MainComponent,
@@ -32,3 +33,5 @@ const routes: Routes = [
 ];
 
 export const appRoutes: any = RouterModule.forRoot(routes);
+
+// 'layouts/nav-view'
