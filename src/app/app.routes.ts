@@ -33,5 +33,3 @@ const routes: Routes = [
 ];
 
 export const appRoutes: any = RouterModule.forRoot(routes);
-
-// 'layouts/nav-view'
