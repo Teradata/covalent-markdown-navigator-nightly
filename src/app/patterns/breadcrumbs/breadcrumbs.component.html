@@ -1,0 +1,59 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/breadcrumbs/breadcrumbs.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">more_horiz</mat-icon>
+        <span class="push-left">Breadcrumbs</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [class.active]="true">
+        <mat-icon matListIcon>more_horiz</mat-icon>
+        Simple
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Simple Breadcrumb</span>
+          <span flex></span>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="pad-top pad-left-lg">
+      <td-breadcrumbs>
+        <a td-breadcrumb [routerLink]="['/']">Overview</a>
+        <td-breadcrumb>Simple Breadcrumb</td-breadcrumb>
+      </td-breadcrumbs>
+    </div>
+    <mat-card class="push">
+      <mat-card-title>What are breadcrumbs?</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        A breadcrumb or breadcrumb trail is a graphical control element frequently used as a navigational aid in user
+        interfaces and on web pages. It allows users to keep track and maintain awareness of their locations within
+        programs, documents, or websites.
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>
+</td-layout-nav>
