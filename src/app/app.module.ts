@@ -20,7 +20,7 @@ import {
   MatSidenavModule,
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { CovalentExpansionPanelModule } from '@covalent/core/expansion-panel';
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentLayoutModule } from '@covalent/core/layout';
