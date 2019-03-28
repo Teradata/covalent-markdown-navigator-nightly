@@ -47,7 +47,7 @@ import { CreationOverComponent } from './patterns/creation-flow/creation-over/cr
 import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
 import {
   CreationDialogComponent,
-  DialogContentExampleDialog,
+  DialogContentExampleDialogComponent,
 } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
@@ -66,7 +66,7 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     CreationOverComponent,
     CreationOverEditComponent,
     CreationDialogComponent,
-    DialogContentExampleDialog,
+    DialogContentExampleDialogComponent,
     CreationSidesheetComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
@@ -113,7 +113,10 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     appRoutes,
   ], // modules needed to run this module
   providers: [httpInterceptorProviders], // additional providers needed for this module
-  entryComponents: [CreationDialogComponent, DialogContentExampleDialog],
+  entryComponents: [
+    CreationDialogComponent,
+    DialogContentExampleDialogComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
