@@ -9,10 +9,9 @@ import { baseURL } from '../../../../data';
   styleUrls: ['./inline.component.scss'],
 })
 export class InlineComponent implements OnInit {
-  user;
+  user: any;
 
-  constructor(private _titleService: Title,
-              public media: TdMediaService) {
+  constructor(private _titleService: Title, public media: TdMediaService) {
     Object.assign(this, { baseURL });
   }
 
@@ -26,11 +25,11 @@ export class InlineComponent implements OnInit {
       email: '',
       nickname: '',
       address: {
-         street: '',
-         street2: '',
-         city: '',
-         state: '',
-         postcode: '',
+        street: '',
+        street2: '',
+        city: '',
+        state: '',
+        postcode: '',
       },
     };
   }

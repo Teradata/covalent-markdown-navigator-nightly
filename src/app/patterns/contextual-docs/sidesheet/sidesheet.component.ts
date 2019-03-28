@@ -9,7 +9,6 @@ import { baseURL } from '../../../../data';
   styleUrls: ['./sidesheet.component.scss'],
 })
 export class DocsSideSheetComponent implements OnInit {
-
   name: string = 'Sandbox';
   showDescription: boolean = false;
   sheet1: boolean = true;
@@ -17,16 +16,15 @@ export class DocsSideSheetComponent implements OnInit {
   sheet3: boolean = false;
   mode: string = 'side';
 
-  constructor(private _titleService: Title,
-    public media: TdMediaService) {
-      Object.assign(this, { baseURL });
+  constructor(private _titleService: Title, public media: TdMediaService) {
+    Object.assign(this, { baseURL });
   }
 
   ngOnInit(): void {
     this._titleService.setTitle('Contextual Docs - Side Sheet');
   }
 
-  showSheet(sheet): void {
+  showSheet(sheet: number): void {
     this.sheet1 = false;
     this.sheet2 = false;
     this.sheet3 = false;
