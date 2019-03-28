@@ -1,10 +1,8 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
 
-import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { baseURL } from '../../../data';
 
 @Component({
@@ -13,11 +11,7 @@ import { baseURL } from '../../../data';
   styleUrls: ['./breadcrumbs.component.scss'],
 })
 export class BreadcrumbsComponent implements OnInit {
-
-  constructor(private _titleService: Title,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {
+  constructor(private _titleService: Title, public media: TdMediaService) {
     Object.assign(this, { baseURL });
   }
 
