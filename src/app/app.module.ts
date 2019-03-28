@@ -39,7 +39,6 @@ import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
-import { MOCK_API } from '../config/api.config';
 
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
