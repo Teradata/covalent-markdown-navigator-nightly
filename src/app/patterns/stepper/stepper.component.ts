@@ -9,15 +9,11 @@ import { baseURL } from '../../../data';
   styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent implements OnInit {
-  user;
+  user: any;
   state1: String = 'none';
   state2: String = 'none';
   state3: String = 'none';
   blockSave: boolean = true;
-
-  constructor(private _titleService: Title, public media: TdMediaService) {
-    Object.assign(this, { baseURL });
-  }
 
   states: String[] = [
     'AL',
@@ -84,6 +80,10 @@ export class StepperComponent implements OnInit {
     'AP',
   ];
 
+  constructor(private _titleService: Title, public media: TdMediaService) {
+    Object.assign(this, { baseURL });
+  }
+
   ngOnInit(): void {
     this._titleService.setTitle('Stepper');
     this.user = {
@@ -103,7 +103,7 @@ export class StepperComponent implements OnInit {
     };
   }
 
-  update(step, isValid): void {
+  update(step: number, isValid: any): void {
     switch (step) {
       case 1:
         if (isValid) {
@@ -126,6 +126,8 @@ export class StepperComponent implements OnInit {
         } else {
           this.state3 = 'required';
         }
+        break;
+      default:
     }
   }
 }
