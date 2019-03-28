@@ -1,12 +1,15 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { TdMediaService } from '@covalent/core/media';
 import { TdLayoutManageListComponent } from '@covalent/core/layout';
-import { getDirection } from '../../../utilities/direction';
 import { baseURL } from '../../../data';
 
-import { tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation } from '@covalent/core';
+import {
+  tdCollapseAnimation,
+  tdRotateAnimation,
+  tdFadeInOutAnimation,
+} from '@covalent/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { share, tap, distinctUntilChanged, debounceTime } from 'rxjs/operators';
+import { share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mini-side-nav',
@@ -15,12 +18,11 @@ import { share, tap, distinctUntilChanged, debounceTime } from 'rxjs/operators';
   animations: [tdCollapseAnimation, tdRotateAnimation, tdFadeInOutAnimation],
 })
 export class MiniSideNavComponent implements AfterViewInit {
-
   @ViewChild('manageList')
   manageList: TdLayoutManageListComponent;
-  
+
   miniNav: boolean = false;
-  _margin: BehaviorSubject<string> = new BehaviorSubject('250'); 
+  _margin: BehaviorSubject<string> = new BehaviorSubject('250');
   dir: 'ltr' | 'rtl';
   marginDirection: string;
 
@@ -63,13 +65,15 @@ export class MiniSideNavComponent implements AfterViewInit {
 
   atomicComponentRoutes: Object[] = [
     {
-      description: 'Series component, determines chart type and series styling.',
+      description:
+        'Series component, determines chart type and series styling.',
       icon: 'style',
       route: '',
       title: 'Series',
     },
     {
-      description: 'Global tooltip component, enable/disable and other tooltip level options.',
+      description:
+        'Global tooltip component, enable/disable and other tooltip level options.',
       icon: 'info',
       route: '',
       title: 'Tooltip',
@@ -93,7 +97,8 @@ export class MiniSideNavComponent implements AfterViewInit {
       title: 'Legend',
     },
     {
-      description: 'Series Tooltip, extends from main tooltip settings and provides specific series level control.',
+      description:
+        'Series Tooltip, extends from main tooltip settings and provides specific series level control.',
       icon: 'info',
       route: '',
       title: 'Series Tooltip',
@@ -114,15 +119,13 @@ export class MiniSideNavComponent implements AfterViewInit {
         this.marginDirection = undefined;
       }
     });
-
   }
 
   toggleMiniNav(event: Event): void {
     event.stopPropagation();
     this.miniNav = !this.miniNav;
     this.checkMiniNav();
-
-    }
+  }
 
   checkMiniNav(): void {
     if (this.miniNav) {
@@ -131,7 +134,7 @@ export class MiniSideNavComponent implements AfterViewInit {
       this._margin.next('250');
     }
     this.restMiniNav();
-}
+  }
 
   openMiniNav(event: Event): void {
     event.stopPropagation();
@@ -141,7 +144,7 @@ export class MiniSideNavComponent implements AfterViewInit {
   }
 
   restMiniNav(): void {
-    this.manageList .opened = false;
+    this.manageList.opened = false;
     setTimeout(() => {
       this.manageList.opened = true;
     }, 300);
