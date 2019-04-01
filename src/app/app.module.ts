@@ -31,7 +31,6 @@ import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
 import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { MOCK_API } from '../config/api.config';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
