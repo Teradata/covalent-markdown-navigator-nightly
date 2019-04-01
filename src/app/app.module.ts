@@ -27,19 +27,17 @@ import { CovalentLoadingModule } from '@covalent/core/loading';
 import { CovalentMessageModule, CovalentStepsModule, CovalentDialogsModule } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { CovalentHttpModule } from '@covalent/http';
 
 import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MOCK_API } from '../config/api.config';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 
 const httpInterceptorProviders: Type<any>[] = [
-  RequestInterceptor,
+
 ];
 
 @NgModule({
@@ -80,11 +78,6 @@ const httpInterceptorProviders: Type<any>[] = [
     CovalentBreadcrumbsModule,
     CovalentStepsModule,
     CovalentDialogsModule,
-    CovalentHttpModule.forRoot({
-      interceptors: [{
-        interceptor: RequestInterceptor, paths: ['**'],
-      }],
-    }),
     // routes
     appRoutes,
   ], // modules needed to run this module
