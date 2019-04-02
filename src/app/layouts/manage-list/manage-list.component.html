@@ -18,10 +18,8 @@
   <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <mat-toolbar td-sidenav-content>
-      <mat-toolbar-row>
         <mat-icon class="push-left-sm push-right-sm">people</mat-icon>
         <span class="push-left">Users</span>
-      </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item>
@@ -46,18 +44,15 @@
       </a>
     </mat-nav-list>
     <mat-toolbar>
-      <mat-toolbar-row>
-        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
-        <div td-toolbar-content layout="row" layout-align="start center" flex>
-          <span>All Users</span>
-          <span flex></span>
-        </div>
-      </mat-toolbar-row>
+      <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div layout="row" layout-align="start center" flex>
+        <span>All Users</span>
+        <span flex></span>
+      </div>
     </mat-toolbar>
     <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-      <mat-divider></mat-divider>
       <ng-template tdLoading="users.list">
         <mat-list class="will-load">
           <mat-list-item>
