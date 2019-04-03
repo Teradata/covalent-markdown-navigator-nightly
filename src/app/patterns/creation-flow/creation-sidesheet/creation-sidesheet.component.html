@@ -18,10 +18,8 @@
   <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <mat-toolbar td-sidenav-content>
-      <mat-toolbar-row>
         <mat-icon class="push-left-sm push-right-sm">add_circle</mat-icon>
         <span class="push-left">Creation Flow</span>
-      </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item [routerLink]="['../']">
@@ -42,17 +40,15 @@
       </a>
     </mat-nav-list>
     <mat-toolbar>
-      <mat-toolbar-row>
         <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
           <mat-icon>arrow_back</mat-icon>
         </button>
-        <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <div layout="row" layout-align="start center" flex>
           <span>Sidesheet</span>
           <span flex></span>
           <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper"
             (click)="matDrawer.toggle()">create</button>
         </div>
-      </mat-toolbar-row>
     </mat-toolbar>
     <mat-drawer-container fullscreen flex>
       <mat-drawer #matDrawer position="end" mode="over" [style.width.%]="(media.registerQuery('gt-xs') | async) ? '50' : '100'"
