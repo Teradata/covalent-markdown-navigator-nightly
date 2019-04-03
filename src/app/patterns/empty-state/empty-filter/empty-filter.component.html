@@ -18,10 +18,8 @@
   <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <mat-toolbar td-sidenav-content>
-      <mat-toolbar-row>
         <mat-icon class="push-left-sm push-right-sm">space_bar</mat-icon>
         <span class="push-left">Empty State</span>
-      </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a [routerLink]="['../']" mat-list-item>
@@ -38,15 +36,13 @@
       </a>
     </mat-nav-list>
     <mat-toolbar>
-      <mat-toolbar-row>
         <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
           <mat-icon>arrow_back</mat-icon>
         </button>
-        <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <div layout="row" layout-align="start center" flex>
           <span>No Possible Data</span>
           <span flex></span>
         </div>
-      </mat-toolbar-row>
     </mat-toolbar>
     <div layout-gt-sm="row" class="pad-sm">
       <mat-card flex-gt-sm>
