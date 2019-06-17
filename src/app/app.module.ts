@@ -33,7 +33,7 @@ import {
 } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule } from '@covalent/http-deprec';
 
 import { appRoutes } from './app.routes';
 
