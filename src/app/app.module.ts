@@ -42,6 +42,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
@@ -51,6 +52,7 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+    NavViewComponent,
     CardOverComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [

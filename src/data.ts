@@ -24,6 +24,12 @@ export let patterns: Object[] = [
 
 export let layouts: Object[] = [
   {
+    color: 'red-800',
+    icon: 'view_compact',
+    route: 'nav-view',
+    title: 'Nav View',
+    description: 'Best for dashboards',
+  }, {
     color: 'deep-purple-800',
     icon: 'view_day',
     route: 'card-over',
