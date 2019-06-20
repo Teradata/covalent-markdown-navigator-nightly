@@ -24,6 +24,12 @@ export let patterns: Object[] = [
 
 export let layouts: Object[] = [
   {
+    color: 'pink-800',
+    icon: 'view_list',
+    route: 'manage-list',
+    title: 'Management List',
+    description: 'Management list or sub-dashboards',
+  }, {
     color: 'purple-800',
     icon: 'view_quilt',
     route: 'nav-list',
