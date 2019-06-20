@@ -1,7 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core/loading';
 import { TdMediaService } from '@covalent/core/media';
 import { baseURL } from '../../../data';
 
@@ -77,8 +76,6 @@ navmenu: Object[] = [{
 ];
 
   constructor(private _titleService: Title,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
     Object.assign(this, { baseURL });
   }

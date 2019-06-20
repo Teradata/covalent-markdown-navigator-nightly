@@ -67,7 +67,7 @@
           <mat-divider></mat-divider>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <mat-list-item>
-              <mat-icon matListAvatar style="visiblity: hidden">person</mat-icon>
+              <mat-icon matListAvatar>person</mat-icon>
               <h3 matLine> {{user.displayName}} </h3>
               <p matLine> {{user.email}} </p>
               <p matLine hide-gt-md class="mat-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
