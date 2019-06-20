@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const routes: Routes = [
   { path: 'patterns/creation-flow', redirectTo: '/', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   {
     path: 'layouts',
     component: MainComponent,
-    children: [{ path: 'nav-view', component: NavViewComponent }],
+    children: [{ path: 'nav-view', component: NavViewComponent }, 
+               { path: 'card-over', component: CardOverComponent }],
   },
 ];
 
