@@ -30,6 +30,12 @@ export let layouts: Object[] = [
     title: 'Nav List',
     description: 'Category views, documentation, & lists',
   }, {
+    color: 'red-800',
+    icon: 'view_compact',
+    route: 'nav-view',
+    title: 'Nav View',
+    description: 'Best for dashboards',
+  }, {
     color: 'deep-purple-800',
     icon: 'view_day',
     route: 'card-over',
