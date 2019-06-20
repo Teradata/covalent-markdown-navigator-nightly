@@ -15,10 +15,10 @@ export let routes: Object[] = [
 export let patterns: Object[] = [
   {
     color: 'indigo-800',
-    icon: 'add_circle',
-    route: 'creation-flow',
-    title: 'Dummy Pattern',
-    description: 'Placeholder for pattern',
+    icon: 'view_column',
+    route: 'mini-side-nav',
+    title: 'Mini Side Nav',
+    description: 'Mini Side Nav',
   },
 ];
 

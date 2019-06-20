@@ -8,8 +8,6 @@ import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const routes: Routes = [
-  { path: 'patterns/creation-flow', redirectTo: '/', pathMatch: 'full' },
-  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: '',
     component: MainComponent,
