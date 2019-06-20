@@ -33,7 +33,7 @@ import {
 } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule } from '@covalent/http-deprec';
 
 import { appRoutes } from './app.routes';
 
@@ -43,6 +43,8 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
 
@@ -52,6 +54,8 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     MainComponent,
     OverviewComponent,
     MiniSideNavComponent,
+    NavViewComponent,
+    CardOverComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules

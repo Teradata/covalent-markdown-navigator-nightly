@@ -4,8 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const routes: Routes = [
+  { path: 'patterns/creation-flow', redirectTo: '/', pathMatch: 'full' },
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: '',
@@ -16,6 +19,12 @@ const routes: Routes = [
     path: 'patterns',
     component: MainComponent,
     children: [{ path: 'mini-side-nav', component: MiniSideNavComponent }],
+  },
+  {
+    path: 'layouts',
+    component: MainComponent,
+    children: [{ path: 'nav-view', component: NavViewComponent }, 
+               { path: 'card-over', component: CardOverComponent }],
   },
 ];
 

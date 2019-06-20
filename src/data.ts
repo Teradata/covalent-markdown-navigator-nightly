@@ -14,11 +14,11 @@ export let routes: Object[] = [
 
 export let patterns: Object[] = [
   {
-    color: 'light-green-800',
-    icon: 'swap_horiz',
-    route: 'mini-side-nav',
-    title: 'Mini Side Nav',
-    description: 'Collapsible navigation',
+    color: 'indigo-800',
+    icon: 'add_circle',
+    route: 'creation-flow',
+    title: 'Dummy Pattern',
+    description: 'Placeholder for pattern',
   },
 ];
 
@@ -27,7 +27,13 @@ export let layouts: Object[] = [
     color: 'red-800',
     icon: 'view_compact',
     route: 'nav-view',
-    title: 'Dummy Layout',
-    description: 'Placeholder for layout',
+    title: 'Nav View',
+    description: 'Best for dashboards',
+  }, {
+    color: 'deep-purple-800',
+    icon: 'view_day',
+    route: 'card-over',
+    title: 'Card Over',
+    description: 'Detail views, forms, & blogs',
   },
 ];
