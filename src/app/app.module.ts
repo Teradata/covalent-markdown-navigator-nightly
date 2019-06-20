@@ -42,7 +42,12 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+<<<<<<< HEAD
 import { MiniSideNavComponent } from './patterns/mini-side-nav/mini-side-nav.component';
+=======
+import { ManageListComponent } from './layouts/manage-list/manage-list.component';
+import { NavListComponent } from './layouts/nav-list/nav-list.component';
+>>>>>>> 755b384f47d8397a07e46cd63c24b8984ceacbd6
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
 import { CardOverComponent } from './layouts/card-over/card-over.component';
 
@@ -53,7 +58,12 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+<<<<<<< HEAD
     MiniSideNavComponent,
+=======
+    ManageListComponent,
+    NavListComponent,
+>>>>>>> 755b384f47d8397a07e46cd63c24b8984ceacbd6
     NavViewComponent,
     CardOverComponent,
   ], // directives, components, and pipes owned by this NgModule
