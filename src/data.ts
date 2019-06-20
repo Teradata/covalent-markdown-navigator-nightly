@@ -29,5 +29,11 @@ export let layouts: Object[] = [
     route: 'nav-list',
     title: 'Nav List',
     description: 'Category views, documentation, & lists',
+  }, {
+    color: 'deep-purple-800',
+    icon: 'view_day',
+    route: 'card-over',
+    title: 'Card Over',
+    description: 'Detail views, forms, & blogs',
   },
 ];
