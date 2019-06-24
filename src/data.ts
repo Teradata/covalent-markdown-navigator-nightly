@@ -12,13 +12,22 @@ export let routes: Object[] = [
   },
 ];
 
+export let overview: Object[] = [
+  {
+    color: 'td-orange-700',
+    icon: 'extension',
+    route: '/',
+    title: 'Design Patterns',
+  },
+];
+
 export let patterns: Object[] = [
   {
     color: 'indigo-800',
     icon: 'add_circle',
     route: 'creation-flow',
-    title: 'Dummy Pattern',
-    description: 'Placeholder for pattern',
+    title: 'Creation Flow',
+    description: 'Adding new items',
   },
 ];
 
@@ -29,19 +38,22 @@ export let layouts: Object[] = [
     route: 'manage-list',
     title: 'Management List',
     description: 'Management list or sub-dashboards',
-  }, {
+  },
+  {
     color: 'purple-800',
     icon: 'view_quilt',
     route: 'nav-list',
     title: 'Nav List',
     description: 'Category views, documentation, & lists',
-  }, {
+  },
+  {
     color: 'red-800',
     icon: 'view_compact',
     route: 'nav-view',
     title: 'Nav View',
     description: 'Best for dashboards',
-  }, {
+  },
+  {
     color: 'deep-purple-800',
     icon: 'view_day',
     route: 'card-over',
