@@ -33,7 +33,7 @@ import {
 } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule } from '@covalent/http-deprec';
 
 import { appRoutes } from './app.routes';
 
@@ -52,6 +52,10 @@ import { CreationSidesheetComponent } from './patterns/creation-flow/creation-si
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ManageListComponent } from './layouts/manage-list/manage-list.component';
+import { NavListComponent } from './layouts/nav-list/nav-list.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
 
@@ -67,6 +71,10 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     CreationDialogComponent,
     DialogContentExampleDialogComponent,
     CreationSidesheetComponent,
+    ManageListComponent,
+    NavListComponent,
+    NavViewComponent,
+    CardOverComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules

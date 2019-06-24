@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ManageListComponent } from './layouts/manage-list/manage-list.component';
+import { NavListComponent } from './layouts/nav-list/nav-list.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
@@ -13,6 +17,7 @@ import { CreationSidesheetComponent } from './patterns/creation-flow/creation-si
 
 const routes: Routes = [
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
+  { path: 'patterns/creation-flow', redirectTo: '/', pathMatch: 'full' },
   {
     path: '',
     component: MainComponent,
@@ -41,6 +46,16 @@ const routes: Routes = [
           { path: 'sidesheet', component: CreationSidesheetComponent },
         ],
       },
+    ],
+  },
+  {
+    path: 'layouts',
+    component: MainComponent,
+    children: [
+      { path: 'manage-list', component: ManageListComponent },
+      { path: 'nav-list', component: NavListComponent },
+      { path: 'nav-view', component: NavViewComponent },
+      { path: 'card-over', component: CardOverComponent },
     ],
   },
 ];
