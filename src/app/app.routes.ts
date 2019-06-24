@@ -16,13 +16,6 @@ import { CreationDialogComponent } from './patterns/creation-flow/creation-dialo
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
 const routes: Routes = [
-  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
-  { path: 'patterns/creation-flow', redirectTo: '/', pathMatch: 'full' },
-  {
-    path: '',
-    component: MainComponent,
-    children: [{ path: '', component: OverviewComponent }],
-  },
   {
     path: 'patterns',
     component: MainComponent,
@@ -57,6 +50,11 @@ const routes: Routes = [
       { path: 'nav-view', component: NavViewComponent },
       { path: 'card-over', component: CardOverComponent },
     ],
+  },
+  {
+    path: '',
+    component: MainComponent,
+    children: [{ path: '', component: OverviewComponent }],
   },
 ];
 
