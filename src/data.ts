@@ -29,13 +29,6 @@ export let patterns: Object[] = [
     title: 'Creation Flow',
     description: 'Adding new items',
   },
-  {
-    color: 'indigo-800',
-    icon: 'add_circle',
-    route: 'creation-flow',
-    title: 'Dummy Pattern',
-    description: 'Placeholder for pattern',
-  },
 ];
 
 export let layouts: Object[] = [
