@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { StepperComponent } from './patterns/stepper/stepper.component';
+
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
@@ -39,8 +41,10 @@ const routes: Routes = [
           { path: 'sidesheet', component: CreationSidesheetComponent },
         ],
       },
+      { path: 'stepper', component: StepperComponent },
     ],
   },
+  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: 'layouts',
     component: MainComponent,

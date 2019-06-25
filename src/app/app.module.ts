@@ -40,6 +40,10 @@ import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
+import { MainComponent } from './main.component';
+import { OverviewComponent } from './overview/overview.component';
+import { StepperComponent } from './patterns/stepper/stepper.component';
+
 import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
 import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
 import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
@@ -50,8 +54,6 @@ import {
 } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
-import { MainComponent } from './main.component';
-import { OverviewComponent } from './overview/overview.component';
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
@@ -64,6 +66,7 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+    StepperComponent,
     CreationFlowComponent,
     CreationEditComponent,
     CreationOverComponent,

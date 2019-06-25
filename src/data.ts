@@ -23,6 +23,13 @@ export let overview: Object[] = [
 
 export let patterns: Object[] = [
   {
+    color: 'light-blue-800',
+    icon: 'looks_one',
+    route: 'stepper',
+    title: 'Stepper Form',
+    description: 'Great for wizards',
+  },
+  {
     color: 'indigo-800',
     icon: 'add_circle',
     route: 'creation-flow',
