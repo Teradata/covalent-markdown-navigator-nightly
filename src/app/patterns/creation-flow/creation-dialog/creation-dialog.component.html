@@ -1,0 +1,85 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/creation-flow/creation-dialog/creation-dialog.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">add_circle</mat-icon>
+        <span class="push-left">Creation Flow</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [routerLink]="['/patterns','creation-flow']">
+        <mat-icon matListIcon>view_list</mat-icon>
+        Management List
+      </a>
+      <a mat-list-item [routerLink]="['/patterns','creation-flow','card-over']">
+        <mat-icon matListIcon>view_day</mat-icon>
+        Card Over
+      </a>
+      <a mat-list-item [class.active]="true" [routerLink]="['/patterns','creation-flow','dialog']">
+        <mat-icon matListIcon>filter_none</mat-icon>
+        Dialog
+      </a>
+      <a mat-list-item [routerLink]="['/patterns','creation-flow','sidesheet']">
+        <mat-icon matListIcon>format_indent_increase</mat-icon>
+        Sidesheet
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Dialog</span>
+          <span flex></span>
+          <button mat-raised-button *ngIf="(media.registerQuery('gt-xs') | async)" color="accent" class="text-upper" (click)="openDialog()">create</button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="push">
+      <mat-card-title>When to use a dialog</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <td-message label="Click create button to see Card Over creation pattern" color="accent" icon="info" class="push-bottom"></td-message>
+        <p>A dialog is useful in the creation flow when the user only needs to make a few quick selections.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="push">
+      <mat-card-title>Create Button Guidance</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <td-message label="Resize your browser to see responsive behavior" color="accent" icon="info"></td-message>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon class="push-right" matListAvatar>check</mat-icon>Use the mat-raised-button in the accent color
+            with the class text-upper
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon class="push-right" matListAvatar>check</mat-icon>On extra small, hide the create button and show
+            a FAB
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </td-layout-manage-list>
+  <button mat-fab *ngIf="(media.registerQuery('xs') | async)" color="accent" class="fixed mat-fab-position-bottom-right z-3"  (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</td-layout-nav>
