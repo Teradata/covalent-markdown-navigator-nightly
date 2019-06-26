@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
@@ -54,6 +55,7 @@ const routes: Routes = [
           { path: 'no-content', component: EmptyContentComponent },
         ],
       },
+      { path: 'nav-drawer', component: NavDrawerComponent },
     ],
   },
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
@@ -70,7 +72,8 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children: [{ path: '', component: OverviewComponent }],
+    children: [
+      { path: '', component: OverviewComponent }],
   },
 ];
 

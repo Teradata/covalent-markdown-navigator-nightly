@@ -30,6 +30,13 @@ export let patterns: Object[] = [
     description: 'No content to display',
   },
   {
+    color: 'green-800',
+    icon: 'kitchen',
+    route: 'nav-drawer',
+    title: 'Nav Drawer',
+    description: 'Application primary navigation',
+  },
+  {
     color: 'light-blue-800',
     icon: 'looks_one',
     route: 'stepper',

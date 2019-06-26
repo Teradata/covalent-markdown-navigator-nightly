@@ -42,6 +42,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
 import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
 import { EmptyContentComponent } from './patterns/empty-state/empty-content/empty-content.component';
@@ -69,6 +70,7 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+    NavDrawerComponent,
     EmptyStateComponent,
     EmptyFilterComponent,
     EmptyContentComponent,
