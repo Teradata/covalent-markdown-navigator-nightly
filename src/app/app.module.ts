@@ -42,6 +42,9 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { AlertsComponent } from './patterns/alerts/alerts.component';
+import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
+import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
 import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
@@ -70,6 +73,9 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+    AlertsComponent,
+    AlertsInlineComponent,
+    AlertsToastsComponent,
     NavDrawerComponent,
     EmptyStateComponent,
     EmptyFilterComponent,

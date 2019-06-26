@@ -22,6 +22,10 @@ import { CreationOverEditComponent } from './patterns/creation-flow/creation-ove
 import { CreationDialogComponent } from './patterns/creation-flow/creation-dialog/creation-dialog.component';
 import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
 
+import { AlertsComponent } from './patterns/alerts/alerts.component';
+import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
+import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
+
 const routes: Routes = [
   {
     path: 'patterns',
@@ -44,6 +48,14 @@ const routes: Routes = [
             children: [{ path: '', component: CreationDialogComponent }],
           },
           { path: 'sidesheet', component: CreationSidesheetComponent },
+        ],
+      },
+      {
+        path: 'alerts',
+        children: [
+          { path: '', component: AlertsComponent },
+          { path: 'inline', component: AlertsInlineComponent },
+          { path: 'toasts', component: AlertsToastsComponent },
         ],
       },
       { path: 'stepper', component: StepperComponent },
