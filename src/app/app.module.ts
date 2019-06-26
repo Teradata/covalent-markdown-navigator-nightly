@@ -33,7 +33,7 @@ import {
 } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentBreadcrumbsModule } from '@covalent/core/breadcrumbs';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule } from '@covalent/http-deprec';
 
 import { appRoutes } from './app.routes';
 
@@ -43,6 +43,22 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
+import { StepperComponent } from './patterns/stepper/stepper.component';
+
+import { CreationFlowComponent } from './patterns/creation-flow/creation-flow.component';
+import { CreationEditComponent } from './patterns/creation-flow/creation-edit/creation-edit.component';
+import { CreationOverComponent } from './patterns/creation-flow/creation-over/creation-over.component';
+import { CreationOverEditComponent } from './patterns/creation-flow/creation-over-edit/creation-over-edit.component';
+import {
+  CreationDialogComponent,
+  DialogContentExampleDialogComponent,
+} from './patterns/creation-flow/creation-dialog/creation-dialog.component';
+import { CreationSidesheetComponent } from './patterns/creation-flow/creation-sidesheet/creation-sidesheet.component';
+
+import { ManageListComponent } from './layouts/manage-list/manage-list.component';
+import { NavListComponent } from './layouts/nav-list/nav-list.component';
+import { NavViewComponent } from './layouts/nav-view/nav-view.component';
+import { CardOverComponent } from './layouts/card-over/card-over.component';
 
 const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
 
@@ -52,6 +68,18 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     MainComponent,
     OverviewComponent,
     NavDrawerComponent,
+    StepperComponent,
+    CreationFlowComponent,
+    CreationEditComponent,
+    CreationOverComponent,
+    CreationOverEditComponent,
+    CreationDialogComponent,
+    DialogContentExampleDialogComponent,
+    CreationSidesheetComponent,
+    ManageListComponent,
+    NavListComponent,
+    NavViewComponent,
+    CardOverComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     // angular modules
@@ -97,7 +125,10 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     appRoutes,
   ], // modules needed to run this module
   providers: [httpInterceptorProviders], // additional providers needed for this module
-  entryComponents: [],
+  entryComponents: [
+    CreationDialogComponent,
+    DialogContentExampleDialogComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
