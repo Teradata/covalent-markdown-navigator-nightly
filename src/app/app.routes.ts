@@ -5,6 +5,10 @@ import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 
+import { EmptyStateComponent } from './patterns/empty-state/empty-state.component';
+import { EmptyFilterComponent } from './patterns/empty-state/empty-filter/empty-filter.component';
+import { EmptyContentComponent } from './patterns/empty-state/empty-content/empty-content.component';
+
 import { ManageListComponent } from './layouts/manage-list/manage-list.component';
 import { NavListComponent } from './layouts/nav-list/nav-list.component';
 import { NavViewComponent } from './layouts/nav-view/nav-view.component';
@@ -42,6 +46,14 @@ const routes: Routes = [
         ],
       },
       { path: 'stepper', component: StepperComponent },
+      { 
+        path: 'empty-state',
+        children: [
+          { path: '', component: EmptyStateComponent },
+          { path: 'filter', component: EmptyFilterComponent },
+          { path: 'no-content', component: EmptyContentComponent },
+        ],
+      },
     ],
   },
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
