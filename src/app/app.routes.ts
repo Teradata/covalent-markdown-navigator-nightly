@@ -55,6 +55,7 @@ const routes: Routes = [
           { path: 'no-content', component: EmptyContentComponent },
         ],
       },
+      { path: 'nav-drawer', component: NavDrawerComponent },
     ],
   },
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
@@ -72,8 +73,7 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      { path: '', component: OverviewComponent },
-      { path: 'nav-drawer', component: NavDrawerComponent }],
+      { path: '', component: OverviewComponent }],
   },
 ];
 
