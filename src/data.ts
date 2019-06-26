@@ -23,6 +23,13 @@ export let overview: Object[] = [
 
 export let patterns: Object[] = [
   {
+    color: 'lime-800',
+    icon: 'space_bar',
+    route: 'empty-state',
+    title: 'Empty State',
+    description: 'No content to display',
+  },
+  {
     color: 'green-800',
     icon: 'kitchen',
     route: 'nav-drawer',
