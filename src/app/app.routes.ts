@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
+import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
+import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 
@@ -27,49 +31,63 @@ import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-in
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
 
 const routes: Routes = [
+  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
+  {
+    path: '',
+    component: MainComponent,
+    children: [{ path: '', component: OverviewComponent }],
+  },
   {
     path: 'patterns',
     component: MainComponent,
     children: [
       {
-        path: 'creation-flow',
+        path: 'contextual-docs',
         children: [
-          { path: '', component: CreationFlowComponent },
-          { path: 'edit', component: CreationEditComponent },
-          {
-            path: 'card-over',
-            children: [
-              { path: '', component: CreationOverComponent },
-              { path: 'edit', component: CreationOverEditComponent },
-            ],
-          },
-          {
-            path: 'dialog',
-            children: [{ path: '', component: CreationDialogComponent }],
-          },
-          { path: 'sidesheet', component: CreationSidesheetComponent },
+          { path: '', component: ContextualDocsComponent },
+          { path: 'inline', component: InlineComponent },
+          { path: 'dialog', component: DialogComponent },
+          { path: 'sidesheet', component: DocsSideSheetComponent },
+        ],
+      },
+    ],
+  }, {
+    path: 'creation-flow',
+    children: [
+      { path: '', component: CreationFlowComponent },
+      { path: 'edit', component: CreationEditComponent },
+      {
+        path: 'card-over',
+        children: [
+          { path: '', component: CreationOverComponent },
+          { path: 'edit', component: CreationOverEditComponent },
         ],
       },
       {
-        path: 'alerts',
-        children: [
-          { path: '', component: AlertsComponent },
-          { path: 'inline', component: AlertsInlineComponent },
-          { path: 'toasts', component: AlertsToastsComponent },
-        ],
+        path: 'dialog',
+        children: [{ path: '', component: CreationDialogComponent }],
       },
-      { path: 'stepper', component: StepperComponent },
-      { 
-        path: 'empty-state',
-        children: [
-          { path: '', component: EmptyStateComponent },
-          { path: 'filter', component: EmptyFilterComponent },
-          { path: 'no-content', component: EmptyContentComponent },
-        ],
-      },
-      { path: 'nav-drawer', component: NavDrawerComponent },
+      { path: 'sidesheet', component: CreationSidesheetComponent },
     ],
   },
+  {
+    path: 'alerts',
+    children: [
+      { path: '', component: AlertsComponent },
+      { path: 'inline', component: AlertsInlineComponent },
+      { path: 'toasts', component: AlertsToastsComponent },
+    ],
+  },
+  { path: 'stepper', component: StepperComponent },
+  {
+    path: 'empty-state',
+    children: [
+      { path: '', component: EmptyStateComponent },
+      { path: 'filter', component: EmptyFilterComponent },
+      { path: 'no-content', component: EmptyContentComponent },
+    ],
+  },
+  { path: 'nav-drawer', component: NavDrawerComponent },
   { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
   {
     path: 'layouts',

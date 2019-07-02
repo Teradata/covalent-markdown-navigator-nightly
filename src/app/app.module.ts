@@ -42,6 +42,10 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { MainComponent } from './main.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
+import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
+import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
@@ -73,6 +77,10 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     AppComponent,
     MainComponent,
     OverviewComponent,
+    ContextualDocsComponent,
+    InlineComponent,
+    DialogComponent,
+    DocsSideSheetComponent,
     AlertsComponent,
     AlertsInlineComponent,
     AlertsToastsComponent,

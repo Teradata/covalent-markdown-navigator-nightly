@@ -57,6 +57,13 @@ export let patterns: Object[] = [
     title: 'Creation Flow',
     description: 'Adding new items',
   },
+  {
+    color: 'blue-800',
+    icon: 'help',
+    route: 'contextual-docs',
+    title: 'Contextual Docs',
+    description: 'Inline documentation',
+  },
 ];
 
 export let layouts: Object[] = [
