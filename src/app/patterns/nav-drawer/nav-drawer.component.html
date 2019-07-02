@@ -1,0 +1,98 @@
+<td-layout-nav logo="assets:teradata" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span [routerLink]="['/']" class="cursor-pointer text-upper">Sandbox</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" matTooltipDelay="500" href="https://teradata.github.io/covalent/" target="_blank">
+      <mat-icon>chrome_reader_mode</mat-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github" matTooltipPosition="before" matTooltipDelay="500" href="https://github.com/Teradata/covalent-resources" target="_blank">
+      <mat-icon svgIcon="assets:github"></mat-icon>
+    </a>
+    <a mat-icon-button [href]="baseURL + '/patterns/nav-drawer/nav-drawer.component.html'" target="_blank">
+      <mat-icon matTooltip="Open in Stackblitz" matTooltipPosition="before" matTooltipDelay="500">code</mat-icon>
+    </a>
+  </div>
+  <td-layout-manage-list [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <mat-toolbar td-sidenav-content>
+      <mat-toolbar-row>
+        <mat-icon class="push-left-sm push-right-sm">kitchen</mat-icon>
+        <span class="push-left">Nav Drawer</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item [class.active]="true">
+        <mat-icon matListIcon>kitchen</mat-icon>
+        Nav Drawer
+      </a>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>Nav Drawer</span>
+          <span flex></span>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>What is a nav drawer?</mat-card-title>
+      <mat-card-content>
+        A nav drawer is a standard way of displaying the main navigation for the entire application.  First class citizens should be displayed with minimal wording which matches the title on the linked page.
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="accent" tdLayoutToggle>Show Drawer</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>Required</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Logo </h3>
+            <p matLine> Match logo in main toolbar </p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> App title </h3>
+            <p matLine> Match title in main toolbar </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+    <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <mat-card-title>Optional</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> User's first & last name </h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> User's email address </h3>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Subheaders </h3>
+            <p matLine> h3 matSubheader </p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListAvatar>check_circle</mat-icon>
+            <h3 matLine> Submenu with link to sign out </h3>
+            <p matLine> td-navigation-drawer-menu </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+    </mat-card>
+  </td-layout-manage-list>
+</td-layout-nav>
