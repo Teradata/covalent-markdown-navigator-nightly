@@ -58,12 +58,20 @@ export let patterns: Object[] = [
     description: 'Adding new items',
   },
   {
+
+    color: 'blue-800',
+    icon: 'help',
+    route: 'contextual-docs',
+    title: 'Contextual Docs',
+    description: 'Inline documentation',
+  },
+  {
     color: 'cyan-800',
     icon: 'view_agenda',
     route: 'cards',
     title: 'Cards',
     description: 'Card list, grids, & images',
-  },
+  }
 ];
 
 export let layouts: Object[] = [

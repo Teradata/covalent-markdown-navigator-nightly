@@ -8,6 +8,10 @@ import { CardGridComponent } from './patterns/cards/card-grid/card-grid.componen
 import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
 
 
+import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
+import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
+import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { NavDrawerComponent } from './patterns/nav-drawer/nav-drawer.component';
 import { StepperComponent } from './patterns/stepper/stepper.component';
 
@@ -33,9 +37,41 @@ import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-to
 
 const routes: Routes = [
   {
-    path: 'patterns',
+    path: '',
+    component: MainComponent,
+    children: [{ path: '', component: OverviewComponent }],
+  },
+  {
+    path: 'layouts',
     component: MainComponent,
     children: [
+      { path: 'manage-list', component: ManageListComponent },
+      { path: 'nav-list', component: NavListComponent },
+      { path: 'nav-view', component: NavViewComponent },
+      { path: 'card-over', component: CardOverComponent },
+    ],
+  },
+  { 
+    path: 'patterns', component: MainComponent,
+    children: [
+      {
+        path: 'alerts',
+        children: [
+          { path: '', component: AlertsComponent },
+          { path: 'inline', component: AlertsInlineComponent },
+          { path: 'toasts', component: AlertsToastsComponent },
+        ],
+      },
+      {
+        path: 'empty-state',
+        children: [
+          { path: '', component: EmptyStateComponent },
+          { path: 'filter', component: EmptyFilterComponent },
+          { path: 'no-content', component: EmptyContentComponent },
+        ],
+      },
+      { path: 'nav-drawer', component: NavDrawerComponent },
+      { path: 'stepper', component: StepperComponent },
       {
         path: 'creation-flow',
         children: [
@@ -53,26 +89,17 @@ const routes: Routes = [
             children: [{ path: '', component: CreationDialogComponent }],
           },
           { path: 'sidesheet', component: CreationSidesheetComponent },
-        ],
+        ]
       },
       {
-        path: 'alerts',
+        path: 'contextual-docs',
         children: [
-          { path: '', component: AlertsComponent },
-          { path: 'inline', component: AlertsInlineComponent },
-          { path: 'toasts', component: AlertsToastsComponent },
+          { path: '', component: ContextualDocsComponent },
+          { path: 'inline', component: InlineComponent },
+          { path: 'dialog', component: DialogComponent },
+          { path: 'sidesheet', component: DocsSideSheetComponent },
         ],
       },
-      { path: 'stepper', component: StepperComponent },
-      { 
-        path: 'empty-state',
-        children: [
-          { path: '', component: EmptyStateComponent },
-          { path: 'filter', component: EmptyFilterComponent },
-          { path: 'no-content', component: EmptyContentComponent },
-        ],
-      },
-      { path: 'nav-drawer', component: NavDrawerComponent },
       {
         path: 'cards',
         children: [
@@ -82,24 +109,7 @@ const routes: Routes = [
           { path: 'card-images', component: CardImagesComponent },
         ],
       },
-    ],
-  },
-  { path: 'layouts/nav-view', redirectTo: '/', pathMatch: 'full' },
-  {
-    path: 'layouts',
-    component: MainComponent,
-    children: [
-      { path: 'manage-list', component: ManageListComponent },
-      { path: 'nav-list', component: NavListComponent },
-      { path: 'nav-view', component: NavViewComponent },
-      { path: 'card-over', component: CardOverComponent },
-    ],
-  },
-  {
-    path: '',
-    component: MainComponent,
-    children: [
-      { path: '', component: OverviewComponent }],
+    ]
   },
 ];
 

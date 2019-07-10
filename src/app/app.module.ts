@@ -46,6 +46,10 @@ import { CardsComponent } from './patterns/cards/cards.component';
 import { CardListComponent } from './patterns/cards/card-list/card-list.component';
 import { CardGridComponent } from './patterns/cards/card-grid/card-grid.component';
 import { CardImagesComponent } from './patterns/cards/card-images/card-images.component';
+import { ContextualDocsComponent } from './patterns/contextual-docs/contextual-docs.component';
+import { InlineComponent } from './patterns/contextual-docs/inline/inline.component';
+import { DialogComponent } from './patterns/contextual-docs/dialog/dialog.component';
+import { DocsSideSheetComponent } from './patterns/contextual-docs/sidesheet/sidesheet.component';
 import { AlertsComponent } from './patterns/alerts/alerts.component';
 import { AlertsInlineComponent } from './patterns/alerts/alerts-inline/alerts-inline.component';
 import { AlertsToastsComponent } from './patterns/alerts/alerts-toasts/alerts-toasts.component';
@@ -81,6 +85,10 @@ const httpInterceptorProviders: Type<any>[] = [RequestInterceptor];
     CardListComponent,
     CardGridComponent,
     CardImagesComponent,
+    ContextualDocsComponent,
+    InlineComponent,
+    DialogComponent,
+    DocsSideSheetComponent,
     AlertsComponent,
     AlertsInlineComponent,
     AlertsToastsComponent,
