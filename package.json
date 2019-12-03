@@ -1,0 +1,47 @@
+{
+  "name": "@covalent/markdown-navigator",
+  "version": "3.0.0-beta.1-2",
+  "description": "Teradata UI Platform Markdown Navigator Module",
+  "keywords": [
+    "angular",
+    "components",
+    "covalent",
+    "markdown",
+    "markdown navigator",
+    "markdown-navigator",
+    "documentation navigator",
+    "inline docs",
+    "docs",
+    "help"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Christian Memije <christian.memije@teradata.com>"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^7.0.0 || ^8.0.0 || ^9.0.0",
+    "@angular/common": "^7.0.0 || ^8.0.0 || ^9.0.0",
+    "@angular/material": "^7.0.0|| ^8.0.0 || ^9.0.0",
+    "@angular/cdk": "^7.0.0|| ^8.0.0 || ^9.0.0",
+    "@covalent/core": "^3.0.0-beta.1-2",
+    "@covalent/flavored-markdown": "^3.0.0-beta.1-2"
+  },
+  "main": "bundles/covalent-markdown-navigator.umd.js",
+  "module": "fesm5/covalent-markdown-navigator.js",
+  "es2015": "fesm2015/covalent-markdown-navigator.js",
+  "esm5": "esm5/covalent-markdown-navigator.js",
+  "esm2015": "esm2015/covalent-markdown-navigator.js",
+  "fesm5": "fesm5/covalent-markdown-navigator.js",
+  "fesm2015": "fesm2015/covalent-markdown-navigator.js",
+  "typings": "covalent-markdown-navigator.d.ts",
+  "metadata": "covalent-markdown-navigator.metadata.json",
+  "sideEffects": false
+}
