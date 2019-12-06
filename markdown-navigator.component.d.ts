@@ -1,4 +1,4 @@
-import { OnChanges, SimpleChanges, ElementRef } from '@angular/core';
+import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { MarkdownLoaderService } from '@covalent/markdown';
 export interface IMarkdownNavigatorItem {
     title?: string;
@@ -13,9 +13,11 @@ export interface IMarkdownNavigatorLabels {
     goBack?: string;
     emptyState?: string;
 }
+export declare type IMarkdownNavigatorCompareWith = (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean;
 export declare const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels;
 export declare class MarkdownNavigatorComponent implements OnChanges {
     private _markdownUrlLoaderService;
+    private _changeDetectorRef;
     /**
      * items: IMarkdownNavigatorItem[]
      *
@@ -28,12 +30,25 @@ export declare class MarkdownNavigatorComponent implements OnChanges {
      * Translated labels
      */
     labels: IMarkdownNavigatorLabels;
+    /**
+     * startAt?: IMarkdownNavigatorItem
+     *
+     * Item to start to
+     */
+    startAt: IMarkdownNavigatorItem;
+    /**
+     * compareWith?: IMarkdownNavigatorCompareWith
+     *
+     * Function used to find startAt item
+     * Defaults to comparison by strict equality (===)
+     */
+    compareWith: IMarkdownNavigatorCompareWith;
     markdownWrapper: ElementRef;
-    historyStack: IMarkdownNavigatorItem[][];
+    historyStack: IMarkdownNavigatorItem[];
     currentMarkdownItem: IMarkdownNavigatorItem;
     currentMenuItems: IMarkdownNavigatorItem[];
     loading: boolean;
-    constructor(_markdownUrlLoaderService: MarkdownLoaderService);
+    constructor(_markdownUrlLoaderService: MarkdownLoaderService, _changeDetectorRef: ChangeDetectorRef);
     clickListener(event: Event): void;
     readonly showGoBackButton: boolean;
     readonly showHomeButton: boolean;
@@ -52,8 +67,9 @@ export declare class MarkdownNavigatorComponent implements OnChanges {
     readonly currentItemTitle: string;
     ngOnChanges(changes: SimpleChanges): void;
     reset(): void;
-    handleItemSelected(item: IMarkdownNavigatorItem): void;
     goBack(): void;
+    handleItemSelected(item: IMarkdownNavigatorItem): void;
     getTitle(item: IMarkdownNavigatorItem): string;
-    handleLinkClick(event: Event): Promise<void>;
+    private _jumpTo;
+    private handleLinkClick;
 }

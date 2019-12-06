@@ -1,6 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels } from '../markdown-navigator.component';
+import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
     title?: string;
     close?: string;
@@ -10,6 +10,8 @@ export declare class MarkdownNavigatorWindowComponent {
     items: IMarkdownNavigatorItem[];
     labels: IMarkdownNavigatorWindowLabels;
     toolbarColor: ThemePalette;
+    startAt: IMarkdownNavigatorItem;
+    compareWith: IMarkdownNavigatorCompareWith;
     toolbarHeight: number;
     closed: EventEmitter<void>;
     readonly markdownNavigatorLabels: IMarkdownNavigatorLabels;
