@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef, Input, ViewChild, HostListener, EventEmitter, Output, Injectable, Directive, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, Input, ViewChild, HostListener, EventEmitter, Output, Injectable, Inject, RendererFactory2, Directive, NgModule } from '@angular/core';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import { __awaiter } from 'tslib';
 import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TdDialogService, CovalentDialogsModule } from '@covalent/core/dialogs';
+import { ResizableDraggableDialog, TdDialogService, CovalentDialogsModule } from '@covalent/core/dialogs';
 
 /**
  * @fileoverview added by tsickle
@@ -487,17 +487,25 @@ if (false) {
     IMarkdownNavigatorWindowLabels.prototype.title;
     /** @type {?|undefined} */
     IMarkdownNavigatorWindowLabels.prototype.close;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorWindowLabels.prototype.dock;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorWindowLabels.prototype.unDock;
 }
 /** @type {?} */
 const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS = {
     title: 'Help',
     close: 'Close',
+    dock: 'Dock',
+    unDock: 'Undock',
 };
 class MarkdownNavigatorWindowComponent {
     constructor() {
         this.toolbarColor = 'primary';
         this.toolbarHeight = 56;
+        this.docked = false;
         this.closed = new EventEmitter();
+        this.dockToggled = new EventEmitter();
     }
     /**
      * @return {?}
@@ -524,13 +532,30 @@ class MarkdownNavigatorWindowComponent {
     get closeLabel() {
         return (this.labels && this.labels.close) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.close;
     }
+    /**
+     * @return {?}
+     */
+    get toggleDockedStateLabel() {
+        if (this.docked) {
+            return (this.labels && this.labels.unDock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.unDock;
+        }
+        else {
+            return (this.labels && this.labels.dock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.dock;
+        }
+    }
+    /**
+     * @return {?}
+     */
+    toggleDockedState() {
+        this.dockToggled.emit(this.docked);
+    }
 }
 MarkdownNavigatorWindowComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-markdown-navigator-window',
-                template: "<mat-toolbar [color]=\"toolbarColor\" class=\"td-markdown-navigator-window-toolbar\" [style.min-height.px]=\"toolbarHeight\">\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\" [style.padding-right.px]=\"0\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed minimize/maximize for now-->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
+                template: "<mat-toolbar\n  [color]=\"toolbarColor\"\n  class=\"td-markdown-navigator-window-toolbar\"\n  [style.min-height.px]=\"toolbarHeight\"\n  [style.cursor]=\"docked ? 'inherit' : 'move'\"\n>\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\" [style.padding-right.px]=\"0\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->\n      <!--\n      <button mat-icon-button [matTooltip]=\"toggleDockedStateLabel\" (click)=\"toggleDockedState()\">\n        <mat-icon [attr.aria-label]=\"toggleDockedStateLabel\">\n          {{ docked ? 'unfold_more' : 'unfold_less' }}\n        </mat-icon>\n      </button>\n      -->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [style.display]=\"docked ? 'none' : 'inherit'\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}:host.td-draggable-markdown-navigator-window .td-markdown-navigator-window-toolbar{cursor:move}.td-markdown-navigator-window-title{margin-bottom:0}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
+                styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.td-markdown-navigator-window-title{margin-bottom:0}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
             }] }
 ];
 MarkdownNavigatorWindowComponent.propDecorators = {
@@ -539,7 +564,9 @@ MarkdownNavigatorWindowComponent.propDecorators = {
     toolbarColor: [{ type: Input }],
     startAt: [{ type: Input }],
     compareWith: [{ type: Input }],
-    closed: [{ type: Output }]
+    docked: [{ type: Input }],
+    closed: [{ type: Output }],
+    dockToggled: [{ type: Output }]
 };
 if (false) {
     /** @type {?} */
@@ -555,7 +582,11 @@ if (false) {
     /** @type {?} */
     MarkdownNavigatorWindowComponent.prototype.toolbarHeight;
     /** @type {?} */
+    MarkdownNavigatorWindowComponent.prototype.docked;
+    /** @type {?} */
     MarkdownNavigatorWindowComponent.prototype.closed;
+    /** @type {?} */
+    MarkdownNavigatorWindowComponent.prototype.dockToggled;
 }
 
 /**
@@ -583,22 +614,48 @@ if (false) {
 /** @type {?} */
 const CDK_OVERLAY_CUSTOM_CLASS = 'td-draggable-markdown-navigator-window-wrapper';
 /** @type {?} */
+const DEFAULT_POSITION = { bottom: '0px', right: '0px' };
+/** @type {?} */
+const DEFAULT_WIDTH = '360px';
+/** @type {?} */
+const DEFAULT_HEIGHT = '75vh';
+/** @type {?} */
+const MIN_HEIGHT = '56px';
+/** @type {?} */
+const MAX_WIDTH = '100vw';
+/** @type {?} */
 const DEFAULT_DRAGGABLE_DIALOG_CONFIG = {
     hasBackdrop: false,
     closeOnNavigation: true,
     panelClass: CDK_OVERLAY_CUSTOM_CLASS,
-    position: { bottom: '0px', right: '0px' },
-    height: '475px',
-    width: '360px',
+    position: DEFAULT_POSITION,
+    height: DEFAULT_HEIGHT,
+    width: DEFAULT_WIDTH,
+    maxWidth: MAX_WIDTH,
 };
+/**
+ * @record
+ */
+function IDialogDimensions() { }
+if (false) {
+    /** @type {?} */
+    IDialogDimensions.prototype.width;
+    /** @type {?} */
+    IDialogDimensions.prototype.height;
+}
 class MarkdownNavigatorWindowService {
     /**
      * @param {?} _tdDialogService
+     * @param {?} _document
+     * @param {?} rendererFactory
      */
-    constructor(_tdDialogService) {
+    constructor(_tdDialogService, _document, rendererFactory) {
         this._tdDialogService = _tdDialogService;
+        this._document = _document;
+        this.rendererFactory = rendererFactory;
         this.markdownNavigatorWindowDialog = undefined;
         this.markdownNavigatorWindowDialogsOpen = 0;
+        this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
     }
     /**
      * @param {?} config
@@ -606,32 +663,31 @@ class MarkdownNavigatorWindowService {
      */
     open(config) {
         this.close();
-        this.markdownNavigatorWindowDialog = this._tdDialogService.openDraggable({
+        /** @type {?} */
+        const draggableConfig = Object.assign(Object.assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig);
+        const { matDialogRef, dragRefSubject, } = this._tdDialogService.openDraggable({
             component: MarkdownNavigatorWindowComponent,
-            config: Object.assign(Object.assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig),
+            config: draggableConfig,
             dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
             draggableClass: 'td-draggable-markdown-navigator-window',
         });
-        this.markdownNavigatorWindowDialogsOpen++;
+        this.markdownNavigatorWindowDialog = matDialogRef;
         this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
         this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
         this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
         this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
         this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
             'toolbarColor' in config ? config.toolbarColor : 'primary';
-        this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe((/**
+        this.markdownNavigatorWindowDialogsOpen++;
+        dragRefSubject.subscribe((/**
+         * @param {?} dragRf
          * @return {?}
          */
-        () => this.close()));
-        this.markdownNavigatorWindowDialog
-            .afterClosed()
-            .toPromise()
-            .then((/**
-         * @return {?}
-         */
-        () => {
-            this.markdownNavigatorWindowDialogsOpen--;
+        (dragRf) => {
+            this.dragRef = dragRf;
+            this.resizableDraggableDialog = new ResizableDraggableDialog(this._document, this._renderer2, this.markdownNavigatorWindowDialog, this.dragRef);
         }));
+        this._handleEvents();
         return this.markdownNavigatorWindowDialog;
     }
     /**
@@ -639,6 +695,9 @@ class MarkdownNavigatorWindowService {
      */
     close() {
         if (this.markdownNavigatorWindowDialog) {
+            if (this.resizableDraggableDialog) {
+                this.resizableDraggableDialog.detach();
+            }
             this.markdownNavigatorWindowDialog.close();
         }
     }
@@ -648,15 +707,91 @@ class MarkdownNavigatorWindowService {
     get isOpen() {
         return this.markdownNavigatorWindowDialogsOpen > 0;
     }
+    /**
+     * @private
+     * @return {?}
+     */
+    _handleEvents() {
+        /** @type {?} */
+        let position;
+        /** @type {?} */
+        let dimensions;
+        this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe((/**
+         * @return {?}
+         */
+        () => this.close()));
+        this.markdownNavigatorWindowDialog.componentInstance.dockToggled.subscribe((/**
+         * @param {?} docked
+         * @return {?}
+         */
+        (docked) => {
+            if (docked) {
+                this.markdownNavigatorWindowDialog.componentInstance.docked = false;
+                this.markdownNavigatorWindowDialog.updateSize(dimensions.width, dimensions.height);
+                this.markdownNavigatorWindowDialog.updatePosition({ top: '0px', right: '0px', bottom: '0px', left: '0px' });
+                this.dragRef.setFreeDragPosition(position);
+                this.dragRef.disabled = false;
+                this.resizableDraggableDialog.attach();
+            }
+            else {
+                dimensions = this._getDialogSize(this.markdownNavigatorWindowDialog);
+                position = this.dragRef.getFreeDragPosition();
+                this.markdownNavigatorWindowDialog.componentInstance.docked = true;
+                this.markdownNavigatorWindowDialog.updateSize(DEFAULT_WIDTH, MIN_HEIGHT);
+                this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
+                this.dragRef.reset();
+                this.dragRef.disabled = true;
+                this.resizableDraggableDialog.detach();
+            }
+        }));
+        this.markdownNavigatorWindowDialog
+            .afterClosed()
+            .toPromise()
+            .then((/**
+         * @return {?}
+         */
+        () => {
+            this.markdownNavigatorWindowDialogsOpen--;
+        }));
+    }
+    /**
+     * @private
+     * @param {?} dialogRef
+     * @return {?}
+     */
+    _getDialogSize(dialogRef) {
+        const { width, height } = getComputedStyle(((/** @type {?} */ (this._document.getElementById(dialogRef.id)))).parentElement);
+        return {
+            width,
+            height,
+        };
+    }
 }
 MarkdownNavigatorWindowService.decorators = [
     { type: Injectable }
 ];
 /** @nocollapse */
 MarkdownNavigatorWindowService.ctorParameters = () => [
-    { type: TdDialogService }
+    { type: TdDialogService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] },
+    { type: RendererFactory2 }
 ];
 if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MarkdownNavigatorWindowService.prototype._renderer2;
+    /**
+     * @type {?}
+     * @private
+     */
+    MarkdownNavigatorWindowService.prototype.dragRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MarkdownNavigatorWindowService.prototype.resizableDraggableDialog;
     /**
      * @type {?}
      * @private
@@ -672,6 +807,16 @@ if (false) {
      * @private
      */
     MarkdownNavigatorWindowService.prototype._tdDialogService;
+    /**
+     * @type {?}
+     * @private
+     */
+    MarkdownNavigatorWindowService.prototype._document;
+    /**
+     * @type {?}
+     * @private
+     */
+    MarkdownNavigatorWindowService.prototype.rendererFactory;
 }
 
 /**

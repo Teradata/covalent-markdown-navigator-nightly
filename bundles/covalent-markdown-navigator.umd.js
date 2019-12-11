@@ -787,17 +787,25 @@
         IMarkdownNavigatorWindowLabels.prototype.title;
         /** @type {?|undefined} */
         IMarkdownNavigatorWindowLabels.prototype.close;
+        /** @type {?|undefined} */
+        IMarkdownNavigatorWindowLabels.prototype.dock;
+        /** @type {?|undefined} */
+        IMarkdownNavigatorWindowLabels.prototype.unDock;
     }
     /** @type {?} */
     var DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS = {
         title: 'Help',
         close: 'Close',
+        dock: 'Dock',
+        unDock: 'Undock',
     };
     var MarkdownNavigatorWindowComponent = /** @class */ (function () {
         function MarkdownNavigatorWindowComponent() {
             this.toolbarColor = 'primary';
             this.toolbarHeight = 56;
+            this.docked = false;
             this.closed = new core.EventEmitter();
+            this.dockToggled = new core.EventEmitter();
         }
         Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "markdownNavigatorLabels", {
             get: /**
@@ -836,12 +844,36 @@
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "toggleDockedStateLabel", {
+            get: /**
+             * @return {?}
+             */
+            function () {
+                if (this.docked) {
+                    return (this.labels && this.labels.unDock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.unDock;
+                }
+                else {
+                    return (this.labels && this.labels.dock) || DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS.dock;
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @return {?}
+         */
+        MarkdownNavigatorWindowComponent.prototype.toggleDockedState = /**
+         * @return {?}
+         */
+        function () {
+            this.dockToggled.emit(this.docked);
+        };
         MarkdownNavigatorWindowComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-markdown-navigator-window',
-                        template: "<mat-toolbar [color]=\"toolbarColor\" class=\"td-markdown-navigator-window-toolbar\" [style.min-height.px]=\"toolbarHeight\">\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\" [style.padding-right.px]=\"0\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed minimize/maximize for now-->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
+                        template: "<mat-toolbar\n  [color]=\"toolbarColor\"\n  class=\"td-markdown-navigator-window-toolbar\"\n  [style.min-height.px]=\"toolbarHeight\"\n  [style.cursor]=\"docked ? 'inherit' : 'move'\"\n>\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\" [style.padding-right.px]=\"0\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->\n      <!--\n      <button mat-icon-button [matTooltip]=\"toggleDockedStateLabel\" (click)=\"toggleDockedState()\">\n        <mat-icon [attr.aria-label]=\"toggleDockedStateLabel\">\n          {{ docked ? 'unfold_more' : 'unfold_less' }}\n        </mat-icon>\n      </button>\n      -->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [style.display]=\"docked ? 'none' : 'inherit'\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}:host.td-draggable-markdown-navigator-window .td-markdown-navigator-window-toolbar{cursor:move}.td-markdown-navigator-window-title{margin-bottom:0}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
+                        styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.td-markdown-navigator-window-title{margin-bottom:0}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
                     }] }
         ];
         MarkdownNavigatorWindowComponent.propDecorators = {
@@ -850,7 +882,9 @@
             toolbarColor: [{ type: core.Input }],
             startAt: [{ type: core.Input }],
             compareWith: [{ type: core.Input }],
-            closed: [{ type: core.Output }]
+            docked: [{ type: core.Input }],
+            closed: [{ type: core.Output }],
+            dockToggled: [{ type: core.Output }]
         };
         return MarkdownNavigatorWindowComponent;
     }());
@@ -868,7 +902,11 @@
         /** @type {?} */
         MarkdownNavigatorWindowComponent.prototype.toolbarHeight;
         /** @type {?} */
+        MarkdownNavigatorWindowComponent.prototype.docked;
+        /** @type {?} */
         MarkdownNavigatorWindowComponent.prototype.closed;
+        /** @type {?} */
+        MarkdownNavigatorWindowComponent.prototype.dockToggled;
     }
 
     /**
@@ -896,19 +934,43 @@
     /** @type {?} */
     var CDK_OVERLAY_CUSTOM_CLASS = 'td-draggable-markdown-navigator-window-wrapper';
     /** @type {?} */
+    var DEFAULT_POSITION = { bottom: '0px', right: '0px' };
+    /** @type {?} */
+    var DEFAULT_WIDTH = '360px';
+    /** @type {?} */
+    var DEFAULT_HEIGHT = '75vh';
+    /** @type {?} */
+    var MIN_HEIGHT = '56px';
+    /** @type {?} */
+    var MAX_WIDTH = '100vw';
+    /** @type {?} */
     var DEFAULT_DRAGGABLE_DIALOG_CONFIG = {
         hasBackdrop: false,
         closeOnNavigation: true,
         panelClass: CDK_OVERLAY_CUSTOM_CLASS,
-        position: { bottom: '0px', right: '0px' },
-        height: '475px',
-        width: '360px',
+        position: DEFAULT_POSITION,
+        height: DEFAULT_HEIGHT,
+        width: DEFAULT_WIDTH,
+        maxWidth: MAX_WIDTH,
     };
+    /**
+     * @record
+     */
+    function IDialogDimensions() { }
+    if (false) {
+        /** @type {?} */
+        IDialogDimensions.prototype.width;
+        /** @type {?} */
+        IDialogDimensions.prototype.height;
+    }
     var MarkdownNavigatorWindowService = /** @class */ (function () {
-        function MarkdownNavigatorWindowService(_tdDialogService) {
+        function MarkdownNavigatorWindowService(_tdDialogService, _document, rendererFactory) {
             this._tdDialogService = _tdDialogService;
+            this._document = _document;
+            this.rendererFactory = rendererFactory;
             this.markdownNavigatorWindowDialog = undefined;
             this.markdownNavigatorWindowDialogsOpen = 0;
+            this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
         }
         /**
          * @param {?} config
@@ -921,32 +983,31 @@
         function (config) {
             var _this = this;
             this.close();
-            this.markdownNavigatorWindowDialog = this._tdDialogService.openDraggable({
+            /** @type {?} */
+            var draggableConfig = __assign(__assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig);
+            var _a = this._tdDialogService.openDraggable({
                 component: MarkdownNavigatorWindowComponent,
-                config: __assign(__assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig),
+                config: draggableConfig,
                 dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
                 draggableClass: 'td-draggable-markdown-navigator-window',
-            });
-            this.markdownNavigatorWindowDialogsOpen++;
+            }), matDialogRef = _a.matDialogRef, dragRefSubject = _a.dragRefSubject;
+            this.markdownNavigatorWindowDialog = matDialogRef;
             this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
             this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
             this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
             this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
             this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
                 'toolbarColor' in config ? config.toolbarColor : 'primary';
-            this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe((/**
+            this.markdownNavigatorWindowDialogsOpen++;
+            dragRefSubject.subscribe((/**
+             * @param {?} dragRf
              * @return {?}
              */
-            function () { return _this.close(); }));
-            this.markdownNavigatorWindowDialog
-                .afterClosed()
-                .toPromise()
-                .then((/**
-             * @return {?}
-             */
-            function () {
-                _this.markdownNavigatorWindowDialogsOpen--;
+            function (dragRf) {
+                _this.dragRef = dragRf;
+                _this.resizableDraggableDialog = new dialogs.ResizableDraggableDialog(_this._document, _this._renderer2, _this.markdownNavigatorWindowDialog, _this.dragRef);
             }));
+            this._handleEvents();
             return this.markdownNavigatorWindowDialog;
         };
         /**
@@ -957,6 +1018,9 @@
          */
         function () {
             if (this.markdownNavigatorWindowDialog) {
+                if (this.resizableDraggableDialog) {
+                    this.resizableDraggableDialog.detach();
+                }
                 this.markdownNavigatorWindowDialog.close();
             }
         };
@@ -970,16 +1034,102 @@
             enumerable: true,
             configurable: true
         });
+        /**
+         * @private
+         * @return {?}
+         */
+        MarkdownNavigatorWindowService.prototype._handleEvents = /**
+         * @private
+         * @return {?}
+         */
+        function () {
+            var _this = this;
+            /** @type {?} */
+            var position;
+            /** @type {?} */
+            var dimensions;
+            this.markdownNavigatorWindowDialog.componentInstance.closed.subscribe((/**
+             * @return {?}
+             */
+            function () { return _this.close(); }));
+            this.markdownNavigatorWindowDialog.componentInstance.dockToggled.subscribe((/**
+             * @param {?} docked
+             * @return {?}
+             */
+            function (docked) {
+                if (docked) {
+                    _this.markdownNavigatorWindowDialog.componentInstance.docked = false;
+                    _this.markdownNavigatorWindowDialog.updateSize(dimensions.width, dimensions.height);
+                    _this.markdownNavigatorWindowDialog.updatePosition({ top: '0px', right: '0px', bottom: '0px', left: '0px' });
+                    _this.dragRef.setFreeDragPosition(position);
+                    _this.dragRef.disabled = false;
+                    _this.resizableDraggableDialog.attach();
+                }
+                else {
+                    dimensions = _this._getDialogSize(_this.markdownNavigatorWindowDialog);
+                    position = _this.dragRef.getFreeDragPosition();
+                    _this.markdownNavigatorWindowDialog.componentInstance.docked = true;
+                    _this.markdownNavigatorWindowDialog.updateSize(DEFAULT_WIDTH, MIN_HEIGHT);
+                    _this.markdownNavigatorWindowDialog.updatePosition(DEFAULT_POSITION);
+                    _this.dragRef.reset();
+                    _this.dragRef.disabled = true;
+                    _this.resizableDraggableDialog.detach();
+                }
+            }));
+            this.markdownNavigatorWindowDialog
+                .afterClosed()
+                .toPromise()
+                .then((/**
+             * @return {?}
+             */
+            function () {
+                _this.markdownNavigatorWindowDialogsOpen--;
+            }));
+        };
+        /**
+         * @private
+         * @param {?} dialogRef
+         * @return {?}
+         */
+        MarkdownNavigatorWindowService.prototype._getDialogSize = /**
+         * @private
+         * @param {?} dialogRef
+         * @return {?}
+         */
+        function (dialogRef) {
+            var _a = getComputedStyle(((/** @type {?} */ (this._document.getElementById(dialogRef.id)))).parentElement), width = _a.width, height = _a.height;
+            return {
+                width: width,
+                height: height,
+            };
+        };
         MarkdownNavigatorWindowService.decorators = [
             { type: core.Injectable }
         ];
         /** @nocollapse */
         MarkdownNavigatorWindowService.ctorParameters = function () { return [
-            { type: dialogs.TdDialogService }
+            { type: dialogs.TdDialogService },
+            { type: undefined, decorators: [{ type: core.Inject, args: [common.DOCUMENT,] }] },
+            { type: core.RendererFactory2 }
         ]; };
         return MarkdownNavigatorWindowService;
     }());
     if (false) {
+        /**
+         * @type {?}
+         * @private
+         */
+        MarkdownNavigatorWindowService.prototype._renderer2;
+        /**
+         * @type {?}
+         * @private
+         */
+        MarkdownNavigatorWindowService.prototype.dragRef;
+        /**
+         * @type {?}
+         * @private
+         */
+        MarkdownNavigatorWindowService.prototype.resizableDraggableDialog;
         /**
          * @type {?}
          * @private
@@ -995,6 +1145,16 @@
          * @private
          */
         MarkdownNavigatorWindowService.prototype._tdDialogService;
+        /**
+         * @type {?}
+         * @private
+         */
+        MarkdownNavigatorWindowService.prototype._document;
+        /**
+         * @type {?}
+         * @private
+         */
+        MarkdownNavigatorWindowService.prototype.rendererFactory;
     }
 
     /**

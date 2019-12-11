@@ -4,6 +4,8 @@ import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels, IMarkdownNavigatorCom
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
     title?: string;
     close?: string;
+    dock?: string;
+    unDock?: string;
 }
 export declare const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowLabels;
 export declare class MarkdownNavigatorWindowComponent {
@@ -13,8 +15,12 @@ export declare class MarkdownNavigatorWindowComponent {
     startAt: IMarkdownNavigatorItem;
     compareWith: IMarkdownNavigatorCompareWith;
     toolbarHeight: number;
+    docked: boolean;
     closed: EventEmitter<void>;
+    dockToggled: EventEmitter<boolean>;
     readonly markdownNavigatorLabels: IMarkdownNavigatorLabels;
     readonly titleLabel: string;
     readonly closeLabel: string;
+    readonly toggleDockedStateLabel: string;
+    toggleDockedState(): void;
 }
