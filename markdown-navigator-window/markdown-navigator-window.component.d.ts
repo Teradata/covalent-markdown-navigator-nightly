@@ -8,7 +8,7 @@ export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels
     unDock?: string;
 }
 export declare const DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS: IMarkdownNavigatorWindowLabels;
-export declare class MarkdownNavigatorWindowComponent {
+export declare class TdMarkdownNavigatorWindowComponent {
     items: IMarkdownNavigatorItem[];
     labels: IMarkdownNavigatorWindowLabels;
     toolbarColor: ThemePalette;

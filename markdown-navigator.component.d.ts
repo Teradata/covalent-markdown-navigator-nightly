@@ -1,5 +1,5 @@
 import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { MarkdownLoaderService } from '@covalent/markdown';
+import { TdMarkdownLoaderService } from '@covalent/markdown';
 export interface IMarkdownNavigatorItem {
     title?: string;
     url?: string;
@@ -15,7 +15,7 @@ export interface IMarkdownNavigatorLabels {
 }
 export declare type IMarkdownNavigatorCompareWith = (o1: IMarkdownNavigatorItem, o2: IMarkdownNavigatorItem) => boolean;
 export declare const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels;
-export declare class MarkdownNavigatorComponent implements OnChanges {
+export declare class TdMarkdownNavigatorComponent implements OnChanges {
     private _markdownUrlLoaderService;
     private _changeDetectorRef;
     /**
@@ -48,7 +48,7 @@ export declare class MarkdownNavigatorComponent implements OnChanges {
     currentMarkdownItem: IMarkdownNavigatorItem;
     currentMenuItems: IMarkdownNavigatorItem[];
     loading: boolean;
-    constructor(_markdownUrlLoaderService: MarkdownLoaderService, _changeDetectorRef: ChangeDetectorRef);
+    constructor(_markdownUrlLoaderService: TdMarkdownLoaderService, _changeDetectorRef: ChangeDetectorRef);
     clickListener(event: Event): void;
     readonly showGoBackButton: boolean;
     readonly showHomeButton: boolean;

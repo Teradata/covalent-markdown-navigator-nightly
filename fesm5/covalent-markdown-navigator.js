@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, Input, ViewChild, HostListener, EventEmitter, Output, Injectable, Inject, RendererFactory2, Directive, NgModule } from '@angular/core';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import { __values, __spread, __awaiter, __generator, __assign } from 'tslib';
-import { removeLeadingHash, isAnchorLink, MarkdownLoaderService } from '@covalent/markdown';
+import { removeLeadingHash, isAnchorLink, TdMarkdownLoaderService } from '@covalent/markdown';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
@@ -135,8 +135,8 @@ function getAncestors(items, item, compareWith) {
     }
     return undefined;
 }
-var MarkdownNavigatorComponent = /** @class */ (function () {
-    function MarkdownNavigatorComponent(_markdownUrlLoaderService, _changeDetectorRef) {
+var TdMarkdownNavigatorComponent = /** @class */ (function () {
+    function TdMarkdownNavigatorComponent(_markdownUrlLoaderService, _changeDetectorRef) {
         this._markdownUrlLoaderService = _markdownUrlLoaderService;
         this._changeDetectorRef = _changeDetectorRef;
         this.historyStack = []; // history
@@ -149,7 +149,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} event
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.clickListener = /**
+    TdMarkdownNavigatorComponent.prototype.clickListener = /**
      * @param {?} event
      * @return {?}
      */
@@ -160,7 +160,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
             this.handleLinkClick(event);
         }
     };
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showGoBackButton", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showGoBackButton", {
         get: /**
          * @return {?}
          */
@@ -170,7 +170,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showHomeButton", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showHomeButton", {
         get: /**
          * @return {?}
          */
@@ -180,7 +180,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showHeader", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showHeader", {
         get: /**
          * @return {?}
          */
@@ -190,7 +190,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showMenu", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showMenu", {
         get: /**
          * @return {?}
          */
@@ -200,7 +200,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showTdMarkdownLoader", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showTdMarkdownLoader", {
         get: /**
          * @return {?}
          */
@@ -210,7 +210,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showTdMarkdown", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showTdMarkdown", {
         get: /**
          * @return {?}
          */
@@ -220,7 +220,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "url", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "url", {
         get: /**
          * @return {?}
          */
@@ -233,7 +233,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "httpOptions", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "httpOptions", {
         get: /**
          * @return {?}
          */
@@ -245,7 +245,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "markdownString", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "markdownString", {
         get: /**
          * @return {?}
          */
@@ -257,7 +257,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "anchor", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "anchor", {
         get: /**
          * @return {?}
          */
@@ -269,7 +269,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "showEmptyState", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "showEmptyState", {
         get: /**
          * @return {?}
          */
@@ -279,7 +279,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "goHomeLabel", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "goHomeLabel", {
         get: /**
          * @return {?}
          */
@@ -289,7 +289,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "goBackLabel", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "goBackLabel", {
         get: /**
          * @return {?}
          */
@@ -299,7 +299,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "emptyStateLabel", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "emptyStateLabel", {
         get: /**
          * @return {?}
          */
@@ -309,7 +309,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorComponent.prototype, "currentItemTitle", {
+    Object.defineProperty(TdMarkdownNavigatorComponent.prototype, "currentItemTitle", {
         get: /**
          * @return {?}
          */
@@ -332,7 +332,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} changes
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.ngOnChanges = /**
+    TdMarkdownNavigatorComponent.prototype.ngOnChanges = /**
      * @param {?} changes
      * @return {?}
      */
@@ -347,7 +347,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.reset = /**
+    TdMarkdownNavigatorComponent.prototype.reset = /**
      * @return {?}
      */
     function () {
@@ -366,7 +366,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.goBack = /**
+    TdMarkdownNavigatorComponent.prototype.goBack = /**
      * @return {?}
      */
     function () {
@@ -395,7 +395,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} item
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.handleItemSelected = /**
+    TdMarkdownNavigatorComponent.prototype.handleItemSelected = /**
      * @param {?} item
      * @return {?}
      */
@@ -426,7 +426,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} item
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.getTitle = /**
+    TdMarkdownNavigatorComponent.prototype.getTitle = /**
      * @param {?} item
      * @return {?}
      */
@@ -444,7 +444,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} item
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype._jumpTo = /**
+    TdMarkdownNavigatorComponent.prototype._jumpTo = /**
      * @private
      * @param {?} item
      * @return {?}
@@ -468,7 +468,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
      * @param {?} event
      * @return {?}
      */
-    MarkdownNavigatorComponent.prototype.handleLinkClick = /**
+    TdMarkdownNavigatorComponent.prototype.handleLinkClick = /**
      * @private
      * @param {?} event
      * @return {?}
@@ -509,7 +509,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
             });
         });
     };
-    MarkdownNavigatorComponent.decorators = [
+    TdMarkdownNavigatorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator',
                     template: "<ng-container *ngIf=\"!showEmptyState\">\n  <mat-progress-bar *ngIf=\"loading\" mode=\"indeterminate\" color=\"accent\"></mat-progress-bar>\n\n  <ng-container *ngIf=\"showHeader\">\n    <div [style.display]=\"'flex'\">\n      <button\n        *ngIf=\"showHomeButton\"\n        mat-icon-button\n        [matTooltip]=\"goHomeLabel\"\n        (click)=\"reset()\"\n        [attr.data-test]=\"'home-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goHomeLabel\">\n          home\n        </mat-icon>\n      </button>\n\n      <button\n        *ngIf=\"showGoBackButton\"\n        mat-icon-button\n        [matTooltip]=\"goBackLabel\"\n        (click)=\"goBack()\"\n        [attr.data-test]=\"'back-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goBackLabel\">\n          arrow_back\n        </mat-icon>\n      </button>\n      <span flex *ngIf=\"currentItemTitle\" class=\"mat-body-2 title truncate\" [attr.data-test]=\"'title'\">\n        {{ currentItemTitle }}\n      </span>\n    </div>\n\n    <mat-divider [style.position]=\"'relative'\"></mat-divider>\n  </ng-container>\n\n  <div *ngIf=\"showMenu\" class=\"td-markdown-list\">\n    <mat-action-list>\n      <button\n        *ngFor=\"let item of currentMenuItems\"\n        (click)=\"handleItemSelected(item)\"\n        mat-list-item\n        [matTooltip]=\"getTitle(item)\"\n        matTooltipPosition=\"before\"\n        matTooltipShowDelay=\"500\"\n      >\n        <mat-icon matListIcon>\n          subject\n        </mat-icon>\n        <span matLine class=\"truncate\">\n          {{ getTitle(item) }}\n        </span>\n        <mat-divider></mat-divider>\n      </button>\n    </mat-action-list>\n  </div>\n\n  <div *ngIf=\"showTdMarkdownLoader || showTdMarkdown\" class=\"markdown-wrapper\" #markdownWrapper>\n    <td-flavored-markdown-loader\n      *ngIf=\"showTdMarkdownLoader\"\n      [url]=\"url\"\n      [httpOptions]=\"httpOptions\"\n      [anchor]=\"anchor\"\n    ></td-flavored-markdown-loader>\n\n    <td-flavored-markdown\n      *ngIf=\"showTdMarkdown\"\n      [content]=\"markdownString\"\n      [hostedUrl]=\"url\"\n      [anchor]=\"anchor\"\n    ></td-flavored-markdown>\n  </div>\n</ng-container>\n\n<div *ngIf=\"showEmptyState\" layout=\"column\" layout-align=\"center center\" class=\" empty-state\">\n  <mat-icon matListAvatar>subject</mat-icon>\n  <h2>{{ emptyStateLabel }}</h2>\n</div>\n",
@@ -518,11 +518,11 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
                 }] }
     ];
     /** @nocollapse */
-    MarkdownNavigatorComponent.ctorParameters = function () { return [
-        { type: MarkdownLoaderService },
+    TdMarkdownNavigatorComponent.ctorParameters = function () { return [
+        { type: TdMarkdownLoaderService },
         { type: ChangeDetectorRef }
     ]; };
-    MarkdownNavigatorComponent.propDecorators = {
+    TdMarkdownNavigatorComponent.propDecorators = {
         items: [{ type: Input }],
         labels: [{ type: Input }],
         startAt: [{ type: Input }],
@@ -530,7 +530,7 @@ var MarkdownNavigatorComponent = /** @class */ (function () {
         markdownWrapper: [{ type: ViewChild, args: ['markdownWrapper', { static: false },] }],
         clickListener: [{ type: HostListener, args: ['click', ['$event'],] }]
     };
-    return MarkdownNavigatorComponent;
+    return TdMarkdownNavigatorComponent;
 }());
 if (false) {
     /**
@@ -539,21 +539,21 @@ if (false) {
      * List of IMarkdownNavigatorItems to be rendered
      * @type {?}
      */
-    MarkdownNavigatorComponent.prototype.items;
+    TdMarkdownNavigatorComponent.prototype.items;
     /**
      * labels?: IMarkdownNavigatorLabels
      *
      * Translated labels
      * @type {?}
      */
-    MarkdownNavigatorComponent.prototype.labels;
+    TdMarkdownNavigatorComponent.prototype.labels;
     /**
      * startAt?: IMarkdownNavigatorItem
      *
      * Item to start to
      * @type {?}
      */
-    MarkdownNavigatorComponent.prototype.startAt;
+    TdMarkdownNavigatorComponent.prototype.startAt;
     /**
      * compareWith?: IMarkdownNavigatorCompareWith
      *
@@ -561,27 +561,27 @@ if (false) {
      * Defaults to comparison by strict equality (===)
      * @type {?}
      */
-    MarkdownNavigatorComponent.prototype.compareWith;
+    TdMarkdownNavigatorComponent.prototype.compareWith;
     /** @type {?} */
-    MarkdownNavigatorComponent.prototype.markdownWrapper;
+    TdMarkdownNavigatorComponent.prototype.markdownWrapper;
     /** @type {?} */
-    MarkdownNavigatorComponent.prototype.historyStack;
+    TdMarkdownNavigatorComponent.prototype.historyStack;
     /** @type {?} */
-    MarkdownNavigatorComponent.prototype.currentMarkdownItem;
+    TdMarkdownNavigatorComponent.prototype.currentMarkdownItem;
     /** @type {?} */
-    MarkdownNavigatorComponent.prototype.currentMenuItems;
+    TdMarkdownNavigatorComponent.prototype.currentMenuItems;
     /** @type {?} */
-    MarkdownNavigatorComponent.prototype.loading;
+    TdMarkdownNavigatorComponent.prototype.loading;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorComponent.prototype._markdownUrlLoaderService;
+    TdMarkdownNavigatorComponent.prototype._markdownUrlLoaderService;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorComponent.prototype._changeDetectorRef;
+    TdMarkdownNavigatorComponent.prototype._changeDetectorRef;
 }
 
 /**
@@ -609,15 +609,15 @@ var DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS = {
     dock: 'Dock',
     unDock: 'Undock',
 };
-var MarkdownNavigatorWindowComponent = /** @class */ (function () {
-    function MarkdownNavigatorWindowComponent() {
+var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
+    function TdMarkdownNavigatorWindowComponent() {
         this.toolbarColor = 'primary';
         this.toolbarHeight = 56;
         this.docked = false;
         this.closed = new EventEmitter();
         this.dockToggled = new EventEmitter();
     }
-    Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "markdownNavigatorLabels", {
+    Object.defineProperty(TdMarkdownNavigatorWindowComponent.prototype, "markdownNavigatorLabels", {
         get: /**
          * @return {?}
          */
@@ -634,7 +634,7 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "titleLabel", {
+    Object.defineProperty(TdMarkdownNavigatorWindowComponent.prototype, "titleLabel", {
         get: /**
          * @return {?}
          */
@@ -644,7 +644,7 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "closeLabel", {
+    Object.defineProperty(TdMarkdownNavigatorWindowComponent.prototype, "closeLabel", {
         get: /**
          * @return {?}
          */
@@ -654,7 +654,7 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MarkdownNavigatorWindowComponent.prototype, "toggleDockedStateLabel", {
+    Object.defineProperty(TdMarkdownNavigatorWindowComponent.prototype, "toggleDockedStateLabel", {
         get: /**
          * @return {?}
          */
@@ -672,13 +672,13 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    MarkdownNavigatorWindowComponent.prototype.toggleDockedState = /**
+    TdMarkdownNavigatorWindowComponent.prototype.toggleDockedState = /**
      * @return {?}
      */
     function () {
         this.dockToggled.emit(this.docked);
     };
-    MarkdownNavigatorWindowComponent.decorators = [
+    TdMarkdownNavigatorWindowComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator-window',
                     template: "<mat-toolbar\n  [color]=\"toolbarColor\"\n  class=\"td-markdown-navigator-window-toolbar\"\n  [style.min-height.px]=\"toolbarHeight\"\n  [style.cursor]=\"docked ? 'inherit' : 'move'\"\n>\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\" [style.padding-right.px]=\"0\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->\n      <!--\n      <button mat-icon-button [matTooltip]=\"toggleDockedStateLabel\" (click)=\"toggleDockedState()\">\n        <mat-icon [attr.aria-label]=\"toggleDockedStateLabel\">\n          {{ docked ? 'unfold_more' : 'unfold_less' }}\n        </mat-icon>\n      </button>\n      -->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [style.display]=\"docked ? 'none' : 'inherit'\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
@@ -686,7 +686,7 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
                     styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.td-markdown-navigator-window-title{margin-bottom:0}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
                 }] }
     ];
-    MarkdownNavigatorWindowComponent.propDecorators = {
+    TdMarkdownNavigatorWindowComponent.propDecorators = {
         items: [{ type: Input }],
         labels: [{ type: Input }],
         toolbarColor: [{ type: Input }],
@@ -696,27 +696,27 @@ var MarkdownNavigatorWindowComponent = /** @class */ (function () {
         closed: [{ type: Output }],
         dockToggled: [{ type: Output }]
     };
-    return MarkdownNavigatorWindowComponent;
+    return TdMarkdownNavigatorWindowComponent;
 }());
 if (false) {
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.items;
+    TdMarkdownNavigatorWindowComponent.prototype.items;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.labels;
+    TdMarkdownNavigatorWindowComponent.prototype.labels;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.toolbarColor;
+    TdMarkdownNavigatorWindowComponent.prototype.toolbarColor;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.startAt;
+    TdMarkdownNavigatorWindowComponent.prototype.startAt;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.compareWith;
+    TdMarkdownNavigatorWindowComponent.prototype.compareWith;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.toolbarHeight;
+    TdMarkdownNavigatorWindowComponent.prototype.toolbarHeight;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.docked;
+    TdMarkdownNavigatorWindowComponent.prototype.docked;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.closed;
+    TdMarkdownNavigatorWindowComponent.prototype.closed;
     /** @type {?} */
-    MarkdownNavigatorWindowComponent.prototype.dockToggled;
+    TdMarkdownNavigatorWindowComponent.prototype.dockToggled;
 }
 
 /**
@@ -773,8 +773,8 @@ if (false) {
     /** @type {?} */
     IDialogDimensions.prototype.height;
 }
-var MarkdownNavigatorWindowService = /** @class */ (function () {
-    function MarkdownNavigatorWindowService(_tdDialogService, _document, rendererFactory) {
+var TdMarkdownNavigatorWindowService = /** @class */ (function () {
+    function TdMarkdownNavigatorWindowService(_tdDialogService, _document, rendererFactory) {
         this._tdDialogService = _tdDialogService;
         this._document = _document;
         this.rendererFactory = rendererFactory;
@@ -786,7 +786,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
      * @param {?} config
      * @return {?}
      */
-    MarkdownNavigatorWindowService.prototype.open = /**
+    TdMarkdownNavigatorWindowService.prototype.open = /**
      * @param {?} config
      * @return {?}
      */
@@ -796,7 +796,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
         /** @type {?} */
         var draggableConfig = __assign(__assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig);
         var _a = this._tdDialogService.openDraggable({
-            component: MarkdownNavigatorWindowComponent,
+            component: TdMarkdownNavigatorWindowComponent,
             config: draggableConfig,
             dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
             draggableClass: 'td-draggable-markdown-navigator-window',
@@ -823,7 +823,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
     /**
      * @return {?}
      */
-    MarkdownNavigatorWindowService.prototype.close = /**
+    TdMarkdownNavigatorWindowService.prototype.close = /**
      * @return {?}
      */
     function () {
@@ -834,7 +834,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
             this.markdownNavigatorWindowDialog.close();
         }
     };
-    Object.defineProperty(MarkdownNavigatorWindowService.prototype, "isOpen", {
+    Object.defineProperty(TdMarkdownNavigatorWindowService.prototype, "isOpen", {
         get: /**
          * @return {?}
          */
@@ -848,7 +848,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
      * @private
      * @return {?}
      */
-    MarkdownNavigatorWindowService.prototype._handleEvents = /**
+    TdMarkdownNavigatorWindowService.prototype._handleEvents = /**
      * @private
      * @return {?}
      */
@@ -901,7 +901,7 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
      * @param {?} dialogRef
      * @return {?}
      */
-    MarkdownNavigatorWindowService.prototype._getDialogSize = /**
+    TdMarkdownNavigatorWindowService.prototype._getDialogSize = /**
      * @private
      * @param {?} dialogRef
      * @return {?}
@@ -913,73 +913,73 @@ var MarkdownNavigatorWindowService = /** @class */ (function () {
             height: height,
         };
     };
-    MarkdownNavigatorWindowService.decorators = [
+    TdMarkdownNavigatorWindowService.decorators = [
         { type: Injectable }
     ];
     /** @nocollapse */
-    MarkdownNavigatorWindowService.ctorParameters = function () { return [
+    TdMarkdownNavigatorWindowService.ctorParameters = function () { return [
         { type: TdDialogService },
         { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] },
         { type: RendererFactory2 }
     ]; };
-    return MarkdownNavigatorWindowService;
+    return TdMarkdownNavigatorWindowService;
 }());
 if (false) {
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype._renderer2;
+    TdMarkdownNavigatorWindowService.prototype._renderer2;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype.dragRef;
+    TdMarkdownNavigatorWindowService.prototype.dragRef;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype.resizableDraggableDialog;
+    TdMarkdownNavigatorWindowService.prototype.resizableDraggableDialog;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype.markdownNavigatorWindowDialog;
+    TdMarkdownNavigatorWindowService.prototype.markdownNavigatorWindowDialog;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype.markdownNavigatorWindowDialogsOpen;
+    TdMarkdownNavigatorWindowService.prototype.markdownNavigatorWindowDialogsOpen;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype._tdDialogService;
+    TdMarkdownNavigatorWindowService.prototype._tdDialogService;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype._document;
+    TdMarkdownNavigatorWindowService.prototype._document;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowService.prototype.rendererFactory;
+    TdMarkdownNavigatorWindowService.prototype.rendererFactory;
 }
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var MarkdownNavigatorWindowDirective = /** @class */ (function () {
-    function MarkdownNavigatorWindowDirective(_markdownNavigatorWindowService) {
+var TdMarkdownNavigatorWindowDirective = /** @class */ (function () {
+    function TdMarkdownNavigatorWindowDirective(_markdownNavigatorWindowService) {
         this._markdownNavigatorWindowService = _markdownNavigatorWindowService;
         this.disabled = false;
     }
     /**
      * @return {?}
      */
-    MarkdownNavigatorWindowDirective.prototype.click = /**
+    TdMarkdownNavigatorWindowDirective.prototype.click = /**
      * @return {?}
      */
     function () {
@@ -987,32 +987,32 @@ var MarkdownNavigatorWindowDirective = /** @class */ (function () {
             this._markdownNavigatorWindowService.open(this.config);
         }
     };
-    MarkdownNavigatorWindowDirective.decorators = [
+    TdMarkdownNavigatorWindowDirective.decorators = [
         { type: Directive, args: [{
                     selector: '[tdMarkdownNavigatorWindow]',
                 },] }
     ];
     /** @nocollapse */
-    MarkdownNavigatorWindowDirective.ctorParameters = function () { return [
-        { type: MarkdownNavigatorWindowService }
+    TdMarkdownNavigatorWindowDirective.ctorParameters = function () { return [
+        { type: TdMarkdownNavigatorWindowService }
     ]; };
-    MarkdownNavigatorWindowDirective.propDecorators = {
+    TdMarkdownNavigatorWindowDirective.propDecorators = {
         config: [{ type: Input, args: ['tdMarkdownNavigatorWindow',] }],
         disabled: [{ type: Input }],
         click: [{ type: HostListener, args: ['click',] }]
     };
-    return MarkdownNavigatorWindowDirective;
+    return TdMarkdownNavigatorWindowDirective;
 }());
 if (false) {
     /** @type {?} */
-    MarkdownNavigatorWindowDirective.prototype.config;
+    TdMarkdownNavigatorWindowDirective.prototype.config;
     /** @type {?} */
-    MarkdownNavigatorWindowDirective.prototype.disabled;
+    TdMarkdownNavigatorWindowDirective.prototype.disabled;
     /**
      * @type {?}
      * @private
      */
-    MarkdownNavigatorWindowDirective.prototype._markdownNavigatorWindowService;
+    TdMarkdownNavigatorWindowDirective.prototype._markdownNavigatorWindowService;
 }
 
 /**
@@ -1036,10 +1036,10 @@ var CovalentMarkdownNavigatorModule = /** @class */ (function () {
                         CovalentFlavoredMarkdownModule,
                         CovalentDialogsModule,
                     ],
-                    declarations: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent, MarkdownNavigatorWindowDirective],
-                    exports: [MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent, MarkdownNavigatorWindowDirective],
-                    entryComponents: [MarkdownNavigatorWindowComponent],
-                    providers: [MarkdownNavigatorWindowService],
+                    declarations: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
+                    exports: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
+                    entryComponents: [TdMarkdownNavigatorWindowComponent],
+                    providers: [TdMarkdownNavigatorWindowService],
                 },] }
     ];
     return CovalentMarkdownNavigatorModule;
@@ -1060,5 +1060,5 @@ var CovalentMarkdownNavigatorModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { CovalentMarkdownNavigatorModule, DEFAULT_MARKDOWN_NAVIGATOR_LABELS, DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS, MarkdownNavigatorComponent, MarkdownNavigatorWindowComponent, MarkdownNavigatorWindowService, MarkdownNavigatorWindowDirective as ɵa };
+export { CovalentMarkdownNavigatorModule, DEFAULT_MARKDOWN_NAVIGATOR_LABELS, DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS, TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowService, TdMarkdownNavigatorWindowDirective as ɵa };
 //# sourceMappingURL=covalent-markdown-navigator.js.map

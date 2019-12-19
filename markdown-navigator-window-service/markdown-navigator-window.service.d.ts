@@ -1,7 +1,7 @@
 import { RendererFactory2 } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
-import { MarkdownNavigatorWindowComponent, IMarkdownNavigatorWindowLabels } from '../markdown-navigator-window/markdown-navigator-window.component';
+import { TdMarkdownNavigatorWindowComponent, IMarkdownNavigatorWindowLabels } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 export interface IMarkdownNavigatorWindowConfig {
@@ -12,7 +12,7 @@ export interface IMarkdownNavigatorWindowConfig {
     startAt?: IMarkdownNavigatorItem;
     compareWith?: IMarkdownNavigatorCompareWith;
 }
-export declare class MarkdownNavigatorWindowService {
+export declare class TdMarkdownNavigatorWindowService {
     private _tdDialogService;
     private _document;
     private rendererFactory;
@@ -22,7 +22,7 @@ export declare class MarkdownNavigatorWindowService {
     private markdownNavigatorWindowDialog;
     private markdownNavigatorWindowDialogsOpen;
     constructor(_tdDialogService: TdDialogService, _document: any, rendererFactory: RendererFactory2);
-    open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<MarkdownNavigatorWindowComponent>;
+    open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<TdMarkdownNavigatorWindowComponent>;
     close(): void;
     readonly isOpen: boolean;
     private _handleEvents;
