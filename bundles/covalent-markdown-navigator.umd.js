@@ -717,7 +717,7 @@
             labels: [{ type: core.Input }],
             startAt: [{ type: core.Input }],
             compareWith: [{ type: core.Input }],
-            markdownWrapper: [{ type: core.ViewChild, args: ['markdownWrapper', { static: false },] }],
+            markdownWrapper: [{ type: core.ViewChild, args: ['markdownWrapper',] }],
             clickListener: [{ type: core.HostListener, args: ['click', ['$event'],] }]
         };
         return TdMarkdownNavigatorComponent;
@@ -1228,7 +1228,6 @@
                         ],
                         declarations: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
                         exports: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
-                        entryComponents: [TdMarkdownNavigatorWindowComponent],
                         providers: [TdMarkdownNavigatorWindowService],
                     },] }
         ];

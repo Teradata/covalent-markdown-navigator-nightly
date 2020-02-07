@@ -18,9 +18,9 @@ export declare class TdMarkdownNavigatorWindowComponent {
     docked: boolean;
     closed: EventEmitter<void>;
     dockToggled: EventEmitter<boolean>;
-    readonly markdownNavigatorLabels: IMarkdownNavigatorLabels;
-    readonly titleLabel: string;
-    readonly closeLabel: string;
-    readonly toggleDockedStateLabel: string;
+    get markdownNavigatorLabels(): IMarkdownNavigatorLabels;
+    get titleLabel(): string;
+    get closeLabel(): string;
+    get toggleDockedStateLabel(): string;
     toggleDockedState(): void;
 }

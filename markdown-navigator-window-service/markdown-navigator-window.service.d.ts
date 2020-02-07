@@ -24,7 +24,7 @@ export declare class TdMarkdownNavigatorWindowService {
     constructor(_tdDialogService: TdDialogService, _document: any, rendererFactory: RendererFactory2);
     open(config: IMarkdownNavigatorWindowConfig): MatDialogRef<TdMarkdownNavigatorWindowComponent>;
     close(): void;
-    readonly isOpen: boolean;
+    get isOpen(): boolean;
     private _handleEvents;
     private _getDialogSize;
 }

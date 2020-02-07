@@ -527,7 +527,7 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         labels: [{ type: Input }],
         startAt: [{ type: Input }],
         compareWith: [{ type: Input }],
-        markdownWrapper: [{ type: ViewChild, args: ['markdownWrapper', { static: false },] }],
+        markdownWrapper: [{ type: ViewChild, args: ['markdownWrapper',] }],
         clickListener: [{ type: HostListener, args: ['click', ['$event'],] }]
     };
     return TdMarkdownNavigatorComponent;
@@ -1038,7 +1038,6 @@ var CovalentMarkdownNavigatorModule = /** @class */ (function () {
                     ],
                     declarations: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
                     exports: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
-                    entryComponents: [TdMarkdownNavigatorWindowComponent],
                     providers: [TdMarkdownNavigatorWindowService],
                 },] }
     ];

@@ -419,7 +419,7 @@ TdMarkdownNavigatorComponent.propDecorators = {
     labels: [{ type: Input }],
     startAt: [{ type: Input }],
     compareWith: [{ type: Input }],
-    markdownWrapper: [{ type: ViewChild, args: ['markdownWrapper', { static: false },] }],
+    markdownWrapper: [{ type: ViewChild, args: ['markdownWrapper',] }],
     clickListener: [{ type: HostListener, args: ['click', ['$event'],] }]
 };
 if (false) {
@@ -888,7 +888,6 @@ CovalentMarkdownNavigatorModule.decorators = [
                 ],
                 declarations: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
                 exports: [TdMarkdownNavigatorComponent, TdMarkdownNavigatorWindowComponent, TdMarkdownNavigatorWindowDirective],
-                entryComponents: [TdMarkdownNavigatorWindowComponent],
                 providers: [TdMarkdownNavigatorWindowService],
             },] }
 ];
