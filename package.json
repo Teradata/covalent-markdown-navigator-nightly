@@ -1,6 +1,6 @@
 {
   "name": "@covalent/markdown-navigator",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "Teradata UI Platform Markdown Navigator Module",
   "keywords": [
     "angular",
@@ -31,8 +31,8 @@
     "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
     "@angular/material": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
     "@angular/cdk": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@covalent/core": "^3.0.0-beta.2",
-    "@covalent/flavored-markdown": "^3.0.0-beta.2",
+    "@covalent/core": "^3.0.0-beta.3",
+    "@covalent/flavored-markdown": "^3.0.0-beta.3",
     "tslib": "^1.10.0"
   },
   "main": "bundles/covalent-markdown-navigator.umd.js",
