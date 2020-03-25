@@ -7,6 +7,8 @@ export interface IMarkdownNavigatorItem {
     markdownString?: string;
     anchor?: string;
     children?: IMarkdownNavigatorItem[];
+    description?: string;
+    icon?: string;
 }
 export interface IMarkdownNavigatorLabels {
     goHome?: string;
@@ -70,6 +72,7 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     goBack(): void;
     handleItemSelected(item: IMarkdownNavigatorItem): void;
     getTitle(item: IMarkdownNavigatorItem): string;
+    getIcon(item: IMarkdownNavigatorItem): string;
     private _jumpTo;
     private handleLinkClick;
 }
