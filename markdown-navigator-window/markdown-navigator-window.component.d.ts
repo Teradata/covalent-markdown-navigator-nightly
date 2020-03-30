@@ -14,7 +14,6 @@ export declare class TdMarkdownNavigatorWindowComponent {
     toolbarColor: ThemePalette;
     startAt: IMarkdownNavigatorItem;
     compareWith: IMarkdownNavigatorCompareWith;
-    toolbarHeight: number;
     docked: boolean;
     closed: EventEmitter<void>;
     dockToggled: EventEmitter<boolean>;

@@ -8,7 +8,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { ResizableDraggableDialog, TdDialogService, CovalentDialogsModule } from '@covalent/core/dialogs';
 
 /**
@@ -612,7 +611,6 @@ var DEFAULT_MARKDOWN_NAVIGATOR_WINDOW_LABELS = {
 var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
     function TdMarkdownNavigatorWindowComponent() {
         this.toolbarColor = 'primary';
-        this.toolbarHeight = 56;
         this.docked = false;
         this.closed = new EventEmitter();
         this.dockToggled = new EventEmitter();
@@ -681,9 +679,9 @@ var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
     TdMarkdownNavigatorWindowComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator-window',
-                    template: "<mat-toolbar\n  [color]=\"toolbarColor\"\n  class=\"td-markdown-navigator-window-toolbar\"\n  [style.min-height.px]=\"toolbarHeight\"\n  [style.cursor]=\"docked ? 'inherit' : 'move'\"\n>\n  <mat-toolbar-row [style.height.px]=\"toolbarHeight\">\n    <div layout=\"row\" layout-align=\"start center\" flex>\n      <span class=\"mat-title td-markdown-navigator-window-title truncate\" flex>\n        {{ titleLabel }}\n      </span>\n      <!-- TODO: Resizing a drag-and-drop element was not working so removed docking/undocking for now-->\n      <!--\n      <button mat-icon-button [matTooltip]=\"toggleDockedStateLabel\" (click)=\"toggleDockedState()\">\n        <mat-icon [attr.aria-label]=\"toggleDockedStateLabel\">\n          {{ docked ? 'unfold_more' : 'unfold_less' }}\n        </mat-icon>\n      </button>\n      -->\n      <button\n        mat-icon-button\n        [matTooltip]=\"closeLabel\"\n        (click)=\"closed.emit()\"\n        class=\"td-markdown-navigator-window-close\"\n        [attr.data-test]=\"'close-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"closeLabel\">\n          close\n        </mat-icon>\n      </button>\n    </div>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<td-markdown-navigator\n  [items]=\"items\"\n  [labels]=\"markdownNavigatorLabels\"\n  [style.display]=\"docked ? 'none' : 'inherit'\"\n  [startAt]=\"startAt\"\n  [compareWith]=\"compareWith\"\n></td-markdown-navigator>\n",
+                    template: "<td-window-dialog\n  [toolbarColor]=\"toolbarColor\"\n  [docked]=\"docked\"\n  [title]=\"titleLabel\"\n  [toggleDockedStateLabel]=\"toggleDockedStateLabel\"\n  [closeLabel]=\"closeLabel\"\n  (dockToggled)=\"toggleDockedState()\"\n  (closed)=\"closed.emit()\"\n>\n  <td-markdown-navigator\n    [items]=\"items\"\n    [labels]=\"markdownNavigatorLabels\"\n    [style.display]=\"docked ? 'none' : 'inherit'\"\n    [startAt]=\"startAt\"\n    [compareWith]=\"compareWith\"\n  ></td-markdown-navigator>\n</td-window-dialog>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush,
-                    styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.td-markdown-navigator-window-title{margin-bottom:0}td-markdown-navigator{height:calc(100% - 56px)}.td-markdown-navigator-window-close{margin:0 -8px}.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}::ng-deep .td-draggable-markdown-navigator-window-wrapper>.mat-dialog-container{padding:0}"]
+                    styles: [":host{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}td-markdown-navigator{height:calc(100% - 56px)}"]
                 }] }
     ];
     TdMarkdownNavigatorWindowComponent.propDecorators = {
@@ -709,8 +707,6 @@ if (false) {
     TdMarkdownNavigatorWindowComponent.prototype.startAt;
     /** @type {?} */
     TdMarkdownNavigatorWindowComponent.prototype.compareWith;
-    /** @type {?} */
-    TdMarkdownNavigatorWindowComponent.prototype.toolbarHeight;
     /** @type {?} */
     TdMarkdownNavigatorWindowComponent.prototype.docked;
     /** @type {?} */
@@ -742,7 +738,7 @@ if (false) {
     IMarkdownNavigatorWindowConfig.prototype.compareWith;
 }
 /** @type {?} */
-var CDK_OVERLAY_CUSTOM_CLASS = 'td-draggable-markdown-navigator-window-wrapper';
+var CDK_OVERLAY_CUSTOM_CLASS = 'td-window-dialog';
 /** @type {?} */
 var DEFAULT_POSITION = { bottom: '0px', right: '0px' };
 /** @type {?} */
@@ -757,7 +753,7 @@ var MAX_WIDTH = '100vw';
 var DEFAULT_DRAGGABLE_DIALOG_CONFIG = {
     hasBackdrop: false,
     closeOnNavigation: true,
-    panelClass: CDK_OVERLAY_CUSTOM_CLASS,
+    panelClass: [CDK_OVERLAY_CUSTOM_CLASS],
     position: DEFAULT_POSITION,
     height: DEFAULT_HEIGHT,
     width: DEFAULT_WIDTH,
@@ -794,11 +790,21 @@ var TdMarkdownNavigatorWindowService = /** @class */ (function () {
         var _this = this;
         this.close();
         /** @type {?} */
-        var draggableConfig = __assign(__assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig);
+        var panelClass = __spread(DEFAULT_DRAGGABLE_DIALOG_CONFIG.panelClass);
+        if (config.dialogConfig && config.dialogConfig.panelClass) {
+            if (Array.isArray(config.dialogConfig.panelClass)) {
+                panelClass = __spread(config.dialogConfig.panelClass);
+            }
+            else {
+                panelClass = [config.dialogConfig.panelClass];
+            }
+        }
+        /** @type {?} */
+        var draggableConfig = __assign(__assign(__assign({}, DEFAULT_DRAGGABLE_DIALOG_CONFIG), config.dialogConfig), { panelClass: panelClass });
         var _a = this._tdDialogService.openDraggable({
             component: TdMarkdownNavigatorWindowComponent,
             config: draggableConfig,
-            dragHandleSelectors: ['.td-markdown-navigator-window-toolbar'],
+            dragHandleSelectors: ['.td-window-dialog-toolbar'],
             draggableClass: 'td-draggable-markdown-navigator-window',
         }), matDialogRef = _a.matDialogRef, dragRefSubject = _a.dragRefSubject;
         this.markdownNavigatorWindowDialog = matDialogRef;
@@ -1032,7 +1038,6 @@ var CovalentMarkdownNavigatorModule = /** @class */ (function () {
                         MatListModule,
                         MatIconModule,
                         MatProgressBarModule,
-                        MatToolbarModule,
                         CovalentFlavoredMarkdownModule,
                         CovalentDialogsModule,
                     ],
