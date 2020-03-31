@@ -1,4 +1,4 @@
-import { RendererFactory2 } from '@angular/core';
+import { RendererFactory2, Type } from '@angular/core';
 import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { ThemePalette } from '@angular/material/core';
 import { TdMarkdownNavigatorWindowComponent, IMarkdownNavigatorWindowLabels } from '../markdown-navigator-window/markdown-navigator-window.component';
@@ -11,6 +11,7 @@ export interface IMarkdownNavigatorWindowConfig {
     toolbarColor?: ThemePalette;
     startAt?: IMarkdownNavigatorItem;
     compareWith?: IMarkdownNavigatorCompareWith;
+    footer?: Type<any>;
 }
 export declare class TdMarkdownNavigatorWindowService {
     private _tdDialogService;

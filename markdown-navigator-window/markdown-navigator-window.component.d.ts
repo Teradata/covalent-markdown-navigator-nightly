@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Type } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
@@ -15,6 +15,7 @@ export declare class TdMarkdownNavigatorWindowComponent {
     startAt: IMarkdownNavigatorItem;
     compareWith: IMarkdownNavigatorCompareWith;
     docked: boolean;
+    footer: Type<any>;
     closed: EventEmitter<void>;
     dockToggled: EventEmitter<boolean>;
     get markdownNavigatorLabels(): IMarkdownNavigatorLabels;

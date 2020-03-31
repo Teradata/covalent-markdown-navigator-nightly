@@ -1,4 +1,4 @@
-import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, Type } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
 export interface IMarkdownNavigatorItem {
     title?: string;
@@ -9,6 +9,7 @@ export interface IMarkdownNavigatorItem {
     children?: IMarkdownNavigatorItem[];
     description?: string;
     icon?: string;
+    footer?: Type<any>;
 }
 export interface IMarkdownNavigatorLabels {
     goHome?: string;
@@ -39,6 +40,12 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
      */
     startAt: IMarkdownNavigatorItem;
     /**
+     * footer?: Type<any>
+     *
+     * Component to be displayed in footer
+     */
+    footer: Type<any>;
+    /**
      * compareWith?: IMarkdownNavigatorCompareWith
      *
      * Function used to find startAt item
@@ -59,6 +66,7 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     get showTdMarkdownLoader(): boolean;
     get showTdMarkdown(): boolean;
     get url(): string;
+    get footerComponent(): any;
     get httpOptions(): object;
     get markdownString(): string;
     get anchor(): string;
