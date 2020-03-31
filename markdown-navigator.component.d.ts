@@ -1,5 +1,6 @@
-import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, Type } from '@angular/core';
+import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, Type, EventEmitter } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
+import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 export interface IMarkdownNavigatorItem {
     title?: string;
     url?: string;
@@ -52,6 +53,7 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
      * Defaults to comparison by strict equality (===)
      */
     compareWith: IMarkdownNavigatorCompareWith;
+    buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent>;
     markdownWrapper: ElementRef;
     historyStack: IMarkdownNavigatorItem[];
     currentMarkdownItem: IMarkdownNavigatorItem;

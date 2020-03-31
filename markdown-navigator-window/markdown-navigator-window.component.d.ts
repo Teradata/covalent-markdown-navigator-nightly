@@ -1,6 +1,7 @@
 import { EventEmitter, Type } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
+import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
     title?: string;
     close?: string;
@@ -18,6 +19,7 @@ export declare class TdMarkdownNavigatorWindowComponent {
     footer: Type<any>;
     closed: EventEmitter<void>;
     dockToggled: EventEmitter<boolean>;
+    buttonClicked: EventEmitter<ITdFlavoredMarkdownButtonClickEvent>;
     get markdownNavigatorLabels(): IMarkdownNavigatorLabels;
     get titleLabel(): string;
     get closeLabel(): string;
