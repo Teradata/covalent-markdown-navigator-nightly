@@ -391,16 +391,8 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         if (this.historyStack.length > 1) {
             /** @type {?} */
             var parent_1 = this.historyStack[this.historyStack.length - 2];
-            if (parent_1.children && parent_1.children.length > 0) {
-                // if parent has children, show menu
-                this.currentMenuItems = parent_1.children;
-                this.currentMarkdownItem = undefined;
-            }
-            else {
-                // else just render markdown
-                this.currentMenuItems = [];
-                this.currentMarkdownItem = parent_1;
-            }
+            this.currentMarkdownItem = parent_1;
+            this.currentMenuItems = parent_1.children;
             this.historyStack = this.historyStack.slice(0, -1);
         }
         else {
