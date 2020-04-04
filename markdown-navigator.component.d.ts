@@ -1,6 +1,8 @@
 import { OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, Type, EventEmitter } from '@angular/core';
 import { TdMarkdownLoaderService } from '@covalent/markdown';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 export interface IMarkdownNavigatorItem {
     title?: string;
     url?: string;
@@ -8,6 +10,7 @@ export interface IMarkdownNavigatorItem {
     markdownString?: string;
     anchor?: string;
     children?: IMarkdownNavigatorItem[];
+    childrenUrl?: string;
     description?: string;
     icon?: string;
     footer?: Type<any>;
@@ -22,6 +25,8 @@ export declare const DEFAULT_MARKDOWN_NAVIGATOR_LABELS: IMarkdownNavigatorLabels
 export declare class TdMarkdownNavigatorComponent implements OnChanges {
     private _markdownUrlLoaderService;
     private _changeDetectorRef;
+    private _sanitizer;
+    private _http;
     /**
      * items: IMarkdownNavigatorItem[]
      *
@@ -59,7 +64,9 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     currentMarkdownItem: IMarkdownNavigatorItem;
     currentMenuItems: IMarkdownNavigatorItem[];
     loading: boolean;
-    constructor(_markdownUrlLoaderService: TdMarkdownLoaderService, _changeDetectorRef: ChangeDetectorRef);
+    markdownLoaderError: string;
+    childrenUrlError: string;
+    constructor(_markdownUrlLoaderService: TdMarkdownLoaderService, _changeDetectorRef: ChangeDetectorRef, _sanitizer: DomSanitizer, _http: HttpClient);
     clickListener(event: Event): void;
     get showGoBackButton(): boolean;
     get showHomeButton(): boolean;
@@ -78,11 +85,17 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     get emptyStateLabel(): string;
     get currentItemTitle(): string;
     ngOnChanges(changes: SimpleChanges): void;
+    hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean;
+    clearErrors(): void;
     reset(): void;
     goBack(): void;
     handleItemSelected(item: IMarkdownNavigatorItem): void;
+    setChildrenAsCurrentMenuItems(item: IMarkdownNavigatorItem): Promise<void>;
+    loadChildrenUrl(item: IMarkdownNavigatorItem): Promise<IMarkdownNavigatorItem[]>;
     getTitle(item: IMarkdownNavigatorItem): string;
     getIcon(item: IMarkdownNavigatorItem): string;
+    handleChildrenUrlError(error: Error): void;
+    handleMarkdownLoaderError(error: Error): void;
     private _jumpTo;
     private handleLinkClick;
 }

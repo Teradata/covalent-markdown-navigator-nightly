@@ -1,7 +1,9 @@
-import { EventEmitter, Component, ChangeDetectionStrategy, ChangeDetectorRef, Input, Output, ViewChild, HostListener, Injectable, Inject, RendererFactory2, Directive, NgModule } from '@angular/core';
+import { EventEmitter, SecurityContext, Component, ChangeDetectionStrategy, ChangeDetectorRef, Input, Output, ViewChild, HostListener, Injectable, Inject, RendererFactory2, Directive, NgModule } from '@angular/core';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import { __values, __spread, __awaiter, __generator, __assign } from 'tslib';
 import { removeLeadingHash, isAnchorLink, TdMarkdownLoaderService } from '@covalent/markdown';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
@@ -9,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CovalentFlavoredMarkdownModule } from '@covalent/flavored-markdown';
 import { ResizableDraggableDialog, TdDialogService, CovalentDialogsModule } from '@covalent/core/dialogs';
+import { CovalentMessageModule } from '@covalent/core/message';
 
 /**
  * @fileoverview added by tsickle
@@ -31,6 +34,8 @@ if (false) {
     IMarkdownNavigatorItem.prototype.anchor;
     /** @type {?|undefined} */
     IMarkdownNavigatorItem.prototype.children;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorItem.prototype.childrenUrl;
     /** @type {?|undefined} */
     IMarkdownNavigatorItem.prototype.description;
     /** @type {?|undefined} */
@@ -141,9 +146,11 @@ function getAncestors(items, item, compareWith) {
     return undefined;
 }
 var TdMarkdownNavigatorComponent = /** @class */ (function () {
-    function TdMarkdownNavigatorComponent(_markdownUrlLoaderService, _changeDetectorRef) {
+    function TdMarkdownNavigatorComponent(_markdownUrlLoaderService, _changeDetectorRef, _sanitizer, _http) {
         this._markdownUrlLoaderService = _markdownUrlLoaderService;
         this._changeDetectorRef = _changeDetectorRef;
+        this._sanitizer = _sanitizer;
+        this._http = _http;
         this.buttonClicked = new EventEmitter();
         this.historyStack = []; // history
         // currently rendered
@@ -364,14 +371,37 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         }
     };
     /**
+     * @param {?} item
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.hasChildrenOrChildrenUrl = /**
+     * @param {?} item
+     * @return {?}
+     */
+    function (item) {
+        return (item.children && item.children.length > 0) || !!item.childrenUrl;
+    };
+    /**
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.clearErrors = /**
+     * @return {?}
+     */
+    function () {
+        this.markdownLoaderError = undefined;
+        this.childrenUrlError = undefined;
+    };
+    /**
      * @return {?}
      */
     TdMarkdownNavigatorComponent.prototype.reset = /**
      * @return {?}
      */
     function () {
+        this.loading = false;
+        this.clearErrors();
         // if single item and no children
-        if (this.items && this.items.length === 1 && (!this.items[0].children || this.items[0].children.length === 0)) {
+        if (this.items && this.items.length === 1 && !this.hasChildrenOrChildrenUrl(this.items[0])) {
             this.currentMenuItems = [];
             this.currentMarkdownItem = this.items[0];
         }
@@ -389,12 +419,14 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        this.loading = false;
+        this.clearErrors();
         if (this.historyStack.length > 1) {
             /** @type {?} */
             var parent_1 = this.historyStack[this.historyStack.length - 2];
             this.currentMarkdownItem = parent_1;
-            this.currentMenuItems = parent_1.children;
             this.historyStack = this.historyStack.slice(0, -1);
+            this.setChildrenAsCurrentMenuItems(parent_1);
         }
         else {
             // one level down just go to root
@@ -411,10 +443,88 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.historyStack = __spread(this.historyStack, [item]);
-        this.currentMenuItems = item.children;
+        this.clearErrors();
         this.currentMarkdownItem = item;
+        this.historyStack = __spread(this.historyStack, [item]);
+        this.setChildrenAsCurrentMenuItems(item);
         this._changeDetectorRef.markForCheck();
+    };
+    /**
+     * @param {?} item
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.setChildrenAsCurrentMenuItems = /**
+     * @param {?} item
+     * @return {?}
+     */
+    function (item) {
+        return __awaiter(this, void 0, void 0, function () {
+            var stackSnapshot, children, newStackSnapshot;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.currentMenuItems = [];
+                        this.loading = true;
+                        this._changeDetectorRef.markForCheck();
+                        stackSnapshot = this.historyStack;
+                        children = [];
+                        if (!item.children) return [3 /*break*/, 1];
+                        children = item.children;
+                        return [3 /*break*/, 3];
+                    case 1:
+                        if (!item.childrenUrl) return [3 /*break*/, 3];
+                        return [4 /*yield*/, this.loadChildrenUrl(item)];
+                    case 2:
+                        children = _a.sent();
+                        _a.label = 3;
+                    case 3:
+                        newStackSnapshot = this.historyStack;
+                        if (stackSnapshot.length === newStackSnapshot.length &&
+                            stackSnapshot.every((/**
+                             * @param {?} stackItem
+                             * @param {?} index
+                             * @return {?}
+                             */
+                            function (stackItem, index) { return stackItem === newStackSnapshot[index]; }))) {
+                            this.currentMenuItems = children;
+                        }
+                        this.loading = false;
+                        this._changeDetectorRef.markForCheck();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * @param {?} item
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.loadChildrenUrl = /**
+     * @param {?} item
+     * @return {?}
+     */
+    function (item) {
+        return __awaiter(this, void 0, void 0, function () {
+            var sanitizedUrl, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        sanitizedUrl = this._sanitizer.sanitize(SecurityContext.URL, item.childrenUrl);
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this._http
+                                .get(sanitizedUrl, __assign({}, item.httpOptions))
+                                .toPromise()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                    case 3:
+                        error_1 = _a.sent();
+                        this.handleChildrenUrlError(error_1);
+                        return [2 /*return*/, []];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
     };
     /**
      * @param {?} item
@@ -445,6 +555,30 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         if (item) {
             return item.icon || 'subject';
         }
+    };
+    /**
+     * @param {?} error
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.handleChildrenUrlError = /**
+     * @param {?} error
+     * @return {?}
+     */
+    function (error) {
+        this.childrenUrlError = error.message;
+        this._changeDetectorRef.markForCheck();
+    };
+    /**
+     * @param {?} error
+     * @return {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.handleMarkdownLoaderError = /**
+     * @param {?} error
+     * @return {?}
+     */
+    function (error) {
+        this.markdownLoaderError = error.message;
+        this._changeDetectorRef.markForCheck();
     };
     /**
      * @private
@@ -482,7 +616,7 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
      */
     function (event) {
         return __awaiter(this, void 0, void 0, function () {
-            var link, url, markdownString, error_1, win;
+            var link, url, markdownString, error_2, win;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -502,7 +636,7 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
                         this.markdownWrapper.nativeElement.scrollTop = 0;
                         return [3 /*break*/, 5];
                     case 3:
-                        error_1 = _a.sent();
+                        error_2 = _a.sent();
                         win = window.open(url.href, '_blank');
                         win.focus();
                         return [3 /*break*/, 5];
@@ -519,7 +653,7 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
     TdMarkdownNavigatorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator',
-                    template: "<ng-container *ngIf=\"!showEmptyState\">\n  <mat-progress-bar *ngIf=\"loading\" mode=\"indeterminate\" color=\"accent\"></mat-progress-bar>\n\n  <ng-container *ngIf=\"showHeader\">\n    <div [style.display]=\"'flex'\">\n      <button\n        *ngIf=\"showHomeButton\"\n        mat-icon-button\n        [matTooltip]=\"goHomeLabel\"\n        (click)=\"reset()\"\n        [attr.data-test]=\"'home-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goHomeLabel\">\n          home\n        </mat-icon>\n      </button>\n\n      <button\n        *ngIf=\"showGoBackButton\"\n        mat-icon-button\n        [matTooltip]=\"goBackLabel\"\n        (click)=\"goBack()\"\n        [attr.data-test]=\"'back-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goBackLabel\">\n          arrow_back\n        </mat-icon>\n      </button>\n      <span flex *ngIf=\"currentItemTitle\" class=\"mat-body-2 title truncate\" [attr.data-test]=\"'title'\">\n        {{ currentItemTitle }}\n      </span>\n    </div>\n\n    <mat-divider [style.position]=\"'relative'\"></mat-divider>\n  </ng-container>\n\n  <div class=\"scroll-area\">\n    <div *ngIf=\"showMenu\" class=\"td-markdown-list\">\n      <mat-action-list>\n        <button\n          *ngFor=\"let item of currentMenuItems\"\n          (click)=\"handleItemSelected(item)\"\n          mat-list-item\n          [matTooltip]=\"getTitle(item)\"\n          matTooltipPosition=\"before\"\n          matTooltipShowDelay=\"500\"\n        >\n          <mat-icon matListIcon>\n            {{ getIcon(item) }}\n          </mat-icon>\n          <span matLine class=\"truncate\">\n            {{ getTitle(item) }}\n          </span>\n          <span matLine class=\"truncate\">{{ item.description }}</span>\n          <mat-divider></mat-divider>\n        </button>\n      </mat-action-list>\n    </div>\n\n    <div *ngIf=\"showTdMarkdownLoader || showTdMarkdown\" class=\"markdown-wrapper\" #markdownWrapper>\n      <td-flavored-markdown-loader\n        *ngIf=\"showTdMarkdownLoader\"\n        [url]=\"url\"\n        [httpOptions]=\"httpOptions\"\n        [anchor]=\"anchor\"\n      ></td-flavored-markdown-loader>\n\n      <td-flavored-markdown\n        *ngIf=\"showTdMarkdown\"\n        [content]=\"markdownString\"\n        [hostedUrl]=\"url\"\n        [anchor]=\"anchor\"\n        (buttonClicked)=\"buttonClicked.emit($event)\"\n      ></td-flavored-markdown>\n    </div>\n    <ng-container *ngComponentOutlet=\"footerComponent\"></ng-container>\n  </div>\n</ng-container>\n\n<div *ngIf=\"showEmptyState\" layout=\"column\" layout-align=\"center center\" class=\" empty-state\">\n  <mat-icon matListAvatar>subject</mat-icon>\n  <h2>{{ emptyStateLabel }}</h2>\n</div>\n",
+                    template: "<ng-container *ngIf=\"!showEmptyState\">\n  <mat-progress-bar *ngIf=\"loading\" mode=\"indeterminate\" color=\"accent\"></mat-progress-bar>\n\n  <ng-container *ngIf=\"showHeader\">\n    <div [style.display]=\"'flex'\">\n      <button\n        *ngIf=\"showHomeButton\"\n        mat-icon-button\n        [matTooltip]=\"goHomeLabel\"\n        (click)=\"reset()\"\n        [attr.data-test]=\"'home-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goHomeLabel\">\n          home\n        </mat-icon>\n      </button>\n\n      <button\n        *ngIf=\"showGoBackButton\"\n        mat-icon-button\n        [matTooltip]=\"goBackLabel\"\n        (click)=\"goBack()\"\n        [attr.data-test]=\"'back-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goBackLabel\">\n          arrow_back\n        </mat-icon>\n      </button>\n      <span flex *ngIf=\"currentItemTitle\" class=\"mat-body-2 title truncate\" [attr.data-test]=\"'title'\">\n        {{ currentItemTitle }}\n      </span>\n    </div>\n\n    <mat-divider [style.position]=\"'relative'\"></mat-divider>\n  </ng-container>\n\n  <div class=\"scroll-area\">\n    <td-message\n      *ngIf=\"childrenUrlError\"\n      [sublabel]=\"childrenUrlError\"\n      color=\"warn\"\n      icon=\"error\"\n      [attr.data-test]=\"'children-url-error'\"\n    ></td-message>\n    <div *ngIf=\"showMenu\" class=\"td-markdown-list\">\n      <mat-action-list>\n        <button\n          *ngFor=\"let item of currentMenuItems\"\n          (click)=\"handleItemSelected(item)\"\n          mat-list-item\n          [matTooltip]=\"getTitle(item)\"\n          matTooltipPosition=\"before\"\n          matTooltipShowDelay=\"500\"\n        >\n          <mat-icon matListIcon>\n            {{ getIcon(item) }}\n          </mat-icon>\n          <span matLine class=\"truncate\">\n            {{ getTitle(item) }}\n          </span>\n          <span matLine class=\"truncate\">{{ item.description }}</span>\n          <mat-divider></mat-divider>\n        </button>\n      </mat-action-list>\n    </div>\n\n    <div *ngIf=\"showTdMarkdownLoader || showTdMarkdown\" class=\"markdown-wrapper\" #markdownWrapper>\n      <td-message\n        *ngIf=\"markdownLoaderError\"\n        [sublabel]=\"markdownLoaderError\"\n        color=\"warn\"\n        icon=\"error\"\n        [attr.data-test]=\"'markdown-loader-error'\"\n      ></td-message>\n      <td-flavored-markdown-loader\n        *ngIf=\"showTdMarkdownLoader\"\n        [url]=\"url\"\n        [httpOptions]=\"httpOptions\"\n        [anchor]=\"anchor\"\n        (loadFailed)=\"handleMarkdownLoaderError($event)\"\n      ></td-flavored-markdown-loader>\n\n      <td-flavored-markdown\n        *ngIf=\"showTdMarkdown\"\n        [content]=\"markdownString\"\n        [hostedUrl]=\"url\"\n        [anchor]=\"anchor\"\n        (buttonClicked)=\"buttonClicked.emit($event)\"\n      ></td-flavored-markdown>\n    </div>\n    <ng-container *ngComponentOutlet=\"footerComponent\"></ng-container>\n  </div>\n</ng-container>\n\n<div *ngIf=\"showEmptyState\" layout=\"column\" layout-align=\"center center\" class=\"empty-state\">\n  <mat-icon matListAvatar>subject</mat-icon>\n  <h2>{{ emptyStateLabel }}</h2>\n</div>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: [":host{position:relative;height:100%;box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}:host .scroll-area{min-height:1px;overflow-y:auto;-webkit-box-flex:1;-ms-flex:1;flex:1;box-sizing:border-box}:host .markdown-wrapper{padding:16px 16px 0}:host .td-markdown-list>.mat-list{padding-top:0}:host td-flavored-markdown-loader ::ng-deep .mat-progress-bar{top:0;left:0;right:0;position:absolute}:host .title{display:inline-block;vertical-align:middle;margin:8px 0;padding-left:16px}.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty-state{padding:32px}.empty-state mat-icon{font-size:4em}"]
                 }] }
@@ -527,7 +661,9 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
     /** @nocollapse */
     TdMarkdownNavigatorComponent.ctorParameters = function () { return [
         { type: TdMarkdownLoaderService },
-        { type: ChangeDetectorRef }
+        { type: ChangeDetectorRef },
+        { type: DomSanitizer },
+        { type: HttpClient }
     ]; };
     TdMarkdownNavigatorComponent.propDecorators = {
         items: [{ type: Input }],
@@ -590,6 +726,10 @@ if (false) {
     TdMarkdownNavigatorComponent.prototype.currentMenuItems;
     /** @type {?} */
     TdMarkdownNavigatorComponent.prototype.loading;
+    /** @type {?} */
+    TdMarkdownNavigatorComponent.prototype.markdownLoaderError;
+    /** @type {?} */
+    TdMarkdownNavigatorComponent.prototype.childrenUrlError;
     /**
      * @type {?}
      * @private
@@ -600,6 +740,16 @@ if (false) {
      * @private
      */
     TdMarkdownNavigatorComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdMarkdownNavigatorComponent.prototype._sanitizer;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdMarkdownNavigatorComponent.prototype._http;
 }
 
 /**
@@ -1067,6 +1217,7 @@ var CovalentMarkdownNavigatorModule = /** @class */ (function () {
                         MatListModule,
                         MatIconModule,
                         MatProgressBarModule,
+                        CovalentMessageModule,
                         CovalentFlavoredMarkdownModule,
                         CovalentDialogsModule,
                     ],
