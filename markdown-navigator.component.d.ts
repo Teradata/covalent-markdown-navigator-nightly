@@ -4,6 +4,7 @@ import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 export interface IMarkdownNavigatorItem {
+    id?: string;
     title?: string;
     url?: string;
     httpOptions?: object;
