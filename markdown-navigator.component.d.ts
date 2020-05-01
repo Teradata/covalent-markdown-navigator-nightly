@@ -41,11 +41,11 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
      */
     labels: IMarkdownNavigatorLabels;
     /**
-     * startAt?: IMarkdownNavigatorItem
+     * startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
      *
-     * Item to start to
+     * Item or path to start at
      */
-    startAt: IMarkdownNavigatorItem;
+    startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
     /**
      * footer?: Type<any>
      *
@@ -85,7 +85,7 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     get goBackLabel(): string;
     get emptyStateLabel(): string;
     get currentItemTitle(): string;
-    ngOnChanges(changes: SimpleChanges): void;
+    ngOnChanges(changes: SimpleChanges): Promise<void>;
     hasChildrenOrChildrenUrl(item: IMarkdownNavigatorItem): boolean;
     clearErrors(): void;
     reset(): void;
@@ -98,5 +98,7 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
     handleChildrenUrlError(error: Error): void;
     handleMarkdownLoaderError(error: Error): void;
     private _jumpTo;
+    private followPath;
+    private findPath;
     private handleLinkClick;
 }

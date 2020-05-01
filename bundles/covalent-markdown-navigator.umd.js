@@ -323,38 +323,6 @@
         }
         return o1 === o2;
     }
-    /**
-     * @param {?} items
-     * @param {?} item
-     * @param {?} compareWith
-     * @return {?}
-     */
-    function getAncestors(items, item, compareWith) {
-        var e_1, _a;
-        if (items) {
-            try {
-                for (var items_1 = __values(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
-                    var child = items_1_1.value;
-                    if (compareWith(child, item)) {
-                        return [child];
-                    }
-                    /** @type {?} */
-                    var ancestors = getAncestors(child.children, item, compareWith);
-                    if (ancestors) {
-                        return __spread([child], ancestors);
-                    }
-                }
-            }
-            catch (e_1_1) { e_1 = { error: e_1_1 }; }
-            finally {
-                try {
-                    if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
-                }
-                finally { if (e_1) throw e_1.error; }
-            }
-        }
-        return undefined;
-    }
     var TdMarkdownNavigatorComponent = /** @class */ (function () {
         function TdMarkdownNavigatorComponent(_markdownUrlLoaderService, _changeDetectorRef, _sanitizer, _http) {
             this._markdownUrlLoaderService = _markdownUrlLoaderService;
@@ -573,12 +541,21 @@
          * @return {?}
          */
         function (changes) {
-            if (changes.items) {
-                this.reset();
-                if (this.items && this.startAt) {
-                    this._jumpTo(this.startAt);
-                }
-            }
+            return __awaiter(this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            if (!changes.items) return [3 /*break*/, 2];
+                            this.reset();
+                            if (!(this.items && this.startAt)) return [3 /*break*/, 2];
+                            return [4 /*yield*/, this._jumpTo(this.startAt)];
+                        case 1:
+                            _a.sent();
+                            _a.label = 2;
+                        case 2: return [2 /*return*/];
+                    }
+                });
+            });
         };
         /**
          * @param {?} item
@@ -792,27 +769,174 @@
         };
         /**
          * @private
-         * @param {?} item
+         * @param {?} itemOrPath
          * @return {?}
          */
         TdMarkdownNavigatorComponent.prototype._jumpTo = /**
          * @private
+         * @param {?} itemOrPath
+         * @return {?}
+         */
+        function (itemOrPath) {
+            return __awaiter(this, void 0, void 0, function () {
+                var path;
+                var _this = this;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            this.reset();
+                            if (!(this.items && this.items.length > 0)) return [3 /*break*/, 4];
+                            path = [];
+                            if (!Array.isArray(itemOrPath)) return [3 /*break*/, 2];
+                            return [4 /*yield*/, this.followPath(this.items, itemOrPath)];
+                        case 1:
+                            path = _a.sent();
+                            return [3 /*break*/, 3];
+                        case 2:
+                            path = this.findPath(this.items, itemOrPath);
+                            _a.label = 3;
+                        case 3:
+                            (path || []).forEach((/**
+                             * @param {?} pathItem
+                             * @return {?}
+                             */
+                            function (pathItem) { return _this.handleItemSelected(pathItem); }));
+                            _a.label = 4;
+                        case 4:
+                            this._changeDetectorRef.markForCheck();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        };
+        /**
+         * @private
+         * @param {?} items
+         * @param {?} path
+         * @return {?}
+         */
+        TdMarkdownNavigatorComponent.prototype.followPath = /**
+         * @private
+         * @param {?} items
+         * @param {?} path
+         * @return {?}
+         */
+        function (items, path) {
+            return __awaiter(this, void 0, void 0, function () {
+                var pathItems, currentLevel, compareWith, _loop_1, this_1, path_1, path_1_1, pathItem, state_1, e_1_1;
+                var e_1, _a;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
+                        case 0:
+                            pathItems = [];
+                            currentLevel = items;
+                            compareWith = this.compareWith || defaultCompareWith;
+                            _loop_1 = function (pathItem) {
+                                var foundItem;
+                                return __generator(this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0:
+                                            foundItem = currentLevel.find((/**
+                                             * @param {?} item
+                                             * @return {?}
+                                             */
+                                            function (item) {
+                                                return compareWith(pathItem, item);
+                                            }));
+                                            if (!foundItem) return [3 /*break*/, 4];
+                                            pathItems = __spread(pathItems, [foundItem]);
+                                            if (!foundItem.children) return [3 /*break*/, 1];
+                                            currentLevel = foundItem.children;
+                                            return [3 /*break*/, 3];
+                                        case 1:
+                                            if (!foundItem.childrenUrl) return [3 /*break*/, 3];
+                                            return [4 /*yield*/, this_1.loadChildrenUrl(foundItem)];
+                                        case 2:
+                                            currentLevel = _a.sent();
+                                            _a.label = 3;
+                                        case 3: return [3 /*break*/, 5];
+                                        case 4: return [2 /*return*/, "break"];
+                                        case 5: return [2 /*return*/];
+                                    }
+                                });
+                            };
+                            this_1 = this;
+                            _b.label = 1;
+                        case 1:
+                            _b.trys.push([1, 6, 7, 8]);
+                            path_1 = __values(path), path_1_1 = path_1.next();
+                            _b.label = 2;
+                        case 2:
+                            if (!!path_1_1.done) return [3 /*break*/, 5];
+                            pathItem = path_1_1.value;
+                            return [5 /*yield**/, _loop_1(pathItem)];
+                        case 3:
+                            state_1 = _b.sent();
+                            if (state_1 === "break")
+                                return [3 /*break*/, 5];
+                            _b.label = 4;
+                        case 4:
+                            path_1_1 = path_1.next();
+                            return [3 /*break*/, 2];
+                        case 5: return [3 /*break*/, 8];
+                        case 6:
+                            e_1_1 = _b.sent();
+                            e_1 = { error: e_1_1 };
+                            return [3 /*break*/, 8];
+                        case 7:
+                            try {
+                                if (path_1_1 && !path_1_1.done && (_a = path_1.return)) _a.call(path_1);
+                            }
+                            finally { if (e_1) throw e_1.error; }
+                            return [7 /*endfinally*/];
+                        case 8:
+                            if (pathItems.length !== path.length) {
+                                pathItems = [];
+                            }
+                            return [2 /*return*/, pathItems];
+                    }
+                });
+            });
+        };
+        /**
+         * @private
+         * @param {?} items
          * @param {?} item
          * @return {?}
          */
-        function (item) {
-            var _this = this;
-            this.reset();
-            if (this.items && this.items.length > 0) {
-                /** @type {?} */
-                var ancestors = getAncestors(this.items, item, this.compareWith || defaultCompareWith);
-                (ancestors || []).forEach((/**
-                 * @param {?} ancestor
-                 * @return {?}
-                 */
-                function (ancestor) { return _this.handleItemSelected(ancestor); }));
+        TdMarkdownNavigatorComponent.prototype.findPath = /**
+         * @private
+         * @param {?} items
+         * @param {?} item
+         * @return {?}
+         */
+        function (items, item) {
+            var e_2, _a;
+            /** @type {?} */
+            var compareWith = this.compareWith || defaultCompareWith;
+            if (items) {
+                try {
+                    for (var items_1 = __values(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
+                        var child = items_1_1.value;
+                        if (compareWith(child, item)) {
+                            return [child];
+                        }
+                        /** @type {?} */
+                        var ancestors = this.findPath(child.children, item);
+                        if (ancestors) {
+                            return __spread([child], ancestors);
+                        }
+                    }
+                }
+                catch (e_2_1) { e_2 = { error: e_2_1 }; }
+                finally {
+                    try {
+                        if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
+                    }
+                    finally { if (e_2) throw e_2.error; }
+                }
             }
-            this._changeDetectorRef.markForCheck();
+            return undefined;
         };
         /**
          * @private
@@ -903,9 +1027,9 @@
          */
         TdMarkdownNavigatorComponent.prototype.labels;
         /**
-         * startAt?: IMarkdownNavigatorItem
+         * startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
          *
-         * Item to start to
+         * Item or path to start at
          * @type {?}
          */
         TdMarkdownNavigatorComponent.prototype.startAt;

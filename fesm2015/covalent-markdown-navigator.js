@@ -118,27 +118,6 @@ function defaultCompareWith(o1, o2) {
     }
     return o1 === o2;
 }
-/**
- * @param {?} items
- * @param {?} item
- * @param {?} compareWith
- * @return {?}
- */
-function getAncestors(items, item, compareWith) {
-    if (items) {
-        for (const child of items) {
-            if (compareWith(child, item)) {
-                return [child];
-            }
-            /** @type {?} */
-            const ancestors = getAncestors(child.children, item, compareWith);
-            if (ancestors) {
-                return [child, ...ancestors];
-            }
-        }
-    }
-    return undefined;
-}
 class TdMarkdownNavigatorComponent {
     /**
      * @param {?} _markdownUrlLoaderService
@@ -291,12 +270,14 @@ class TdMarkdownNavigatorComponent {
      * @return {?}
      */
     ngOnChanges(changes) {
-        if (changes.items) {
-            this.reset();
-            if (this.items && this.startAt) {
-                this._jumpTo(this.startAt);
+        return __awaiter(this, void 0, void 0, function* () {
+            if (changes.items) {
+                this.reset();
+                if (this.items && this.startAt) {
+                    yield this._jumpTo(this.startAt);
+                }
             }
-        }
+        });
     }
     /**
      * @param {?} item
@@ -453,21 +434,92 @@ class TdMarkdownNavigatorComponent {
     }
     /**
      * @private
+     * @param {?} itemOrPath
+     * @return {?}
+     */
+    _jumpTo(itemOrPath) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.reset();
+            if (this.items && this.items.length > 0) {
+                /** @type {?} */
+                let path = [];
+                if (Array.isArray(itemOrPath)) {
+                    path = yield this.followPath(this.items, itemOrPath);
+                }
+                else {
+                    path = this.findPath(this.items, itemOrPath);
+                }
+                (path || []).forEach((/**
+                 * @param {?} pathItem
+                 * @return {?}
+                 */
+                (pathItem) => this.handleItemSelected(pathItem)));
+            }
+            this._changeDetectorRef.markForCheck();
+        });
+    }
+    /**
+     * @private
+     * @param {?} items
+     * @param {?} path
+     * @return {?}
+     */
+    followPath(items, path) {
+        return __awaiter(this, void 0, void 0, function* () {
+            /** @type {?} */
+            let pathItems = [];
+            /** @type {?} */
+            let currentLevel = items;
+            /** @type {?} */
+            const compareWith = this.compareWith || defaultCompareWith;
+            for (const pathItem of path) {
+                /** @type {?} */
+                const foundItem = currentLevel.find((/**
+                 * @param {?} item
+                 * @return {?}
+                 */
+                (item) => compareWith(pathItem, item)));
+                if (foundItem) {
+                    pathItems = [...pathItems, foundItem];
+                    if (foundItem.children) {
+                        currentLevel = foundItem.children;
+                    }
+                    else if (foundItem.childrenUrl) {
+                        currentLevel = yield this.loadChildrenUrl(foundItem);
+                    }
+                }
+                else {
+                    break;
+                }
+            }
+            if (pathItems.length !== path.length) {
+                pathItems = [];
+            }
+            return pathItems;
+        });
+    }
+    /**
+     * @private
+     * @param {?} items
      * @param {?} item
      * @return {?}
      */
-    _jumpTo(item) {
-        this.reset();
-        if (this.items && this.items.length > 0) {
-            /** @type {?} */
-            const ancestors = getAncestors(this.items, item, this.compareWith || defaultCompareWith);
-            (ancestors || []).forEach((/**
-             * @param {?} ancestor
-             * @return {?}
-             */
-            (ancestor) => this.handleItemSelected(ancestor)));
+    findPath(items, item) {
+        /** @type {?} */
+        const compareWith = this.compareWith || defaultCompareWith;
+        if (items) {
+            for (const child of items) {
+                if (compareWith(child, item)) {
+                    return [child];
+                }
+                /** @type {?} */
+                const ancestors = this.findPath(child.children, item);
+                if (ancestors) {
+                    return [child, ...ancestors];
+                }
+            }
         }
-        this._changeDetectorRef.markForCheck();
+        return undefined;
     }
     /**
      * @private
@@ -543,9 +595,9 @@ if (false) {
      */
     TdMarkdownNavigatorComponent.prototype.labels;
     /**
-     * startAt?: IMarkdownNavigatorItem
+     * startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
      *
-     * Item to start to
+     * Item or path to start at
      * @type {?}
      */
     TdMarkdownNavigatorComponent.prototype.startAt;
