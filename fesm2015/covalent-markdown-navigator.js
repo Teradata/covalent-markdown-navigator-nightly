@@ -273,9 +273,9 @@ class TdMarkdownNavigatorComponent {
         return __awaiter(this, void 0, void 0, function* () {
             if (changes.items) {
                 this.reset();
-                if (this.items && this.startAt) {
-                    yield this._jumpTo(this.startAt);
-                }
+            }
+            if (changes.startAt && this.items && this.startAt) {
+                this._jumpTo(this.startAt);
             }
         });
     }

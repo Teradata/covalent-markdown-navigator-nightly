@@ -338,17 +338,13 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
     function (changes) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!changes.items) return [3 /*break*/, 2];
-                        this.reset();
-                        if (!(this.items && this.startAt)) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this._jumpTo(this.startAt)];
-                    case 1:
-                        _a.sent();
-                        _a.label = 2;
-                    case 2: return [2 /*return*/];
+                if (changes.items) {
+                    this.reset();
                 }
+                if (changes.startAt && this.items && this.startAt) {
+                    this._jumpTo(this.startAt);
+                }
+                return [2 /*return*/];
             });
         });
     };
