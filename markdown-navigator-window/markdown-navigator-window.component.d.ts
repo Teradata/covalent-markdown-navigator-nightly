@@ -13,7 +13,7 @@ export declare class TdMarkdownNavigatorWindowComponent {
     items: IMarkdownNavigatorItem[];
     labels: IMarkdownNavigatorWindowLabels;
     toolbarColor: ThemePalette;
-    startAt: IMarkdownNavigatorItem;
+    startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
     compareWith: IMarkdownNavigatorCompareWith;
     docked: boolean;
     footer: Type<any>;
