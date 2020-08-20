@@ -2,6 +2,7 @@ import { EventEmitter, Type } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorLabels, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 export interface IMarkdownNavigatorWindowLabels extends IMarkdownNavigatorLabels {
     title?: string;
     close?: string;
@@ -16,6 +17,8 @@ export declare class TdMarkdownNavigatorWindowComponent {
     startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
     compareWith: IMarkdownNavigatorCompareWith;
     docked: boolean;
+    copyCodeToClipboard: boolean;
+    copyCodeTooltips: ICopyCodeTooltips;
     footer: Type<any>;
     closed: EventEmitter<void>;
     dockToggled: EventEmitter<boolean>;

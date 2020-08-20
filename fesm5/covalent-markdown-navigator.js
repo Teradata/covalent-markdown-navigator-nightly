@@ -124,6 +124,19 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         this._changeDetectorRef = _changeDetectorRef;
         this._sanitizer = _sanitizer;
         this._http = _http;
+        /**
+         * copyCodeToClipboard?: boolean
+         *
+         * Display copy button on code snippets to copy code to clipboard.
+         *
+         */
+        this.copyCodeToClipboard = false;
+        /**
+         * copyCodeTooltips?: ICopyCodeTooltips
+         *
+         * Tooltips for copy button to copy and upon copying.
+         */
+        this.copyCodeTooltips = {};
         this.buttonClicked = new EventEmitter();
         this.historyStack = []; // history
         // currently rendered
@@ -778,7 +791,7 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
     TdMarkdownNavigatorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator',
-                    template: "<ng-container *ngIf=\"!showEmptyState\">\n  <mat-progress-bar *ngIf=\"loading\" mode=\"indeterminate\" color=\"accent\"></mat-progress-bar>\n\n  <ng-container *ngIf=\"showHeader\">\n    <div [style.display]=\"'flex'\">\n      <button\n        id=\"td-markdown-navigator-home-button\"\n        *ngIf=\"showHomeButton\"\n        mat-icon-button\n        [matTooltip]=\"goHomeLabel\"\n        (click)=\"reset()\"\n        [attr.data-test]=\"'home-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goHomeLabel\">\n          home\n        </mat-icon>\n      </button>\n\n      <button\n        id=\"td-markdown-navigator-back-button\"\n        *ngIf=\"showGoBackButton\"\n        mat-icon-button\n        [matTooltip]=\"goBackLabel\"\n        (click)=\"goBack()\"\n        [attr.data-test]=\"'back-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goBackLabel\">\n          arrow_back\n        </mat-icon>\n      </button>\n      <span flex *ngIf=\"currentItemTitle\" class=\"mat-body-2 title truncate\" [attr.data-test]=\"'title'\">\n        {{ currentItemTitle }}\n      </span>\n    </div>\n\n    <mat-divider [style.position]=\"'relative'\"></mat-divider>\n  </ng-container>\n\n  <div class=\"scroll-area\" id=\"td-markdown-navigator-content\">\n    <td-message\n      *ngIf=\"childrenUrlError\"\n      [sublabel]=\"childrenUrlError\"\n      color=\"warn\"\n      icon=\"error\"\n      [attr.data-test]=\"'children-url-error'\"\n    ></td-message>\n    <div *ngIf=\"showMenu\" class=\"td-markdown-list\">\n      <mat-action-list>\n        <button\n          *ngFor=\"let item of currentMenuItems; index as index\"\n          [id]=\"'td-markdown-navigator-list-item-' + (item.id ? item.id : index)\"\n          (click)=\"handleItemSelected(item)\"\n          mat-list-item\n          [matTooltip]=\"getTitle(item)\"\n          matTooltipPosition=\"before\"\n          matTooltipShowDelay=\"500\"\n        >\n          <mat-icon matListIcon>\n            {{ getIcon(item) }}\n          </mat-icon>\n          <span matLine class=\"truncate\">\n            {{ getTitle(item) }}\n          </span>\n          <span matLine class=\"truncate\">{{ item.description }}</span>\n          <mat-divider></mat-divider>\n        </button>\n      </mat-action-list>\n    </div>\n\n    <div *ngIf=\"showTdMarkdownLoader || showTdMarkdown\" class=\"markdown-wrapper\" #markdownWrapper>\n      <td-message\n        *ngIf=\"markdownLoaderError\"\n        [sublabel]=\"markdownLoaderError\"\n        color=\"warn\"\n        icon=\"error\"\n        [attr.data-test]=\"'markdown-loader-error'\"\n      ></td-message>\n      <td-flavored-markdown-loader\n        *ngIf=\"showTdMarkdownLoader\"\n        [url]=\"url\"\n        [httpOptions]=\"httpOptions\"\n        [anchor]=\"anchor\"\n        (loadFailed)=\"handleMarkdownLoaderError($event)\"\n      ></td-flavored-markdown-loader>\n\n      <td-flavored-markdown\n        *ngIf=\"showTdMarkdown\"\n        [content]=\"markdownString\"\n        [hostedUrl]=\"url\"\n        [anchor]=\"anchor\"\n        (buttonClicked)=\"buttonClicked.emit($event)\"\n      ></td-flavored-markdown>\n    </div>\n    <ng-container *ngComponentOutlet=\"footerComponent\"></ng-container>\n  </div>\n</ng-container>\n\n<div *ngIf=\"showEmptyState\" layout=\"column\" layout-align=\"center center\" class=\"empty-state\">\n  <mat-icon matListAvatar>subject</mat-icon>\n  <h2>{{ emptyStateLabel }}</h2>\n</div>\n",
+                    template: "<ng-container *ngIf=\"!showEmptyState\">\n  <mat-progress-bar *ngIf=\"loading\" mode=\"indeterminate\" color=\"accent\"></mat-progress-bar>\n\n  <ng-container *ngIf=\"showHeader\">\n    <div [style.display]=\"'flex'\">\n      <button\n        id=\"td-markdown-navigator-home-button\"\n        *ngIf=\"showHomeButton\"\n        mat-icon-button\n        [matTooltip]=\"goHomeLabel\"\n        (click)=\"reset()\"\n        [attr.data-test]=\"'home-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goHomeLabel\">\n          home\n        </mat-icon>\n      </button>\n\n      <button\n        id=\"td-markdown-navigator-back-button\"\n        *ngIf=\"showGoBackButton\"\n        mat-icon-button\n        [matTooltip]=\"goBackLabel\"\n        (click)=\"goBack()\"\n        [attr.data-test]=\"'back-button'\"\n      >\n        <mat-icon [attr.aria-label]=\"goBackLabel\">\n          arrow_back\n        </mat-icon>\n      </button>\n      <span flex *ngIf=\"currentItemTitle\" class=\"mat-body-2 title truncate\" [attr.data-test]=\"'title'\">\n        {{ currentItemTitle }}\n      </span>\n    </div>\n\n    <mat-divider [style.position]=\"'relative'\"></mat-divider>\n  </ng-container>\n\n  <div class=\"scroll-area\" id=\"td-markdown-navigator-content\">\n    <td-message\n      *ngIf=\"childrenUrlError\"\n      [sublabel]=\"childrenUrlError\"\n      color=\"warn\"\n      icon=\"error\"\n      [attr.data-test]=\"'children-url-error'\"\n    ></td-message>\n    <div *ngIf=\"showMenu\" class=\"td-markdown-list\">\n      <mat-action-list>\n        <button\n          *ngFor=\"let item of currentMenuItems; index as index\"\n          [id]=\"'td-markdown-navigator-list-item-' + (item.id ? item.id : index)\"\n          (click)=\"handleItemSelected(item)\"\n          mat-list-item\n          [matTooltip]=\"getTitle(item)\"\n          matTooltipPosition=\"before\"\n          matTooltipShowDelay=\"500\"\n        >\n          <mat-icon matListIcon>\n            {{ getIcon(item) }}\n          </mat-icon>\n          <span matLine class=\"truncate\">\n            {{ getTitle(item) }}\n          </span>\n          <span matLine class=\"truncate\">{{ item.description }}</span>\n          <mat-divider></mat-divider>\n        </button>\n      </mat-action-list>\n    </div>\n\n    <div *ngIf=\"showTdMarkdownLoader || showTdMarkdown\" class=\"markdown-wrapper\" #markdownWrapper>\n      <td-message\n        *ngIf=\"markdownLoaderError\"\n        [sublabel]=\"markdownLoaderError\"\n        color=\"warn\"\n        icon=\"error\"\n        [attr.data-test]=\"'markdown-loader-error'\"\n      ></td-message>\n      <td-flavored-markdown-loader\n        *ngIf=\"showTdMarkdownLoader\"\n        [url]=\"url\"\n        [httpOptions]=\"httpOptions\"\n        [anchor]=\"anchor\"\n        [copyCodeToClipboard]=\"copyCodeToClipboard\"\n        [copyCodeTooltips]=\"copyCodeTooltips\"\n        (loadFailed)=\"handleMarkdownLoaderError($event)\"\n      ></td-flavored-markdown-loader>\n      <td-flavored-markdown\n        *ngIf=\"showTdMarkdown\"\n        [content]=\"markdownString\"\n        [hostedUrl]=\"url\"\n        [anchor]=\"anchor\"\n        [copyCodeToClipboard]=\"copyCodeToClipboard\"\n        [copyCodeTooltips]=\"copyCodeTooltips\"\n        (buttonClicked)=\"buttonClicked.emit($event)\"\n      ></td-flavored-markdown>\n    </div>\n    <ng-container *ngComponentOutlet=\"footerComponent\"></ng-container>\n  </div>\n</ng-container>\n\n<div *ngIf=\"showEmptyState\" layout=\"column\" layout-align=\"center center\" class=\"empty-state\">\n  <mat-icon matListAvatar>subject</mat-icon>\n  <h2>{{ emptyStateLabel }}</h2>\n</div>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: [":host{position:relative;height:100%;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}:host .scroll-area{min-height:1px;overflow-y:auto;-ms-flex:1;flex:1;box-sizing:border-box}:host .markdown-wrapper{padding:16px 16px 0}:host .td-markdown-list>.mat-list{padding-top:0}:host td-flavored-markdown-loader ::ng-deep .mat-progress-bar{top:0;left:0;right:0;position:absolute}:host .title{display:inline-block;vertical-align:middle;margin:8px 0;padding-left:16px}.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty-state{padding:32px}.empty-state mat-icon{font-size:4em}"]
                 }] }
@@ -794,6 +807,8 @@ var TdMarkdownNavigatorComponent = /** @class */ (function () {
         items: [{ type: Input }],
         labels: [{ type: Input }],
         startAt: [{ type: Input }],
+        copyCodeToClipboard: [{ type: Input }],
+        copyCodeTooltips: [{ type: Input }],
         footer: [{ type: Input }],
         compareWith: [{ type: Input }],
         buttonClicked: [{ type: Output }],
@@ -824,6 +839,21 @@ if (false) {
      * @type {?}
      */
     TdMarkdownNavigatorComponent.prototype.startAt;
+    /**
+     * copyCodeToClipboard?: boolean
+     *
+     * Display copy button on code snippets to copy code to clipboard.
+     *
+     * @type {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.copyCodeToClipboard;
+    /**
+     * copyCodeTooltips?: ICopyCodeTooltips
+     *
+     * Tooltips for copy button to copy and upon copying.
+     * @type {?}
+     */
+    TdMarkdownNavigatorComponent.prototype.copyCodeTooltips;
     /**
      * footer?: Type<any>
      *
@@ -906,6 +936,8 @@ var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
     function TdMarkdownNavigatorWindowComponent() {
         this.toolbarColor = 'primary';
         this.docked = false;
+        this.copyCodeToClipboard = false;
+        this.copyCodeTooltips = {};
         this.closed = new EventEmitter();
         this.dockToggled = new EventEmitter();
         this.buttonClicked = new EventEmitter();
@@ -974,7 +1006,7 @@ var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
     TdMarkdownNavigatorWindowComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-markdown-navigator-window',
-                    template: "<td-window-dialog\n  [toolbarColor]=\"toolbarColor\"\n  [docked]=\"docked\"\n  [title]=\"titleLabel\"\n  [toggleDockedStateLabel]=\"toggleDockedStateLabel\"\n  [closeLabel]=\"closeLabel\"\n  (dockToggled)=\"toggleDockedState()\"\n  (closed)=\"closed.emit()\"\n>\n  <td-markdown-navigator\n    [items]=\"items\"\n    [labels]=\"markdownNavigatorLabels\"\n    [style.display]=\"docked ? 'none' : 'inherit'\"\n    [startAt]=\"startAt\"\n    [compareWith]=\"compareWith\"\n    [footer]=\"footer\"\n    (buttonClicked)=\"buttonClicked.emit($event)\"\n  ></td-markdown-navigator>\n</td-window-dialog>\n",
+                    template: "<td-window-dialog\n  [toolbarColor]=\"toolbarColor\"\n  [docked]=\"docked\"\n  [title]=\"titleLabel\"\n  [toggleDockedStateLabel]=\"toggleDockedStateLabel\"\n  [closeLabel]=\"closeLabel\"\n  (dockToggled)=\"toggleDockedState()\"\n  (closed)=\"closed.emit()\"\n>\n  <td-markdown-navigator\n    [items]=\"items\"\n    [labels]=\"markdownNavigatorLabels\"\n    [style.display]=\"docked ? 'none' : 'inherit'\"\n    [startAt]=\"startAt\"\n    [compareWith]=\"compareWith\"\n    [footer]=\"footer\"\n    [copyCodeToClipboard]=\"copyCodeToClipboard\"\n    [copyCodeTooltips]=\"copyCodeTooltips\"\n    (buttonClicked)=\"buttonClicked.emit($event)\"\n  ></td-markdown-navigator>\n</td-window-dialog>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     styles: [":host{height:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}td-markdown-navigator{height:calc(100% - 56px)}"]
                 }] }
@@ -986,6 +1018,8 @@ var TdMarkdownNavigatorWindowComponent = /** @class */ (function () {
         startAt: [{ type: Input }],
         compareWith: [{ type: Input }],
         docked: [{ type: Input }],
+        copyCodeToClipboard: [{ type: Input }],
+        copyCodeTooltips: [{ type: Input }],
         footer: [{ type: Input }],
         closed: [{ type: Output }],
         dockToggled: [{ type: Output }],
@@ -1006,6 +1040,10 @@ if (false) {
     TdMarkdownNavigatorWindowComponent.prototype.compareWith;
     /** @type {?} */
     TdMarkdownNavigatorWindowComponent.prototype.docked;
+    /** @type {?} */
+    TdMarkdownNavigatorWindowComponent.prototype.copyCodeToClipboard;
+    /** @type {?} */
+    TdMarkdownNavigatorWindowComponent.prototype.copyCodeTooltips;
     /** @type {?} */
     TdMarkdownNavigatorWindowComponent.prototype.footer;
     /** @type {?} */
@@ -1037,6 +1075,10 @@ if (false) {
     IMarkdownNavigatorWindowConfig.prototype.startAt;
     /** @type {?|undefined} */
     IMarkdownNavigatorWindowConfig.prototype.compareWith;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorWindowConfig.prototype.copyCodeToClipboard;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorWindowConfig.prototype.copyCodeTooltips;
     /** @type {?|undefined} */
     IMarkdownNavigatorWindowConfig.prototype.footer;
 }
@@ -1114,6 +1156,8 @@ var TdMarkdownNavigatorWindowService = /** @class */ (function () {
         this.markdownNavigatorWindowDialog.componentInstance.items = config.items;
         this.markdownNavigatorWindowDialog.componentInstance.labels = config.labels;
         this.markdownNavigatorWindowDialog.componentInstance.startAt = config.startAt;
+        this.markdownNavigatorWindowDialog.componentInstance.copyCodeToClipboard = config.copyCodeToClipboard;
+        this.markdownNavigatorWindowDialog.componentInstance.copyCodeTooltips = config.copyCodeTooltips;
         this.markdownNavigatorWindowDialog.componentInstance.compareWith = config.compareWith;
         this.markdownNavigatorWindowDialog.componentInstance.toolbarColor =
             'toolbarColor' in config ? config.toolbarColor : 'primary';

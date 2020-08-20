@@ -3,6 +3,7 @@ import { TdMarkdownLoaderService } from '@covalent/markdown';
 import { ITdFlavoredMarkdownButtonClickEvent } from '@covalent/flavored-markdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 export interface IMarkdownNavigatorItem {
     id?: string;
     title?: string;
@@ -46,6 +47,19 @@ export declare class TdMarkdownNavigatorComponent implements OnChanges {
      * Item or path to start at
      */
     startAt: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
+    /**
+     * copyCodeToClipboard?: boolean
+     *
+     * Display copy button on code snippets to copy code to clipboard.
+     *
+     */
+    copyCodeToClipboard: boolean;
+    /**
+     * copyCodeTooltips?: ICopyCodeTooltips
+     *
+     * Tooltips for copy button to copy and upon copying.
+     */
+    copyCodeTooltips: ICopyCodeTooltips;
     /**
      * footer?: Type<any>
      *

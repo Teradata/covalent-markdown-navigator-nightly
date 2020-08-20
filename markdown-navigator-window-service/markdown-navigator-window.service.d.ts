@@ -4,6 +4,7 @@ import { ThemePalette } from '@angular/material/core';
 import { TdMarkdownNavigatorWindowComponent, IMarkdownNavigatorWindowLabels } from '../markdown-navigator-window/markdown-navigator-window.component';
 import { TdDialogService } from '@covalent/core/dialogs';
 import { IMarkdownNavigatorItem, IMarkdownNavigatorCompareWith } from '../markdown-navigator.component';
+import { ICopyCodeTooltips } from '@covalent/highlight';
 export interface IMarkdownNavigatorWindowConfig {
     items: IMarkdownNavigatorItem[];
     dialogConfig?: MatDialogConfig;
@@ -11,6 +12,8 @@ export interface IMarkdownNavigatorWindowConfig {
     toolbarColor?: ThemePalette;
     startAt?: IMarkdownNavigatorItem | IMarkdownNavigatorItem[];
     compareWith?: IMarkdownNavigatorCompareWith;
+    copyCodeToClipboard?: boolean;
+    copyCodeTooltips?: ICopyCodeTooltips;
     footer?: Type<any>;
 }
 export declare class TdMarkdownNavigatorWindowService {
