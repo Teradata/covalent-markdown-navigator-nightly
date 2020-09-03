@@ -16,6 +16,7 @@ export interface IMarkdownNavigatorItem {
     description?: string;
     icon?: string;
     footer?: Type<any>;
+    startAtLink?: IMarkdownNavigatorItem;
 }
 export interface IMarkdownNavigatorLabels {
     goHome?: string;

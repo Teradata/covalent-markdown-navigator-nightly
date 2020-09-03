@@ -44,6 +44,8 @@ if (false) {
     IMarkdownNavigatorItem.prototype.icon;
     /** @type {?|undefined} */
     IMarkdownNavigatorItem.prototype.footer;
+    /** @type {?|undefined} */
+    IMarkdownNavigatorItem.prototype.startAtLink;
 }
 /**
  * @record
@@ -288,7 +290,7 @@ class TdMarkdownNavigatorComponent {
                 this.reset();
             }
             if (changes.startAt && this.items && this.startAt) {
-                this._jumpTo(this.startAt);
+                this._jumpTo(this.startAt, undefined);
             }
         });
     }
@@ -332,10 +334,21 @@ class TdMarkdownNavigatorComponent {
         this.clearErrors();
         if (this.historyStack.length > 1) {
             /** @type {?} */
-            const parent = this.historyStack[this.historyStack.length - 2];
-            this.currentMarkdownItem = parent;
-            this.historyStack = this.historyStack.slice(0, -1);
-            this.setChildrenAsCurrentMenuItems(parent);
+            let parent = this.historyStack[this.historyStack.length - 2];
+            if (parent.startAtLink) {
+                parent = this.historyStack[this.historyStack.length - 3]
+                    ? this.historyStack[this.historyStack.length - 3]
+                    : undefined;
+                this.historyStack = this.historyStack.slice(0, -1);
+            }
+            if (parent) {
+                this.currentMarkdownItem = parent;
+                this.historyStack = this.historyStack.slice(0, -1);
+                this.setChildrenAsCurrentMenuItems(parent);
+            }
+            else {
+                this.reset();
+            }
         }
         else {
             // one level down just go to root
@@ -372,6 +385,9 @@ class TdMarkdownNavigatorComponent {
             }
             else if (item.childrenUrl) {
                 children = yield this.loadChildrenUrl(item);
+            }
+            if (children && children.length && item.startAtLink) {
+                this._jumpTo(item.startAtLink, children);
             }
             /** @type {?} */
             const newStackSnapshot = this.historyStack;
@@ -448,16 +464,23 @@ class TdMarkdownNavigatorComponent {
     /**
      * @private
      * @param {?} itemOrPath
+     * @param {?} children
      * @return {?}
      */
-    _jumpTo(itemOrPath) {
+    _jumpTo(itemOrPath, children) {
         return __awaiter(this, void 0, void 0, function* () {
+            /** @type {?} */
+            const historyStack = this.historyStack;
             this.reset();
             if (this.items && this.items.length > 0) {
                 /** @type {?} */
                 let path = [];
                 if (Array.isArray(itemOrPath)) {
                     path = yield this.followPath(this.items, itemOrPath);
+                }
+                else if (children && children.length > 0) {
+                    this.historyStack = historyStack;
+                    path = this.findPath(children, itemOrPath);
                 }
                 else {
                     path = this.findPath(this.items, itemOrPath);

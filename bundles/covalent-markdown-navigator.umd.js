@@ -249,6 +249,8 @@
         IMarkdownNavigatorItem.prototype.icon;
         /** @type {?|undefined} */
         IMarkdownNavigatorItem.prototype.footer;
+        /** @type {?|undefined} */
+        IMarkdownNavigatorItem.prototype.startAtLink;
     }
     /**
      * @record
@@ -560,7 +562,7 @@
                         this.reset();
                     }
                     if (changes.startAt && this.items && this.startAt) {
-                        this._jumpTo(this.startAt);
+                        this._jumpTo(this.startAt, undefined);
                     }
                     return [2 /*return*/];
                 });
@@ -620,9 +622,20 @@
             if (this.historyStack.length > 1) {
                 /** @type {?} */
                 var parent_1 = this.historyStack[this.historyStack.length - 2];
-                this.currentMarkdownItem = parent_1;
-                this.historyStack = this.historyStack.slice(0, -1);
-                this.setChildrenAsCurrentMenuItems(parent_1);
+                if (parent_1.startAtLink) {
+                    parent_1 = this.historyStack[this.historyStack.length - 3]
+                        ? this.historyStack[this.historyStack.length - 3]
+                        : undefined;
+                    this.historyStack = this.historyStack.slice(0, -1);
+                }
+                if (parent_1) {
+                    this.currentMarkdownItem = parent_1;
+                    this.historyStack = this.historyStack.slice(0, -1);
+                    this.setChildrenAsCurrentMenuItems(parent_1);
+                }
+                else {
+                    this.reset();
+                }
             }
             else {
                 // one level down just go to root
@@ -674,6 +687,9 @@
                             children = _a.sent();
                             _a.label = 3;
                         case 3:
+                            if (children && children.length && item.startAtLink) {
+                                this._jumpTo(item.startAtLink, children);
+                            }
                             newStackSnapshot = this.historyStack;
                             if (stackSnapshot.length === newStackSnapshot.length &&
                                 stackSnapshot.every((/**
@@ -779,20 +795,23 @@
         /**
          * @private
          * @param {?} itemOrPath
+         * @param {?} children
          * @return {?}
          */
         TdMarkdownNavigatorComponent.prototype._jumpTo = /**
          * @private
          * @param {?} itemOrPath
+         * @param {?} children
          * @return {?}
          */
-        function (itemOrPath) {
+        function (itemOrPath, children) {
             return __awaiter(this, void 0, void 0, function () {
-                var path;
+                var historyStack, path;
                 var _this = this;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
+                            historyStack = this.historyStack;
                             this.reset();
                             if (!(this.items && this.items.length > 0)) return [3 /*break*/, 4];
                             path = [];
@@ -802,7 +821,13 @@
                             path = _a.sent();
                             return [3 /*break*/, 3];
                         case 2:
-                            path = this.findPath(this.items, itemOrPath);
+                            if (children && children.length > 0) {
+                                this.historyStack = historyStack;
+                                path = this.findPath(children, itemOrPath);
+                            }
+                            else {
+                                path = this.findPath(this.items, itemOrPath);
+                            }
                             _a.label = 3;
                         case 3:
                             (path || []).forEach((/**
